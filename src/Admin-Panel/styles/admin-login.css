@@ -1,0 +1,111 @@
+/* Login Page Styles */
+.admin-login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--admin-primary) 0%, var(--admin-accent) 100%);
+  padding: var(--admin-spacing);
+}
+
+.admin-login-card {
+  background-color: var(--admin-surface);
+  border-radius: var(--admin-radius-lg);
+  box-shadow: var(--admin-shadow-lg);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  animation: admin-fade-in 0.5s ease-out;
+}
+
+@keyframes admin-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.admin-login-title {
+  font-size: 2.3rem;
+  font-weight: 500;
+  font-family: "Russo One", sans-serif;
+  text-decoration: underline;
+  color: var(--admin-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.admin-login-subtitle {
+  color: var(--admin-text-secondary);
+  font-size: 0.875rem;
+}
+
+.admin-login-form {
+  margin-bottom: var(--admin-spacing);
+}
+
+.admin-login-button {
+  width: 100%;
+  background-color: var(--admin-primary);
+  color: white;
+  border: none;
+  padding: 0.875rem;
+  border-radius: var(--admin-radius);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--admin-transition);
+  margin-top: var(--admin-spacing);
+}
+
+.admin-login-button:hover {
+  background-color: var(--admin-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--admin-shadow-lg);
+}
+
+.admin-login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.admin-login-info {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--admin-border);
+  text-align: center;
+}
+
+.admin-login-info p {
+  font-size: 0.75rem;
+  color: var(--admin-text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.admin-login-info p:first-child {
+  font-weight: 600;
+  color: var(--admin-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .admin-login-card {
+    padding: 2rem;
+    margin: 1rem;
+  }
+
+  .admin-login-title {
+    font-size: 1.75rem;
+  }
+}

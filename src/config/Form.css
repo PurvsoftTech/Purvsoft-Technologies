@@ -1,0 +1,255 @@
+/* FormWithImage.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fwi-container {
+  padding: 40px 20px;
+  background: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.fwi-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+/* Left Side - Form */
+.fwi-form-side {
+  padding: 50px;
+  background: #ffffff;
+}
+
+.fwi-form-content {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.fwi-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.fwi-subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+/* Form */
+.fwi-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fwi-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fwi-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.fwi-required {
+  color: #dc2626;
+  margin-left: 2px;
+}
+
+/* Input Wrapper */
+.fwi-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fwi-input-icon {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.fwi-input {
+  width: 100%;
+  padding: 14px 14px 14px 45px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  transition: all 0.2s ease;
+  background: #f8fafc;
+}
+
+.fwi-input:focus {
+  outline: none;
+  border-color: #4361ee;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.fwi-input::placeholder {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* Submit Button */
+.fwi-submit-btn {
+  background: #4361ee;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+}
+
+.fwi-submit-btn:hover {
+  background: #3a56d4;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(67, 97, 238, 0.3);
+}
+
+/* Right Side - Image */
+.fwi-image-side {
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fwi-image-container {
+  max-width: 450px;
+  width: 100%;
+  animation: fwi-float 3s ease-in-out infinite;
+}
+
+.fwi-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes fwi-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .fwi-form-side {
+    padding: 40px;
+  }
+
+  .fwi-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fwi-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .fwi-form-side {
+    padding: 40px 30px;
+  }
+
+  .fwi-form-content {
+    max-width: 100%;
+  }
+
+  .fwi-image-side {
+    padding: 40px 20px;
+    min-height: 300px;
+  }
+
+  .fwi-image-container {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fwi-container {
+    padding: 20px 15px;
+  }
+
+  .fwi-form-side {
+    padding: 30px 20px;
+  }
+
+  .fwi-title {
+    font-size: 1.5rem;
+  }
+
+  .fwi-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+
+  .fwi-input {
+    padding: 12px 12px 12px 42px;
+    font-size: 0.9rem;
+  }
+
+  .fwi-input-icon {
+    left: 12px;
+  }
+
+  .fwi-submit-btn {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+
+  .fwi-image-side {
+    min-height: 250px;
+    padding: 30px 15px;
+  }
+
+  .fwi-image-container {
+    max-width: 280px;
+  }
+}
+
+.fwi-message {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1d4ed8;
+}

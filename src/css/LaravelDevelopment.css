@@ -1,0 +1,783 @@
+/* LaravelDevelopment.css */
+
+
+:root {
+  --lv-primary: #f05340;
+  --lv-primary-dark: #d43f2e;
+  --lv-primary-light: #fee9e7;
+  --lv-secondary: #f8f9fa;
+  --lv-success: #10b981;
+  --lv-warning: #f59e0b;
+  --lv-danger: #ef4444;
+  --lv-info: #3b82f6;
+  --lv-text-dark: #1e293b;
+  --lv-text-light: #64748b;
+  --lv-white: #ffffff;
+  --lv-border: #e2e8f0;
+  --lv-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --lv-shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --lv-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --lv-gradient: linear-gradient(135deg, #f05340 0%, #d43f2e 100%);
+  --lv-gradient-hover: linear-gradient(135deg, #d43f2e 0%, #f05340 100%);
+}
+
+.lv-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  color: var(--lv-text-dark);
+  background: var(--lv-white);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.lv-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Hero Section */
+.lv-hero {
+  padding: 130px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.lv-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.lv-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--lv-primary-light);
+  color: var(--lv-primary);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.lv-hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: var(--lv-text-dark);
+}
+
+.lv-gradient-text {
+  background: var(--lv-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.lv-hero-description {
+  font-size: 1.1rem;
+  color: var(--lv-text-light);
+  margin-bottom: 32px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.lv-hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.lv-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.lv-stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--lv-primary);
+  line-height: 1.2;
+}
+
+.lv-stat-label {
+  font-size: 0.9rem;
+  color: var(--lv-text-light);
+}
+
+.lv-hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.lv-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--lv-gradient);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: var(--lv-shadow-md);
+}
+
+.lv-btn-primary:hover {
+  background: var(--lv-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--lv-shadow-lg);
+}
+
+.lv-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--lv-primary);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
+  border: 2px solid var(--lv-primary);
+  transition: all 0.3s ease;
+}
+
+.lv-btn-outline:hover {
+  background: var(--lv-primary-light);
+  transform: translateY(-2px);
+}
+
+/* Hero Visual */
+.lv-hero-visual {
+  position: relative;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lv-code-block {
+  width: 100%;
+  max-width: 500px;
+  background: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--lv-shadow-lg);
+  animation: lv-float 3s ease-in-out infinite;
+}
+
+@keyframes lv-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.lv-code-header {
+  background: #2d2d2d;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lv-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.lv-dot-red { background: #ff5f56; }
+.lv-dot-yellow { background: #ffbd2e; }
+.lv-dot-green { background: #27c93f; }
+
+.lv-filename {
+  color: #888;
+  font-size: 0.9rem;
+  margin-left: auto;
+}
+
+.lv-code-content {
+  padding: 20px;
+  color: #fff;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.85rem;
+}
+
+.lv-line {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.lv-indent {
+  margin-left: 20px;
+}
+
+.lv-comment {
+  color: #6a9955;
+}
+
+.lv-keyword {
+  color: #569cd6;
+}
+
+.lv-function {
+  color: #dcdcaa;
+}
+
+.lv-string {
+  color: #ce9178;
+}
+
+/* Stats Section */
+.lv-stats {
+  padding: 60px 0;
+  background: var(--lv-white);
+  border-bottom: 1px solid var(--lv-border);
+}
+
+.lv-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.lv-stat-card {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--lv-white);
+  border-radius: 16px;
+  box-shadow: var(--lv-shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.lv-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--lv-shadow-md);
+}
+
+.lv-stat-icon {
+  color: var(--lv-primary);
+  margin-bottom: 16px;
+}
+
+.lv-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--lv-text-dark);
+  margin-bottom: 8px;
+}
+
+.lv-stat-label {
+  color: var(--lv-text-light);
+  font-size: 0.95rem;
+}
+
+/* Section Header */
+.lv-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.lv-section-subtitle {
+  color: var(--lv-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.lv-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 24px;
+  color: var(--lv-text-dark);
+}
+
+.lv-section-description {
+  color: var(--lv-text-light);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Features Section */
+.lv-features {
+  padding: 80px 0;
+  background: var(--lv-white);
+}
+
+.lv-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.lv-feature-card {
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--lv-shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid var(--lv-border);
+}
+
+.lv-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--lv-shadow-md);
+  border-color: var(--lv-primary);
+}
+
+.lv-feature-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--lv-primary-light);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lv-primary);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.lv-feature-card:hover .lv-feature-icon {
+  background: var(--lv-primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+.lv-feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--lv-text-dark);
+}
+
+.lv-feature-description {
+  color: var(--lv-text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Modules Section */
+.lv-modules {
+  padding: 80px 0;
+  background: var(--lv-secondary);
+}
+
+.lv-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.lv-module-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--lv-shadow-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--lv-border);
+}
+
+.lv-module-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--lv-shadow-md);
+  border-color: var(--lv-primary);
+}
+
+.lv-module-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--lv-primary-light);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lv-primary);
+  flex-shrink: 0;
+}
+
+.lv-module-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--lv-text-dark);
+}
+
+.lv-module-description {
+  font-size: 0.85rem;
+  color: var(--lv-text-light);
+}
+
+/* Benefits Section */
+.lv-benefits {
+  padding: 80px 0;
+  background: var(--lv-white);
+}
+
+.lv-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.lv-benefit-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--lv-shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid var(--lv-border);
+  text-align: center;
+}
+
+.lv-benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--lv-shadow-md);
+  border-color: var(--lv-primary);
+}
+
+.lv-benefit-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--lv-primary-light);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lv-primary);
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.lv-benefit-card:hover .lv-benefit-icon {
+  background: var(--lv-primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+.lv-benefit-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--lv-text-dark);
+}
+
+.lv-benefit-description {
+  color: var(--lv-text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Use Cases Section */
+.lv-use-cases {
+  padding: 80px 0;
+  background: var(--lv-secondary);
+}
+
+.lv-use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.lv-use-case-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--lv-shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid var(--lv-border);
+  text-align: center;
+}
+
+.lv-use-case-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--lv-shadow-md);
+  border-color: var(--lv-primary);
+}
+
+.lv-use-case-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--lv-primary-light);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lv-primary);
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.lv-use-case-card:hover .lv-use-case-icon {
+  background: var(--lv-primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+.lv-use-case-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--lv-text-dark);
+}
+
+.lv-use-case-description {
+  color: var(--lv-text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Process Section */
+.lv-process {
+  padding: 80px 0;
+  background: var(--lv-white);
+}
+
+.lv-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.lv-process-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--lv-shadow-sm);
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid var(--lv-border);
+}
+
+.lv-process-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--lv-shadow-md);
+}
+
+.lv-process-number {
+  position: absolute;
+  top: -15px;
+  left: 30px;
+  width: 30px;
+  height: 30px;
+  background: var(--lv-gradient);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.lv-process-icon {
+  color: var(--lv-primary);
+  margin: 20px 0;
+}
+
+.lv-process-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--lv-text-dark);
+}
+
+.lv-process-description {
+  color: var(--lv-text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* FAQ Section */
+.lv-faq {
+  padding: 80px 0;
+  background: var(--lv-secondary);
+}
+
+.lv-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.lv-faq-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--lv-shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid var(--lv-border);
+}
+
+.lv-faq-card:hover {
+  box-shadow: var(--lv-shadow-md);
+  border-color: var(--lv-primary);
+}
+
+.lv-faq-question {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--lv-text-dark);
+}
+
+.lv-faq-answer {
+  color: var(--lv-text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.lv-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  border-top: 1px solid var(--lv-border);
+}
+
+.lv-cta-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lv-cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--lv-text-dark);
+}
+
+.lv-cta-description {
+  font-size: 1.1rem;
+  color: var(--lv-text-light);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.lv-cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.lv-btn-large {
+  padding: 16px 40px;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .lv-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .lv-features-grid,
+  .lv-benefits-grid,
+  .lv-use-cases-grid,
+  .lv-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .lv-modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .lv-faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .lv-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .lv-hero-content {
+    text-align: center;
+  }
+  
+  .lv-hero-description {
+    margin: 0 auto 32px;
+  }
+  
+  .lv-hero-stats {
+    justify-content: center;
+  }
+  
+  .lv-hero-buttons {
+    justify-content: center;
+  }
+  
+  .lv-hero-visual {
+    height: auto;
+  }
+  
+  .lv-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .lv-section-title {
+    font-size: 2rem;
+  }
+  
+  .lv-features-grid,
+  .lv-benefits-grid,
+  .lv-use-cases-grid,
+  .lv-process-grid,
+  .lv-modules-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .lv-hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .lv-hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .lv-hero-buttons {
+    flex-direction: column;
+  }
+  
+  .lv-btn-primary, .lv-btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .lv-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .lv-section-title {
+    font-size: 1.75rem;
+  }
+  
+  .lv-cta-title {
+    font-size: 2rem;
+  }
+  
+  .lv-cta-buttons {
+    flex-direction: column;
+  }
+}

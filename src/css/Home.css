@@ -1,0 +1,372 @@
+/* Add these styles to your existing App.css */
+
+.techstack-section {
+  position: relative;
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.techstack-parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.95) 0%,
+    rgba(30, 41, 59, 0.98) 100%
+  ),
+  url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -2;
+}
+
+.techstack-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.techstack-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.techstack-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  color: white;
+}
+
+.techstack-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+}
+
+.techstack-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #fff 0%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.techstack-description {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.techstack-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.techstack-tab-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  font-size: 0.95rem;
+}
+
+.techstack-tab-button:hover {
+  background: rgba(37, 99, 235, 0.3);
+  border-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.techstack-tab-button.active {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  border-color: transparent;
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+}
+
+.techstack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.techstack-item {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.techstack-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed, #2563eb);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.techstack-item:hover::before {
+  transform: translateX(100%);
+}
+
+.techstack-item:hover {
+  transform: translateY(-5px);
+  background: rgba(37, 99, 235, 0.15);
+  border-color: #2563eb;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.techstack-item i {
+  font-size: 2.5rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.techstack-item:hover i {
+  transform: scale(1.2);
+  color: #2563eb;
+}
+
+.techstack-name {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.techstack-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.techstack-stat-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.techstack-stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.techstack-stat-label {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .techstack-title {
+    font-size: 2.5rem;
+  }
+
+  .techstack-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .techstack-section {
+    padding: 4rem 1rem;
+  }
+
+  .techstack-title {
+    font-size: 2rem;
+  }
+
+  .techstack-description {
+    font-size: 1rem;
+  }
+
+  .techstack-tabs {
+    gap: 0.5rem;
+  }
+
+  .techstack-tab-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .techstack-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .techstack-item {
+    padding: 1rem;
+  }
+
+  .techstack-item i {
+    font-size: 2rem;
+  }
+
+  .techstack-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .techstack-stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .techstack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .techstack-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+}
+
+/* Add these styles to your existing App.css */
+
+/* ===== AGENCY BADGE ===== */
+.agency-badge {
+  margin-bottom: 1.5rem;
+  animation: fadeInDown 0.8s ease;
+}
+
+.badge-text {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+  color: #2563eb;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.company-name {
+  font-size: 4.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  letter-spacing: -2px;
+}
+
+.hero-subtitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  color: #475569;
+}
+
+/* Update existing hero-title */
+.hero-title {
+  margin-bottom: 0.5rem;
+}
+
+/* Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .company-name {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+  
+  .badge-text {
+    font-size: 0.8rem;
+    padding: 0.4rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-name {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+

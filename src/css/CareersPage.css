@@ -1,0 +1,178 @@
+.careers-wrapper { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Hero Section */
+.careers-hero { background: linear-gradient(90deg, #ffffff, #f0f7ff); padding: 120px 0; }
+.hero-flex { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.hero-content h1 { font-size: 3rem; margin-bottom: 20px; color: #1e293b; }
+.blue-text { color: #0088cc; }
+.hero-content p { font-size: 1.1rem; color: #64748b; line-height: 1.6; margin-bottom: 15px; }
+.apply-now-btn { background: #0088cc; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: 600; margin-top: 10px; transition: 0.3s; }
+.apply-now-btn:hover { background: #006699; transform: translateY(-2px); }
+.hero-illustration img { width: 500px; }
+
+/* Open Positions (Dark Section) */
+.open-positions { background: #000000; padding: 80px 0; color: white; text-align: center; }
+.blue-text-bright { color: #00d2ff; font-weight: bold; }
+.positions-header h2 { font-size: 2.2rem; margin-bottom: 20px; }
+.positions-header p { max-width: 800px; margin: 0 auto 40px; color: #cbd5e1; }
+.underline-title { font-size: 1.8rem; text-decoration: underline; margin-bottom: 40px; }
+
+.positions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.dark-card { 
+  border: 1px solid #334155; 
+  padding: 40px; 
+  border-radius: 15px; 
+  background: #0f172a;
+  transition: 0.3s;
+}
+.dark-card:hover { border-color: #0088cc; box-shadow: 0 10px 30px rgba(0,136,204,0.2); }
+.dark-card h3 { font-size: 1.6rem; margin-bottom: 15px; }
+.dark-card p { color: #94a3b8; margin-bottom: 30px; height: 50px; }
+.card-btn { 
+  display: inline-block;
+  background: #000; 
+  color: #fff; 
+  border: 2px solid #fff; 
+  padding: 10px 30px; 
+  border-radius: 50px; 
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.card-btn:hover { background: #fff; color: #000; }
+
+/* Hiring Process */
+.hiring-process { padding: 80px 0; text-align: center; }
+.section-title { margin-bottom: 50px; font-size: 2rem; }
+.process-steps { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+.step-item { position: relative; width: 200px; }
+.step-num { 
+  width: 60px; height: 60px; background: #f0f7ff; color: #0088cc; 
+  border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+  font-size: 1.5rem; font-weight: 800; margin: 0 auto 15px;
+  border: 2px solid #0088cc;
+}
+
+@media (max-width: 768px) {
+  .hero-flex { flex-direction: column; text-align: center; }
+  .hero-illustration img { width: 100%; }
+  .positions-grid { grid-template-columns: 1fr; }
+}
+
+/* Light Section Styling */
+.open-positions-light {
+  padding: 80px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #1e293b;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.main-heading {
+  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.description-text {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #111111;
+  line-height: 1.6;
+}
+
+.open-positions-title {
+  display: inline-block;
+  font-size: 1.8rem;
+  margin-bottom: 50px;
+  border-bottom: 3px solid #0088cc;
+  padding-bottom: 5px;
+}
+
+/* Grid & Cards */
+.positions-grid-light {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.pos-card-light {
+  position: relative;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: left;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.pos-card-light:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* Theme Colors - Inspired by image_d4ace6.jpg */
+.purple-theme { background-color: #f5f0ff; }
+.blue-theme { background-color: #eef8ff; }
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #0088cc;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.pos-card-light h3 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 15px;
+}
+
+.pos-card-light p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.apply-link {
+  text-decoration: none;
+  color: #0088cc;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.2s;
+}
+
+.apply-link:hover { gap: 15px; }
+
+/* Watermark Number */
+.bg-number {
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  font-size: 8rem;
+  font-weight: 900;
+  color: rgba(0,0,0,0.03);
+  z-index: 1;
+}

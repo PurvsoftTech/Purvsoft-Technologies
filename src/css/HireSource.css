@@ -1,0 +1,291 @@
+/* HireSource.css */
+
+
+.hs-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  color: #1e293b;
+  background: #ffffff;
+  line-height: 1.5;
+}
+
+.hs-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation Bar */
+.hs-navbar {
+  padding: 15px 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hs-nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hs-logo h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.hs-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.hs-nav-link {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hs-nav-link:hover {
+  color: #4361ee;
+}
+
+.hs-nav-link.active {
+  color: #4361ee;
+}
+
+.hs-dropdown {
+  position: relative;
+}
+
+.hs-get-started {
+  background: #4361ee;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.hs-get-started:hover {
+  background: #3a56d4;
+}
+
+/* Hero Section */
+.hs-hero {
+  padding: 150px 0 30px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.hs-hero-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.hs-hero-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+/* Stats Section */
+.hs-stats {
+  padding: 20px 0 30px;
+  background: #ffffff;
+}
+
+.hs-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hs-stat-card {
+  text-align: center;
+}
+
+.hs-stat-value {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #4361ee;
+  margin-bottom: 5px;
+}
+
+.hs-stat-label {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* Section Title */
+.hs-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #1e293b;
+}
+
+/* What We Offer Section */
+.hs-offer {
+  padding: 30px 0 40px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.hs-offer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.hs-offer-card {
+  padding: 20px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.hs-offer-icon {
+  width: 48px;
+  height: 48px;
+  background: #eef2ff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4361ee;
+  margin-bottom: 15px;
+}
+
+.hs-offer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.hs-offer-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* Why Choose Us Section */
+.hs-why {
+  padding: 30px 0 40px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hs-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hs-why-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hs-why-icon {
+  color: #4361ee;
+}
+
+.hs-why-text {
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+/* Footer Note */
+.hs-footer-note {
+  padding: 20px 0;
+  background: #ffffff;
+  text-align: center;
+}
+
+.hs-footer-note p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hs-nav-menu {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hs-nav-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .hs-nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hs-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hs-offer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hs-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hs-nav-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hs-nav-link {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .hs-get-started {
+    width: 100%;
+  }
+  
+  .hs-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hs-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hs-offer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hs-why-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hs-why-item {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,486 @@
+/* NodeJSDevelopment.css */
+
+.nj-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  color: #1e293b;
+  background: #ffffff;
+  line-height: 1.5;
+}
+
+.nj-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.nj-hero {
+  padding: 120px 0 40px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.nj-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.nj-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: #e6f7e6;
+  color: #2e7d32;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.nj-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.nj-highlight {
+  color: #2e7d32;
+  position: relative;
+  display: inline-block;
+}
+
+.nj-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(46, 125, 50, 0.1);
+  z-index: -1;
+}
+
+.nj-hero-description {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nj-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.nj-stat-item {
+  text-align: center;
+}
+
+.nj-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2e7d32;
+  line-height: 1.2;
+}
+
+.nj-stat-label {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.nj-hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nj-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #2e7d32;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+  border: none;
+}
+
+.nj-btn-primary:hover {
+  background: #1b5e20;
+}
+
+.nj-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  background: transparent;
+  color: #2e7d32;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid #2e7d32;
+  transition: all 0.2s ease;
+}
+
+.nj-btn-outline:hover {
+  background: #e6f7e6;
+}
+
+/* Section Styles */
+.nj-section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.nj-section-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Features Section */
+.nj-features {
+  padding: 50px 0;
+  background: #ffffff;
+}
+
+.nj-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.nj-feature-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 25px 20px;
+  transition: all 0.2s ease;
+}
+
+.nj-feature-card:hover {
+  border-color: #2e7d32;
+}
+
+.nj-feature-icon {
+  width: 48px;
+  height: 48px;
+  background: #e6f7e6;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.nj-feature-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.nj-feature-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Services Section */
+.nj-services {
+  padding: 50px 0;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nj-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.nj-service-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.nj-service-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.nj-service-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.nj-service-features {
+  list-style: none;
+}
+
+.nj-service-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.nj-service-features svg {
+  color: #2e7d32;
+  flex-shrink: 0;
+}
+
+/* Benefits Section */
+.nj-benefits {
+  padding: 40px 0;
+  background: #ffffff;
+}
+
+.nj-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.nj-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+}
+
+.nj-benefit-icon {
+  color: #2e7d32;
+  flex-shrink: 0;
+}
+
+.nj-benefit-text {
+  font-size: 0.9rem;
+  color: #1e293b;
+}
+
+/* Use Cases Section */
+.nj-use-cases {
+  padding: 40px 0;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nj-use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.nj-use-case-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.nj-use-case-item svg {
+  color: #2e7d32;
+  flex-shrink: 0;
+}
+
+/* Tech Stack Section */
+.nj-tech {
+  padding: 40px 0;
+  background: #ffffff;
+}
+
+.nj-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.nj-tech-category h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.nj-tech-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nj-tech-tag {
+  padding: 6px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  color: #475569;
+  transition: all 0.2s ease;
+}
+
+.nj-tech-tag:hover {
+  border-color: #2e7d32;
+  color: #2e7d32;
+}
+
+/* CTA Section */
+.nj-cta {
+  padding: 50px 0;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.nj-cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.nj-cta-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.nj-cta-desc {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+.nj-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 30px;
+  background: #2e7d32;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.nj-cta-button:hover {
+  background: #1b5e20;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .nj-features-grid,
+  .nj-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .nj-use-cases-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nj-hero-title {
+    font-size: 2rem;
+  }
+  
+  .nj-stats-row {
+    gap: 20px;
+  }
+  
+  .nj-features-grid,
+  .nj-services-grid,
+  .nj-use-cases-grid,
+  .nj-tech-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nj-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .nj-section-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nj-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .nj-stats-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nj-hero-buttons {
+    flex-direction: column;
+  }
+  
+  .nj-btn-primary,
+  .nj-btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .nj-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nj-cta-title {
+    font-size: 1.5rem;
+  }
+  
+  .nj-tech-grid {
+    gap: 20px;
+  }
+}

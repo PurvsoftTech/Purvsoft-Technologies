@@ -1,0 +1,146 @@
+/* Using the core variables from your main Home.css for consistency */
+:root {
+  --primary: #2563eb; /* Clean Blue */
+  --bg-light: #ffffff;
+  --bg-subtle: #f8fafc;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+}
+
+.assist-section {
+  padding: 80px 0; /* Reduced top/bottom section padding */
+  background: var(--bg-light); /* Clean white theme */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container spacing matches your previous layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header styling similar to your new tech index */
+.section-header-wrap {
+  text-align: center;
+  margin-bottom: 50px; /* Reduced margin */
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: #dbeafe; /* Very pale blue */
+  color: var(--primary);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px; /* Reduced margin */
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: 2.75rem; /* Slightly smaller title */
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px; /* Reduced margin */
+  color: var(--text-main);
+}
+
+.brand-gradient {
+  background: linear-gradient(90deg, var(--primary), #06b6d4); /* Azure to Cyan gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-desc {
+  font-size: 1.1rem; /* Slightly smaller text */
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- Elevated Cards Design --- */
+.assist-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 column layout */
+  gap: 20px; /* Reduced gap between cards to look tighter */
+  align-items: stretch;
+}
+
+/* Medium screen tablet fix */
+@media (max-width: 1100px) {
+  .assist-steps-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+.assist-card {
+  background: white;
+  padding: 30px 20px; /* **KEY CHANGE**: Reduced padding makes the card feel smaller */
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  position: relative; /* Essential for ghost numbers */
+  overflow: hidden;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.assist-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.06); /* Soft, premium shadow */
+  border-color: #dbeafe;
+}
+
+/* The Ghost Number (Premium design retained) */
+.step-number-ghost {
+  position: absolute;
+  right: -5px; /* Adjusted position */
+  bottom: -25px; /* Adjusted position */
+  font-size: 9rem; /* **KEY CHANGE**: Slightly smaller ghost number */
+  font-weight: 800;
+  line-height: 1;
+  color: #eff6ff; /* Super subtle blue-gray */
+  user-select: none;
+  z-index: 1;
+  transition: 0.4s ease;
+}
+
+.assist-card:hover .step-number-ghost {
+  color: #dbeafe; /* Slight darken on hover for effect */
+  transform: translateY(-10px);
+}
+
+/* Card Content above the number */
+.card-content {
+  position: relative;
+  z-index: 5; /* Ensures text is always on top */
+}
+
+.card-icon {
+  font-size: 2rem; /* **KEY CHANGE**: Smaller icon size */
+  color: var(--primary); /* Monochromatic blue icon */
+  margin-bottom: 20px; /* Reduced margin */
+  display: inline-block;
+  opacity: 0.9;
+}
+
+.assist-card:hover .card-icon {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+
+.card-title {
+  font-size: 1.2rem; /* **KEY CHANGE**: Smaller title size */
+  font-weight: 600;
+  margin-bottom: 15px; /* Reduced margin */
+  color: var(--text-main);
+  line-height: 1.3; /* Adjusted line-height */
+}
+
+.card-description {
+  font-size: 0.95rem; /* **KEY CHANGE**: Slightly smaller description text */
+  color: var(--text-muted);
+  line-height: 1.6; /* Adjusted line-height */
+}

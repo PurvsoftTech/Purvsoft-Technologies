@@ -1,0 +1,473 @@
+/* OurChallenges.css */
+
+.oc-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  color: #1e293b;
+  background: #ffffff;
+  line-height: 1.5;
+}
+
+.oc-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.oc-hero {
+  padding: 130px 0 40px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.oc-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.oc-hero-subtitle {
+  color: #4361ee;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.oc-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.oc-highlight {
+  color: #4361ee;
+  position: relative;
+  display: inline-block;
+}
+
+.oc-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(67, 97, 238, 0.1);
+  z-index: -1;
+}
+
+.oc-hero-description {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.oc-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.oc-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-radius: 40px;
+  border: 1px solid #e2e8f0;
+}
+
+.oc-stat-icon {
+  color: #4361ee;
+}
+
+.oc-stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-right: 4px;
+}
+
+.oc-stat-label {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* Filter Section */
+.oc-filter-section {
+  padding: 30px 0 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.oc-filter-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.oc-filter-btn {
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.oc-filter-btn:hover {
+  border-color: #4361ee;
+  color: #4361ee;
+}
+
+.oc-filter-btn.active {
+  background: #4361ee;
+  border-color: #4361ee;
+  color: white;
+}
+
+/* Challenges Grid */
+.oc-challenges {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.oc-challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.oc-challenge-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.2s ease;
+}
+
+.oc-challenge-card:hover {
+  border-color: #4361ee;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.oc-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.oc-card-icon {
+  width: 40px;
+  height: 40px;
+  background: #eef2ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4361ee;
+}
+
+.oc-card-category {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4361ee;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.oc-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.oc-card-section {
+  margin-bottom: 16px;
+}
+
+.oc-section-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.oc-card-text {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.oc-card-result {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #10b981;
+  line-height: 1.5;
+}
+
+.oc-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.oc-metric-tag {
+  padding: 4px 12px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+/* Approach Section */
+.oc-approach {
+  padding: 60px 0;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.oc-section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.oc-section-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.oc-approach-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.oc-approach-item {
+  text-align: center;
+}
+
+.oc-approach-number {
+  width: 40px;
+  height: 40px;
+  background: #4361ee;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 auto 16px;
+}
+
+.oc-approach-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.oc-approach-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Testimonial */
+.oc-testimonial {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.oc-testimonial-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.oc-testimonial-quote {
+  font-size: 5rem;
+  font-family: serif;
+  color: #4361ee;
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.oc-testimonial-text {
+  font-size: 1.1rem;
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.oc-testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.oc-testimonial-author strong {
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.oc-testimonial-author span {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* CTA Section */
+.oc-cta {
+  padding: 60px 0;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.oc-cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.oc-cta-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.oc-cta-desc {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.oc-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: #4361ee;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.oc-cta-button:hover {
+  background: #3a56d4;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .oc-challenges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .oc-approach-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .oc-hero-title {
+    font-size: 2rem;
+  }
+  
+  .oc-stats-row {
+    gap: 20px;
+  }
+  
+  .oc-stat-item {
+    width: calc(50% - 10px);
+  }
+  
+  .oc-challenges-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .oc-approach-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .oc-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .oc-stats-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .oc-stat-item {
+    width: 100%;
+  }
+  
+  .oc-filter-container {
+    flex-direction: column;
+  }
+  
+  .oc-filter-btn {
+    width: 100%;
+  }
+  
+  .oc-approach-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .oc-approach-item {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .oc-testimonial-card {
+    padding: 30px 20px;
+  }
+  
+  .oc-testimonial-text {
+    font-size: 1rem;
+  }
+  
+  .oc-cta-title {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,896 @@
+/* NextJSSolutions.css */
+
+:root {
+  --njs-primary: #000000;
+  --njs-primary-dark: #333333;
+  --njs-primary-light: #f5f5f5;
+  --njs-secondary: #f8f9fa;
+  --njs-success: #10b981;
+  --njs-warning: #f59e0b;
+  --njs-danger: #ef4444;
+  --njs-info: #3b82f6;
+  --njs-text-dark: #1e293b;
+  --njs-text-light: #64748b;
+  --njs-white: #ffffff;
+  --njs-border: #e2e8f0;
+  --njs-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --njs-shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --njs-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --njs-gradient: linear-gradient(135deg, #000000 0%, #333333 100%);
+  --njs-gradient-hover: linear-gradient(135deg, #333333 0%, #000000 100%);
+}
+
+.njs-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  color: var(--njs-text-dark);
+  background: var(--njs-white);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.njs-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Hero Section */
+.njs-hero {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.njs-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.njs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--njs-primary-light);
+  color: var(--njs-primary);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.njs-hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: var(--njs-text-dark);
+}
+
+.njs-gradient-text {
+  background: var(--njs-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.njs-hero-description {
+  font-size: 1.1rem;
+  color: var(--njs-text-light);
+  margin-bottom: 32px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.njs-hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.njs-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.njs-stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--njs-primary);
+  line-height: 1.2;
+}
+
+.njs-stat-label {
+  font-size: 0.9rem;
+  color: var(--njs-text-light);
+}
+
+.njs-hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.njs-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--njs-gradient);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: var(--njs-shadow-md);
+}
+
+.njs-btn-primary:hover {
+  background: var(--njs-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--njs-shadow-lg);
+}
+
+.njs-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--njs-primary);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
+  border: 2px solid var(--njs-primary);
+  transition: all 0.3s ease;
+}
+
+.njs-btn-outline:hover {
+  background: var(--njs-primary-light);
+  transform: translateY(-2px);
+}
+
+/* Hero Visual */
+.njs-hero-visual {
+  position: relative;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.njs-visual-card {
+  width: 100%;
+  max-width: 450px;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--njs-shadow-lg);
+  border: 1px solid var(--njs-border);
+  animation: njs-float 3s ease-in-out infinite;
+}
+
+@keyframes njs-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.njs-card-header {
+  background: var(--njs-primary);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.njs-header-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.njs-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.njs-dot-red { background: #ff5f56; }
+.njs-dot-yellow { background: #ffbd2e; }
+.njs-dot-green { background: #27c93f; }
+
+.njs-header-title {
+  color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-left: auto;
+}
+
+.njs-card-content {
+  padding: 24px;
+}
+
+.njs-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.njs-metric {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: var(--njs-secondary);
+  border-radius: 12px;
+}
+
+.njs-metric-icon {
+  color: var(--njs-primary);
+}
+
+.njs-metric-value {
+  display: block;
+  font-weight: 700;
+  color: var(--njs-text-dark);
+}
+
+.njs-metric-label {
+  font-size: 0.75rem;
+  color: var(--njs-text-light);
+}
+
+.njs-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.njs-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: var(--njs-secondary);
+  border-radius: 8px;
+  color: var(--njs-text-dark);
+}
+
+.njs-feature-item svg {
+  color: var(--njs-success);
+}
+
+/* Stats Section */
+.njs-stats {
+  padding: 60px 0;
+  background: var(--njs-white);
+  border-bottom: 1px solid var(--njs-border);
+}
+
+.njs-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.njs-stat-card {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--njs-white);
+  border-radius: 16px;
+  box-shadow: var(--njs-shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.njs-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--njs-shadow-md);
+}
+
+.njs-stat-icon {
+  color: var(--njs-primary);
+  margin-bottom: 16px;
+}
+
+.njs-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--njs-text-dark);
+  margin-bottom: 8px;
+}
+
+.njs-stat-label {
+  color: var(--njs-text-light);
+  font-size: 0.95rem;
+}
+
+/* Solutions Section */
+.njs-solutions {
+  padding: 80px 0;
+  background: var(--njs-white);
+}
+
+.njs-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.njs-section-subtitle {
+  color: var(--njs-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.njs-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 24px;
+  color: var(--njs-text-dark);
+}
+
+.njs-section-description {
+  color: var(--njs-text-light);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.njs-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.njs-solution-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--njs-shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid var(--njs-border);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.njs-solution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--njs-shadow-md);
+  border-color: var(--njs-primary);
+}
+
+.njs-solution-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--njs-primary-light);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--njs-primary);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.njs-solution-card:hover .njs-solution-icon {
+  background: var(--njs-primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+.njs-solution-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--njs-text-dark);
+}
+
+.njs-solution-description {
+  color: var(--njs-text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.njs-solution-features {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.njs-solution-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--njs-text-light);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.njs-solution-features svg {
+  color: var(--njs-success);
+  flex-shrink: 0;
+}
+
+.njs-solution-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--njs-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.njs-solution-link:hover {
+  gap: 10px;
+  color: var(--njs-primary-dark);
+}
+
+/* Features Section */
+.njs-features {
+  padding: 80px 0;
+  background: var(--njs-secondary);
+}
+
+.njs-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.njs-feature-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--njs-shadow-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--njs-border);
+}
+
+.njs-feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--njs-shadow-md);
+  border-color: var(--njs-primary);
+}
+
+.njs-feature-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--njs-primary-light);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--njs-primary);
+  flex-shrink: 0;
+}
+
+.njs-feature-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--njs-text-dark);
+}
+
+.njs-feature-desc {
+  font-size: 0.85rem;
+  color: var(--njs-text-light);
+}
+
+/* Benefits Section */
+.njs-benefits {
+  padding: 80px 0;
+  background: var(--njs-white);
+}
+
+.njs-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.njs-benefit-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--njs-shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid var(--njs-border);
+  text-align: center;
+}
+
+.njs-benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--njs-shadow-md);
+  border-color: var(--njs-primary);
+}
+
+.njs-benefit-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--njs-primary-light);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--njs-primary);
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.njs-benefit-card:hover .njs-benefit-icon {
+  background: var(--njs-primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+.njs-benefit-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--njs-text-dark);
+}
+
+.njs-benefit-description {
+  color: var(--njs-text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Process Section */
+.njs-process {
+  padding: 80px 0;
+  background: var(--njs-secondary);
+}
+
+.njs-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.njs-process-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: var(--njs-shadow-sm);
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid var(--njs-border);
+}
+
+.njs-process-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--njs-shadow-md);
+}
+
+.njs-process-step {
+  position: absolute;
+  top: -15px;
+  left: 30px;
+  background: var(--njs-gradient);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.njs-process-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--njs-primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--njs-primary);
+  margin: 0 auto 24px;
+  transition: all 0.3s ease;
+}
+
+.njs-process-card:hover .njs-process-icon {
+  background: var(--njs-primary);
+  color: white;
+  transform: rotate(360deg);
+}
+
+.njs-process-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--njs-text-dark);
+}
+
+.njs-process-description {
+  color: var(--njs-text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Case Studies Section */
+.njs-case-studies {
+  padding: 80px 0;
+  background: var(--njs-white);
+}
+
+.njs-case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.njs-case-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--njs-shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid var(--njs-border);
+}
+
+.njs-case-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--njs-shadow-md);
+  border-color: var(--njs-primary);
+}
+
+.njs-case-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--njs-primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--njs-primary);
+  margin-bottom: 20px;
+}
+
+.njs-case-company {
+  color: var(--njs-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.njs-case-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 8px 0 12px;
+  color: var(--njs-text-dark);
+}
+
+.njs-case-result {
+  background: var(--njs-success);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.njs-case-description {
+  color: var(--njs-text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.njs-case-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--njs-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.njs-case-link:hover {
+  gap: 10px;
+  color: var(--njs-primary-dark);
+}
+
+/* FAQ Section */
+.njs-faq {
+  padding: 80px 0;
+  background: var(--njs-secondary);
+}
+
+.njs-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.njs-faq-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--njs-shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid var(--njs-border);
+}
+
+.njs-faq-card:hover {
+  box-shadow: var(--njs-shadow-md);
+  border-color: var(--njs-primary);
+}
+
+.njs-faq-question {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--njs-text-dark);
+}
+
+.njs-faq-answer {
+  color: var(--njs-text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.njs-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  border-top: 1px solid var(--njs-border);
+}
+
+.njs-cta-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.njs-cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--njs-text-dark);
+}
+
+.njs-cta-description {
+  font-size: 1.1rem;
+  color: var(--njs-text-light);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.njs-cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.njs-btn-large {
+  padding: 16px 40px;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .njs-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .njs-solutions-grid,
+  .njs-benefits-grid,
+  .njs-case-studies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .njs-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .njs-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .njs-faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .njs-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .njs-hero-content {
+    text-align: center;
+  }
+  
+  .njs-hero-description {
+    margin: 0 auto 32px;
+  }
+  
+  .njs-hero-stats {
+    justify-content: center;
+  }
+  
+  .njs-hero-buttons {
+    justify-content: center;
+  }
+  
+  .njs-hero-visual {
+    height: auto;
+  }
+  
+  .njs-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .njs-section-title {
+    font-size: 2rem;
+  }
+  
+  .njs-solutions-grid,
+  .njs-benefits-grid,
+  .njs-case-studies-grid,
+  .njs-process-grid,
+  .njs-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .njs-hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .njs-hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .njs-hero-buttons {
+    flex-direction: column;
+  }
+  
+  .njs-btn-primary, .njs-btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .njs-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .njs-section-title {
+    font-size: 1.75rem;
+  }
+  
+  .njs-cta-title {
+    font-size: 2rem;
+  }
+  
+  .njs-cta-buttons {
+    flex-direction: column;
+  }
+  
+  .njs-metrics {
+    grid-template-columns: 1fr;
+  }
+}

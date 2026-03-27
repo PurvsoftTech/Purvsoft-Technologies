@@ -1,0 +1,107 @@
+/* Custom Variables */
+:root {
+    --primary: #0d6efd;
+    --primary-hover: #0b5ed7;
+    --dark: #1e293b;
+    --light-bg: #f8fafc;
+    --white: #ffffff;
+    --text-muted: #64748b;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Global Reset */
+.agency-wrapper {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+    background: var(--white);
+}
+
+/* 1. Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+    padding: 80px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 500px;
+}
+
+.hero-content { flex: 1; max-width: 600px; }
+.hero-image { flex: 1; text-align: right; }
+.hero-image img { max-width: 100%; height: auto; border-radius: 10px; }
+
+.hero-title { font-size: 3rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
+.hero-title span { color: var(--primary); }
+.hero-desc { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px; }
+
+.btn-main {
+    background: var(--primary);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-main:hover { background: var(--primary-hover); transform: translateY(-2px); }
+
+/* 2. Services Grid (Image 2 Style) */
+.services-section { padding: 80px 5%; text-align: center; background: var(--light-bg); }
+.section-header h2 { font-size: 2.2rem; margin-bottom: 40px; }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+    text-align: left;
+}
+.service-card:hover { transform: translateY(-10px); }
+.icon-container { color: var(--primary); margin-bottom: 20px; }
+
+/* 3. Contact Form (Dark Style) */
+.contact-section {
+    background: #0f172a;
+    color: white;
+    padding: 80px 5%;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-info { flex: 1; min-width: 300px; }
+.contact-form-container { 
+    flex: 1; 
+    min-width: 300px; 
+    background: white; 
+    padding: 40px; 
+    border-radius: 20px;
+}
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; color: var(--dark); margin-bottom: 8px; font-weight: 600; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box; /* Padding handling */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section { flex-direction: column; text-align: center; }
+    .hero-image { display: none; }
+    .contact-section { flex-direction: column; }
+}
