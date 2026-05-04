@@ -68,7 +68,7 @@
   color: var(--text-dark);
 }
 
-.gradient-text {
+.brand-gradient {
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -124,6 +124,7 @@
   font-weight: 500;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-md);
+  border: none;
 }
 
 .btn-primary:hover {

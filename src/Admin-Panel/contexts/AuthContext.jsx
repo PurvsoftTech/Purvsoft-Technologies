@@ -1,6 +1,6 @@
-// Updated AuthContext - Consistent token key "apiToken", token in state
 import React, { createContext, useContext, useState, useEffect } from "react";
 import API_URL from "../../config/config";
+
 const AuthContext = createContext();
 
 export function useAuth() {
@@ -12,6 +12,7 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // ✅ LOGIN FIXED
  async function login(email, password) {
   try {
     const res = await fetch(`${API_URL}/user/login`, {
@@ -23,11 +24,29 @@ export function AuthProvider({ children }) {
       body: JSON.stringify({ email, password }),
     });
 
-    const data = await res.json();
-    console.log("LOGIN RESPONSE:", data);
+    const contentType = res.headers.get("content-type");
 
-    // ✅ SIMPLE TOKEN EXTRACTION
-    let tokenValue = Array.isArray(data) ? data[0] : data;
+    let data;
+
+    if (contentType && contentType.includes("application/json")) {
+      data = await res.json();
+    } else {
+      const text = await res.text();
+      console.error("❌ Login not JSON:", text);
+      return { success: false, message: "Server error" };
+    }
+
+    // console.log("LOGIN RESPONSE:", data);
+
+    // ✅ FIXED: Handle array response from server
+    let tokenValue;
+    if (Array.isArray(data) && data.length > 0) {
+      tokenValue = data[0];
+    } else {
+      tokenValue = data.token || data.access_token;
+    }
+
+    // console.log("Token extracted:", tokenValue); // Debug log
 
     if (res.ok && tokenValue) {
       localStorage.setItem("apiToken", tokenValue);
@@ -38,34 +57,33 @@ export function AuthProvider({ children }) {
 
       return { success: true };
     } else {
-      return { success: false, message: "Login failed" };
+      return { success: false, message: data.message || "Login failed" };
     }
+
   } catch (error) {
     console.error("Login error:", error);
     return { success: false, message: "Something went wrong" };
   }
 }
 
+  // ✅ LOGOUT
   function logout() {
     localStorage.removeItem("apiToken");
     localStorage.removeItem("authUser");
     setToken(null);
     setCurrentUser(null);
-    console.log("Logged out - token cleared");
   }
 
+  // ✅ AUTO LOGIN
   useEffect(() => {
     const storedToken = localStorage.getItem("apiToken");
     const user = localStorage.getItem("authUser");
-    console.log("Auth check - stored token:", storedToken ? "Found" : "Not found");
 
     if (storedToken && user) {
       setToken(storedToken);
       setCurrentUser(JSON.parse(user));
-    } else {
-      setToken(null);
-      setCurrentUser(null);
     }
+
     setLoading(false);
   }, []);
 

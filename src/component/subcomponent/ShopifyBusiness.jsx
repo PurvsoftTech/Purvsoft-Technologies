@@ -30,6 +30,13 @@ import '../../css/ShopifyBusiness.css';
 import { Helmet} from 'react-helmet-async';
 import Form from '../../config/Form'
 
+// Sample product images for hero section
+const productImages = {
+  product1: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200&h=200&fit=crop",
+  product2: "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=200&h=200&fit=crop",
+  product3: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=200&h=200&fit=crop",
+};
+
 const ShopifyBusiness = () => {
   const businessSolutions = [
     {
@@ -269,24 +276,24 @@ const ShopifyBusiness = () => {
       business: "Fashion Boutique",
       challenge: "Low mobile conversion rate",
       solution: "Mobile-optimized theme with quick buy",
-      result: "156% increase in mobile sales",
       icon: <ShoppingCart size={24} />
     },
     {
       business: "Organic Food Store",
       challenge: "High cart abandonment",
       solution: "Abandoned cart recovery + subscriptions",
-      result: "45% recovery rate achieved",
       icon: <Gift size={24} />
     },
     {
       business: "Electronics Retailer",
       challenge: "Complex product variants",
       solution: "Custom variant management system",
-      result: "Order processing time reduced by 70%",
       icon: <Smartphone size={24} />
     }
   ];
+  const scrollToForm = () => {
+  document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+};
 
   const faqs = [
     {
@@ -307,62 +314,189 @@ const ShopifyBusiness = () => {
     }
   ];
 
+  // JSON-LD Structured Data for Shopify Development Services
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Shopify Development Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Purvsoft Technologies",
+      "url": "https://www.purvsoft.com",
+      "logo": "https://www.purvsoft.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ahmedabad",
+        "addressRegion": "Gujarat",
+        "addressCountry": "India"
+      }
+    },
+    "description": "Professional Shopify development services including custom theme development, store setup, app integration, and optimization. Grow your online business with Purvsoft Technologies.",
+    "serviceType": ["Shopify Store Setup", "Custom Theme Development", "Shopify App Integration", "Store Migration", "Shopify SEO"],
+    "areaServed": "Worldwide",
+    "audience": {
+      "@type": "BusinessAudience"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "USD",
+        "price": "Custom"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.purvsoft.com/services/shopify-ecommerce"
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.purvsoft.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.purvsoft.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Shopify Development",
+        "item": "https://www.purvsoft.com/services/shopify-ecommerce"
+      }
+    ]
+  };
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <div className="sb-container">
       <Helmet>
-      <title>Shopify Development Services | Purvsoft Technologies</title>
-      <meta name="description" content="Launch and grow your Shopify store with Purvsoft Technologies. Custom Shopify theme development, app integration, store setup, and optimization for higher conversions." />
-      <meta name="keywords" content="Shopify development, Shopify store, Shopify theme, Shopify expert, e-commerce Shopify India, Shopify optimization" />
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <link rel="canonical" href="https://www.purvsoft.com/services/shopify-ECommerce" />
- 
-      <meta property="og:title" content="Shopify Development Services | Purvsoft Technologies" />
-      <meta property="og:description" content="Custom Shopify development — theme, apps, store setup, and optimization for higher sales." />
-      <meta property="og:url" content="https://www.purvsoft.com/services/shopify" />
-      <meta property="og:image" content="https://www.purvsoft.com/og-image.jpg" />
- 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Shopify Development | Purvsoft Technologies" />
-      <meta name="twitter:description" content="Expert Shopify store development and optimization by Purvsoft Technologies." />
-    </Helmet>
+        {/* Primary Meta Tags */}
+        <title>Shopify Development Company | Custom Shopify Store Experts | Purvsoft</title>
+        <meta name="title" content="Shopify Development Company | Custom Shopify Store Experts | Purvsoft" />
+        <meta name="description" content="Purvsoft Technologies is a leading Shopify development company. We build custom Shopify stores with unique themes, app integrations, and SEO optimization. Launch your online store today." />
+        <meta 
+            name="keywords" 
+            content="Shopify development company Ahmedabad, Shopify store setup, custom Shopify development, Shopify SEO services, e-commerce development India, hire Shopify developer"
+          />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="author" content="Purvsoft Technologies" />
+        <meta name="language" content="English" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.purvsoft.com/services/shopify-ecommerce" />
+        
+        {/* Alternate language versions */}
+        <link rel="alternate" href="https://www.purvsoft.com/services/shopify-ecommerce" hrefLang="x-default" />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.purvsoft.com/services/shopify-ecommerce" />
+        <meta property="og:title" content="Shopify Development Company | Custom Shopify Store Experts | Purvsoft" />
+        <meta property="og:description" content="Launch and grow your Shopify store with Purvsoft Technologies. Custom theme development, app integration, store setup, and optimization for higher conversions." />
+        <meta property="og:image" content="https://www.purvsoft.com/og-shopify-development.jpg" />
+        <meta property="og:image:alt" content="Shopify Development Services - Custom E-commerce Store" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Purvsoft Technologies" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.purvsoft.com/services/shopify-ecommerce" />
+        <meta name="twitter:title" content="Shopify Development | Purvsoft Technologies" />
+        <meta name="twitter:description" content="Custom Shopify store development and optimization by Purvsoft Technologies. Launch your online store today." />
+        <meta name="twitter:image" content="https://www.purvsoft.com/twitter-shopify-development.jpg" />
+        <meta name="twitter:image:alt" content="Shopify Development Services" />
+        
+        {/* Verification tags - Google Search Console */}
+        <meta name="google-site-verification" content="MjMKilzhOmqr6Txi7pbjACF6g_hSt-B6Ej496yJyrH0" />
+         <meta name="msvalidate.01" content="AD0DF443696FB452E952416667F1A8DC" />
+        {/* Geographic Meta Tags - Ahmedabad, Gujarat */}
+        <meta name="geo.region" content="IN-GJ" />
+        <meta name="geo.placename" content="Ahmedabad, Gujarat, India" />
+        <meta name="geo.position" content="23.0225;72.5714" />
+        <meta name="ICBM" content="23.0225, 72.5714" />
+        
+        {/* Mobile Optimization */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+      </Helmet>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(faqStructuredData)}
+      </script>
+
       {/* Hero Section */}
-      <section className="sb-hero">
+      <section className="sb-hero" aria-label="Shopify Development Hero Section">
         <div className="sb-wrapper">
           <div className="sb-hero-grid">
-            <div className="sb-hero-content">
+            <div className="sb-hero-content" data-aos="fade-right">
               <div className="sb-badge">
                 <ShoppingCart size={16} />
                 <span>Shopify Business Solutions</span>
               </div>
               <h1>
                 Grow Your Business with <br />
-                <span className="sb-gradient-text">Shopify Development</span>
+                <span className="sb-brand-gradient">Shopify Development</span>
               </h1>
               <p className="sb-hero-description">
                 Launch a powerful e-commerce store that drives sales and scales with your business. 
                 We build custom Shopify solutions tailored to your unique business needs and goals.
               </p>
               <div className="sb-hero-stats">
-                <div className="sb-stat-item">
+                <div className="sb-stat-item" data-aos="fade-up" data-aos-delay="0">
                   <span className="sb-stat-number">200+</span>
                   <span className="sb-stat-label">Stores Launched</span>
                 </div>
-                <div className="sb-stat-item">
+                <div className="sb-stat-item" data-aos="fade-up" data-aos-delay="50">
                   <span className="sb-stat-number">$50M+</span>
                   <span className="sb-stat-label">Revenue Generated</span>
                 </div>
-                <div className="sb-stat-item">
+                <div className="sb-stat-item" data-aos="fade-up" data-aos-delay="100">
                   <span className="sb-stat-number">98%</span>
                   <span className="sb-stat-label">Client Retention</span>
                 </div>
               </div>
               <div className="sb-hero-buttons">
-                <a href="#form" className="sb-btn-primary">
-                  Contact Us<ArrowRight size={18} />
-                </a>
+                <button
+                    className="sb-btn-primary"
+                    onClick={scrollToForm}
+                    aria-label="Contact us for Shopify development"
+                  >
+                    Start Your Shopify Store <ArrowRight size={18} />
+                  </button>
               </div>
             </div>
-            <div className="sb-hero-visual">
+            <div className="sb-hero-visual" data-aos="fade-left">
               <div className="sb-visual-card">
                 <div className="sb-visual-header">
                   <div className="sb-header-dots">
@@ -370,19 +504,19 @@ const ShopifyBusiness = () => {
                     <span className="sb-dot sb-dot-yellow"></span>
                     <span className="sb-dot sb-dot-green"></span>
                   </div>
-                  <span className="sb-header-title">Your Shopify Store</span>
+                  <span className="sb-header-title">Your Shopify Dashboard</span>
                 </div>
                 <div className="sb-visual-content">
                   <div className="sb-metrics">
                     <div className="sb-metric">
-                      <DollarSign size={20} className="sb-metric-icon" />
+                      <DollarSign size={20} className="sb-metric-icon" aria-hidden="true" />
                       <div>
                         <span className="sb-metric-value">$12,450</span>
                         <span className="sb-metric-label">Today's Sales</span>
                       </div>
                     </div>
                     <div className="sb-metric">
-                      <Users size={20} className="sb-metric-icon" />
+                      <Users size={20} className="sb-metric-icon" aria-hidden="true" />
                       <div>
                         <span className="sb-metric-value">156</span>
                         <span className="sb-metric-label">Orders</span>
@@ -391,7 +525,15 @@ const ShopifyBusiness = () => {
                   </div>
                   <div className="sb-product-list">
                     <div className="sb-product-item">
-                      <div className="sb-product-image"></div>
+                      <div className="sb-product-image">
+                        <img 
+                          src={productImages.product1}
+                          alt="Premium T-Shirt product for Shopify store"
+                          width="50"
+                          height="50"
+                          loading="eager"
+                        />
+                      </div>
                       <div className="sb-product-details">
                         <span className="sb-product-name">Premium T-Shirt</span>
                         <span className="sb-product-price">$29.99</span>
@@ -399,7 +541,15 @@ const ShopifyBusiness = () => {
                       <span className="sb-product-status">Sold</span>
                     </div>
                     <div className="sb-product-item">
-                      <div className="sb-product-image"></div>
+                      <div className="sb-product-image">
+                        <img 
+                          src={productImages.product2}
+                          alt="Leather Wallet product for Shopify e-commerce"
+                          width="50"
+                          height="50"
+                          loading="eager"
+                        />
+                      </div>
                       <div className="sb-product-details">
                         <span className="sb-product-name">Leather Wallet</span>
                         <span className="sb-product-price">$49.99</span>
@@ -407,7 +557,15 @@ const ShopifyBusiness = () => {
                       <span className="sb-product-status sb-pending">Pending</span>
                     </div>
                     <div className="sb-product-item">
-                      <div className="sb-product-image"></div>
+                      <div className="sb-product-image">
+                        <img 
+                          src={productImages.product3}
+                          alt="Designer Sunglasses product for online store"
+                          width="50"
+                          height="50"
+                          loading="eager"
+                        />
+                      </div>
                       <div className="sb-product-details">
                         <span className="sb-product-name">Sunglasses</span>
                         <span className="sb-product-price">$89.99</span>
@@ -423,11 +581,11 @@ const ShopifyBusiness = () => {
       </section>
 
       {/* ROI Metrics Section */}
-      <section className="sb-roi">
+      <section className="sb-roi" aria-label="ROI Metrics for Shopify Store">
         <div className="sb-wrapper">
           <div className="sb-roi-grid">
             {roiMetrics.map((metric, index) => (
-              <div key={index} className="sb-roi-card">
+              <div key={index} className="sb-roi-card" data-aos="fade-up" data-aos-delay={index * 50}>
                 <h3 className="sb-roi-increase">{metric.increase}</h3>
                 <p className="sb-roi-metric">{metric.metric}</p>
                 <p className="sb-roi-desc">{metric.desc}</p>
@@ -438,12 +596,12 @@ const ShopifyBusiness = () => {
       </section>
 
       {/* Business Solutions Section */}
-      <section className="sb-solutions">
+      <section className="sb-solutions" aria-label="Shopify Business Solutions">
         <div className="sb-wrapper">
           <div className="sb-section-header">
-            <h6 className="sb-section-subtitle">Business Solutions</h6>
+            <p className="sb-section-subtitle">Business Solutions</p>
             <h2 className="sb-section-title">
-              Complete Shopify Services for <span className="sb-gradient-text">Your Business</span>
+              Complete Shopify Services for <span className="sb-brand-gradient">Your Business</span>
             </h2>
             <p className="sb-section-description">
               From store setup to ongoing optimization, we provide everything you need to succeed on Shopify.
@@ -452,14 +610,14 @@ const ShopifyBusiness = () => {
 
           <div className="sb-solutions-grid">
             {businessSolutions.map((solution, index) => (
-              <div key={index} className="sb-solution-card">
-                <div className="sb-solution-icon">{solution.icon}</div>
+              <div key={index} className="sb-solution-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="sb-solution-icon" aria-hidden="true">{solution.icon}</div>
                 <h3 className="sb-solution-title">{solution.title}</h3>
                 <p className="sb-solution-description">{solution.desc}</p>
-                <ul className="sb-solution-features">
+                <ul className="sb-solution-features" aria-label={`${solution.title} features`}>
                   {solution.features.map((feature, idx) => (
                     <li key={idx}>
-                      <CheckCircle size={14} />
+                      <CheckCircle size={14} aria-hidden="true" />
                       {feature}
                     </li>
                   ))}
@@ -471,12 +629,12 @@ const ShopifyBusiness = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="sb-industries">
+      <section className="sb-industries" aria-label="Industries We Serve for Shopify">
         <div className="sb-wrapper">
           <div className="sb-section-header">
-            <h6 className="sb-section-subtitle">Industries We Serve</h6>
+            <p className="sb-section-subtitle">Industries We Serve</p>
             <h2 className="sb-section-title">
-              Shopify Solutions for <span className="sb-gradient-text">Every Industry</span>
+              Shopify Solutions for <span className="sb-brand-gradient">Every Industry</span>
             </h2>
             <p className="sb-section-description">
               We've built successful stores for businesses across various industries.
@@ -485,8 +643,8 @@ const ShopifyBusiness = () => {
 
           <div className="sb-industries-grid">
             {industries.map((industry, index) => (
-              <div key={index} className="sb-industry-card">
-                <div className="sb-industry-icon">{industry.icon}</div>
+              <div key={index} className="sb-industry-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="sb-industry-icon" aria-hidden="true">{industry.icon}</div>
                 <h3 className="sb-industry-title">{industry.title}</h3>
                 <p className="sb-industry-desc">{industry.desc}</p>
               </div>
@@ -496,19 +654,22 @@ const ShopifyBusiness = () => {
       </section>
 
       {/* Business Benefits Section */}
-      <section className="sb-benefits">
+      <section className="sb-benefits" aria-label="Benefits of Shopify">
         <div className="sb-wrapper">
           <div className="sb-section-header">
-            <h6 className="sb-section-subtitle">Business Benefits</h6>
+            <p className="sb-section-subtitle">Business Benefits</p>
             <h2 className="sb-section-title">
-              Why Businesses Choose <span className="sb-gradient-text">Shopify</span>
+              Why Businesses Choose <span className="sb-brand-gradient">Shopify</span>
             </h2>
+            <p className="sb-section-description">
+              Discover the advantages that make Shopify the world's leading e-commerce platform
+            </p>
           </div>
 
           <div className="sb-benefits-grid">
             {businessBenefits.map((benefit, index) => (
-              <div key={index} className="sb-benefit-card">
-                <div className="sb-benefit-icon">{benefit.icon}</div>
+              <div key={index} className="sb-benefit-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="sb-benefit-icon" aria-hidden="true">{benefit.icon}</div>
                 <h3 className="sb-benefit-title">{benefit.title}</h3>
                 <p className="sb-benefit-description">{benefit.desc}</p>
               </div>
@@ -518,19 +679,22 @@ const ShopifyBusiness = () => {
       </section>
 
       {/* Features Grid */}
-      <section className="sb-features">
+      <section className="sb-features" aria-label="Shopify Features">
         <div className="sb-wrapper">
           <div className="sb-section-header">
-            <h6 className="sb-section-subtitle">Powerful Features</h6>
+            <p className="sb-section-subtitle">Powerful Features</p>
             <h2 className="sb-section-title">
-              Everything You Need to <span className="sb-gradient-text">Succeed</span>
+              Everything You Need to <span className="sb-brand-gradient">Succeed</span>
             </h2>
+            <p className="sb-section-description">
+              Built-in features that help you sell more and grow faster
+            </p>
           </div>
 
           <div className="sb-features-grid">
             {features.map((feature, index) => (
-              <div key={index} className="sb-feature-item">
-                <div className="sb-feature-icon">{feature.icon}</div>
+              <div key={index} className="sb-feature-item" data-aos="fade-up" data-aos-delay={index * 30}>
+                <div className="sb-feature-icon" aria-hidden="true">{feature.icon}</div>
                 <div>
                   <h4 className="sb-feature-title">{feature.title}</h4>
                   <p className="sb-feature-desc">{feature.desc}</p>
@@ -542,12 +706,12 @@ const ShopifyBusiness = () => {
       </section>
 
       {/* Process Section */}
-      <section className="sb-process">
+      <section className="sb-process" aria-label="Shopify Development Process">
         <div className="sb-wrapper">
           <div className="sb-section-header">
-            <h6 className="sb-section-subtitle">Our Process</h6>
+            <p className="sb-section-subtitle">Our Process</p>
             <h2 className="sb-section-title">
-              How We Build Your <span className="sb-gradient-text">Shopify Store</span>
+              How We Build Your <span className="sb-brand-gradient">Shopify Store</span>
             </h2>
             <p className="sb-section-description">
               A proven methodology that delivers results on time and on budget.
@@ -556,9 +720,9 @@ const ShopifyBusiness = () => {
 
           <div className="sb-process-grid">
             {process.map((item, index) => (
-              <div key={index} className="sb-process-card">
-                <div className="sb-process-step">{item.step}</div>
-                <div className="sb-process-icon">{item.icon}</div>
+              <div key={index} className="sb-process-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="sb-process-step" aria-label={`Step ${item.step}`}>{item.step}</div>
+                <div className="sb-process-icon" aria-hidden="true">{item.icon}</div>
                 <h3 className="sb-process-title">{item.title}</h3>
                 <p className="sb-process-description">{item.desc}</p>
               </div>
@@ -568,25 +732,27 @@ const ShopifyBusiness = () => {
       </section>
 
       {/* Success Stories */}
-      <section className="sb-stories">
+      <section className="sb-stories" aria-label="Shopify Success Stories">
         <div className="sb-wrapper">
           <div className="sb-section-header">
-            <h6 className="sb-section-subtitle">Success Stories</h6>
+            <p className="sb-section-subtitle">Success Stories</p>
             <h2 className="sb-section-title">
-              Real Results for <span className="sb-gradient-text">Real Businesses</span>
+              Real Results for <span className="sb-brand-gradient">Real Businesses</span>
             </h2>
+            <p className="sb-section-description">
+              See how we've helped businesses achieve their e-commerce goals
+            </p>
           </div>
 
           <div className="sb-stories-grid">
             {successStories.map((story, index) => (
-              <div key={index} className="sb-story-card">
-                <div className="sb-story-icon">{story.icon}</div>
+              <div key={index} className="sb-story-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="sb-story-icon" aria-hidden="true">{story.icon}</div>
                 <h3 className="sb-story-business">{story.business}</h3>
                 <div className="sb-story-details">
                   <p><strong>Challenge:</strong> {story.challenge}</p>
                   <p><strong>Solution:</strong> {story.solution}</p>
                 </div>
-                <div className="sb-story-result">{story.result}</div>
               </div>
             ))}
           </div>
@@ -594,20 +760,25 @@ const ShopifyBusiness = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="sb-faq">
+      <section className="sb-faq" aria-label="Shopify FAQs">
         <div className="sb-wrapper">
           <div className="sb-section-header">
-            <h6 className="sb-section-subtitle">FAQ</h6>
+            <p className="sb-section-subtitle">FAQ</p>
             <h2 className="sb-section-title">
-              Frequently Asked <span className="sb-gradient-text">Questions</span>
+              Frequently Asked <span className="sb-brand-gradient">Questions</span>
             </h2>
+            <p className="sb-section-description">
+              Get answers to common questions about Shopify development
+            </p>
           </div>
 
           <div className="sb-faq-grid">
             {faqs.map((faq, index) => (
-              <div key={index} className="sb-faq-card">
-                <h3 className="sb-faq-question">{faq.question}</h3>
-                <p className="sb-faq-answer">{faq.answer}</p>
+              <div key={index} className="sb-faq-card" data-aos="fade-up" data-aos-delay={index * 50} itemScope itemType="https://schema.org/Question">
+                <h3 className="sb-faq-question" itemProp="name">{faq.question}</h3>
+                <div className="sb-faq-answer" itemProp="acceptedAnswer" itemScope itemType="https://schema.org/Answer">
+                  <p itemProp="text">{faq.answer}</p>
+                </div>
               </div>
             ))}
           </div>

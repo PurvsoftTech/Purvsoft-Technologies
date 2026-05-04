@@ -1,27 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
 import {
-  Target,
   TrendingUp,
   Users,
   Clock,
-  DollarSign,
   Code,
   Smartphone,
   Globe,
   ShoppingCart,
-  BarChart3,
-  CheckCircle,
-  ArrowRight,
   Lightbulb,
-  Rocket,
   Shield,
-  Zap,
   RefreshCw,
   Award,
-  Heart,
   Briefcase,
-  Coffee,
   ThumbsUp
 } from 'lucide-react';
 import '../css/OurChallenges.css';
@@ -145,29 +136,104 @@ const OurChallenges = () => {
     ? challenges 
     : challenges.filter(c => c.category.includes(activeCategory));
 
+  // JSON-LD Structured Data for Case Studies / Challenges
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Our Challenges - Business Problems We Solve",
+    "description": "Discover how Purvsoft Technologies solves complex business challenges including website performance, mobile app development, digital marketing ROI, and security vulnerabilities.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Purvsoft Technologies",
+      "url": "https://www.purvsoft.com",
+      "logo": "https://www.purvsoft.com/logo.png"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": challenges.map((challenge, index) => ({
+        "@type": "CreativeWork",
+        "position": index + 1,
+        "name": challenge.title,
+        "description": `Challenge: ${challenge.challenge} Solution: ${challenge.solution} Result: ${challenge.result}`,
+        "category": challenge.category
+      }))
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.purvsoft.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Our Challenges",
+        "item": "https://www.purvsoft.com/our-challenges"
+      }
+    ]
+  };
+
   return (
     <div className="oc-container">
       <Helmet>
-      <title>Our Challenges | Purvsoft Technologies – Problems We Solve</title>
-      <meta name="description" content="Discover the business challenges Purvsoft Technologies solves for its clients — from digital transformation to marketing ROI, scalability, and technology adoption." />
-      <meta name="keywords" content="business challenges, digital transformation, marketing problems, technology solutions, Purvsoft Technologies challenges" />
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <link rel="canonical" href="https://www.purvsoft.com/services/our-challenges" />
- 
-      <meta property="og:title" content="Our Challenges | Purvsoft Technologies" />
-      <meta property="og:description" content="Business challenges Purvsoft Technologies solves — digital transformation, marketing ROI, and scalability." />
-      <meta property="og:url" content="https://www.purvsoft.com/services/our-challenges" />
-      <meta property="og:image" content="https://www.purvsoft.com/og-image.jpg" />
- 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Our Challenges | Purvsoft Technologies" />
-      <meta name="twitter:description" content="See what problems Purvsoft Technologies solves for businesses." />
-    </Helmet>
+        {/* Primary Meta Tags */}
+        <title>Our Challenges | Business Problems Solved | Purvsoft Technologies</title>
+        <meta name="title" content="Our Challenges | Business Problems Solved | Purvsoft Technologies" />
+        <meta name="description" content="Discover how Purvsoft Technologies solves complex business challenges including website performance issues, mobile app development hurdles, digital marketing ROI problems, and security vulnerabilities with proven solutions." />
+        <meta name="keywords" content="business challenges, technology problems solved, website performance issues, mobile app development challenges, digital marketing ROI, e-commerce problems, security vulnerabilities, legacy system migration, cart abandonment solutions, SEO recovery, Purvsoft case studies" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="author" content="Purvsoft Technologies" />
+        <meta name="language" content="English" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.purvsoft.com/our-challenges" />
+        
+        {/* Open Graph / Facebook Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.purvsoft.com/our-challenges" />
+        <meta property="og:title" content="Our Challenges | Business Problems Solved | Purvsoft Technologies" />
+        <meta property="og:description" content="See how Purvsoft Technologies transforms business obstacles into opportunities. Real challenges, real solutions, remarkable results across web development, mobile apps, marketing, and security." />
+        <meta property="og:image" content="https://www.purvsoft.com/og-our-challenges.jpg" />
+        <meta property="og:image:alt" content="Purvsoft Technologies - Business Challenges Solved" />
+        <meta property="og:site_name" content="Purvsoft Technologies" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.purvsoft.com/our-challenges" />
+        <meta name="twitter:title" content="Our Challenges | Business Problems Solved | Purvsoft" />
+        <meta name="twitter:description" content="Discover how Purvsoft solves complex business challenges from performance issues to security vulnerabilities." />
+        <meta name="twitter:image" content="https://www.purvsoft.com/twitter-our-challenges.jpg" />
+        <meta name="twitter:image:alt" content="Purvsoft Case Studies and Problem Solving" />
+        
+        {/* Verification tags - replace with your actual codes */}
+        <meta name="google-site-verification" content="MjMKilzhOmqr6Txi7pbjACF6g_hSt-B6Ej496yJyrH0" />
+         <meta name="msvalidate.01" content="AD0DF443696FB452E952416667F1A8DC" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="geo.region" content="IN-GJ" />
+        <meta name="geo.placename" content="Ahmedabad, Gujarat" />
+      </Helmet>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbData)}
+      </script>
+
       {/* Hero Section */}
-      <section className="oc-hero">
+      <section className="oc-hero" aria-label="Our Challenges Hero Section - Business Problem Solving">
         <div className="oc-wrapper">
-          <div className="oc-hero-content">
-            <h6 className="oc-hero-subtitle">Our Challenges</h6>
+          <div className="oc-hero-content" data-aos="fade-up">
+            <p className="oc-hero-subtitle">Case Studies & Success Stories</p>
             <h1 className="oc-hero-title">
               Turning <span className="oc-highlight">Obstacles</span> into Opportunities
             </h1>
@@ -178,8 +244,8 @@ const OurChallenges = () => {
             
             <div className="oc-stats-row">
               {stats.map((stat, index) => (
-                <div key={index} className="oc-stat-item">
-                  <span className="oc-stat-icon">{stat.icon}</span>
+                <div key={index} className="oc-stat-item" data-aos="fade-up" data-aos-delay={index * 50}>
+                  <span className="oc-stat-icon" aria-hidden="true">{stat.icon}</span>
                   <div>
                     <span className="oc-stat-value">{stat.value}</span>
                     <span className="oc-stat-label">{stat.label}</span>
@@ -192,7 +258,7 @@ const OurChallenges = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="oc-filter-section">
+      <section className="oc-filter-section" aria-label="Filter challenges by category">
         <div className="oc-wrapper">
           <div className="oc-filter-container">
             {categories.map((category, index) => (
@@ -200,6 +266,8 @@ const OurChallenges = () => {
                 key={index}
                 className={`oc-filter-btn ${activeCategory === category ? 'active' : ''}`}
                 onClick={() => setActiveCategory(category)}
+                aria-label={`Filter challenges by ${category}`}
+                aria-pressed={activeCategory === category}
               >
                 {category}
               </button>
@@ -209,84 +277,86 @@ const OurChallenges = () => {
       </section>
 
       {/* Challenges Grid */}
-      <section className="oc-challenges">
+      <section className="oc-challenges" aria-label="Business challenges and solutions">
         <div className="oc-wrapper">
+          <div className="section-header">
+            <h2 className="oc-section-title">Real <span className="brand-gradient">Challenges</span>, Real Solutions</h2>
+            <p className="oc-section-subtitle">See how we've helped businesses overcome their toughest obstacles</p>
+          </div>
+          
           <div className="oc-challenges-grid">
-            {filteredChallenges.map((item) => (
-              <div key={item.id} className="oc-challenge-card">
+            {filteredChallenges.map((item, index) => (
+              <div key={item.id} className="oc-challenge-card" data-aos="fade-up" data-aos-delay={index * 50} itemScope itemType="https://schema.org/CreativeWork">
                 <div className="oc-card-header">
-                  <div className="oc-card-icon">{item.icon}</div>
-                  <span className="oc-card-category">{item.category}</span>
+                  <div className="oc-card-icon" aria-hidden="true">{item.icon}</div>
+                  <span className="oc-card-category" itemProp="category">{item.category}</span>
                 </div>
                 
-                <h3 className="oc-card-title">{item.title}</h3>
+                <h3 className="oc-card-title" itemProp="name">{item.title}</h3>
                 
                 <div className="oc-card-section">
                   <h4 className="oc-section-label">Challenge:</h4>
-                  <p className="oc-card-text">{item.challenge}</p>
+                  <p className="oc-card-text" itemProp="description">{item.challenge}</p>
                 </div>
                 
                 <div className="oc-card-section">
                   <h4 className="oc-section-label">Solution:</h4>
                   <p className="oc-card-text">{item.solution}</p>
                 </div>
-                
-                <div className="oc-card-section">
-                  <h4 className="oc-section-label">Result:</h4>
-                  <p className="oc-card-result">{item.result}</p>
-                </div>
-                
-                <div className="oc-metrics">
-                  {item.metrics.map((metric, idx) => (
-                    <span key={idx} className="oc-metric-tag">{metric}</span>
-                  ))}
-                </div>
               </div>
             ))}
           </div>
+          
+          {filteredChallenges.length === 0 && (
+            <div className="oc-no-results" data-aos="fade-up">
+              <p>No challenges found in this category. Please try another category.</p>
+            </div>
+          )}
         </div>
       </section>
 
       {/* Approach Section */}
-      <section className="oc-approach">
+      <section className="oc-approach" aria-label="Our problem-solving approach">
         <div className="oc-wrapper">
-          <h2 className="oc-section-title">Our Problem-Solving Approach</h2>
-          <p className="oc-section-subtitle">How we tackle complex challenges</p>
+          <div className="section-header">
+            <h2 className="oc-section-title">Our <span className="brand-gradient">Problem-Solving Approach</span></h2>
+            <p className="oc-section-subtitle">How we tackle complex challenges with proven methodology</p>
+          </div>
           
           <div className="oc-approach-grid">
-            <div className="oc-approach-item">
+            <div className="oc-approach-item" data-aos="fade-up" data-aos-delay="0">
               <div className="oc-approach-number">1</div>
               <h3 className="oc-approach-title">Analyze</h3>
-              <p className="oc-approach-desc">Deep dive into the problem, understanding root causes and impact.</p>
+              <p className="oc-approach-desc">Deep dive into the problem, understanding root causes and impact on business operations.</p>
             </div>
             
-            <div className="oc-approach-item">
+            <div className="oc-approach-item" data-aos="fade-up" data-aos-delay="50">
               <div className="oc-approach-number">2</div>
               <h3 className="oc-approach-title">Strategize</h3>
-              <p className="oc-approach-desc">Develop multiple solution approaches and choose the best path.</p>
+              <p className="oc-approach-desc">Develop multiple solution approaches and choose the best path for optimal results.</p>
             </div>
             
-            <div className="oc-approach-item">
+            <div className="oc-approach-item" data-aos="fade-up" data-aos-delay="100">
               <div className="oc-approach-number">3</div>
               <h3 className="oc-approach-title">Execute</h3>
-              <p className="oc-approach-desc">Implement solution with precision and attention to detail.</p>
+              <p className="oc-approach-desc">Implement solution with precision, attention to detail, and agile methodology.</p>
             </div>
             
-            <div className="oc-approach-item">
+            <div className="oc-approach-item" data-aos="fade-up" data-aos-delay="150">
               <div className="oc-approach-number">4</div>
               <h3 className="oc-approach-title">Measure</h3>
-              <p className="oc-approach-desc">Track results and optimize for even better outcomes.</p>
+              <p className="oc-approach-desc">Track results, analyze performance metrics, and optimize for even better outcomes.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonial */}
-      <section className="oc-testimonial">
+      <section className="oc-testimonial" aria-label="Client testimonial">
         <div className="oc-wrapper">
-          <div className="oc-testimonial-card">
-            <p className="oc-testimonial-quote">"</p>
-            <p className="oc-testimonial-text">
+          <div className="oc-testimonial-card" data-aos="fade-up">
+            <p className="oc-testimonial-quote" aria-hidden="true">"</p>
+            <p className="oc-testimonial-text" itemProp="review">
               When our e-commerce site crashed during peak season, Purvsoft team worked through the weekend 
               to restore everything. They didn't just fix the problem – they implemented solutions that made 
               our site faster and more reliable than ever before.

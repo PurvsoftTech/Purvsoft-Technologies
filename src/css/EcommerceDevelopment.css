@@ -1,10 +1,5 @@
 /* EcommerceDevelopment.css - Complete Responsive */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 :root {
   --primary: #4361ee;
@@ -78,7 +73,7 @@
   color: var(--text-dark);
 }
 
-.gradient-text {
+.brand-gradient {
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

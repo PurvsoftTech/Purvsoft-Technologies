@@ -1,0 +1,346 @@
+/* NotFound.css - Modern 404 Page */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.notfound-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #eef2ff 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  padding: 130px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background Elements */
+.notfound-bg-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.notfound-circle-1 {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(67, 97, 238, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+}
+
+.notfound-circle-2 {
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 15s ease-in-out infinite reverse;
+}
+
+.notfound-circle-3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(67, 97, 238, 0.03) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, 30px); }
+}
+
+/* Main Card */
+.notfound-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  width: 100%;
+}
+
+.notfound-card {
+  background: white;
+  border-radius: 32px;
+  padding: 50px 40px;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(67, 97, 238, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.notfound-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 404 Code Animation */
+.notfound-code-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.notfound-code {
+  font-size: 5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4361ee 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.notfound-code-animation {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #eef2ff 0%, #f3e8ff 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.notfound-code-animation svg {
+  color: #4361ee;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.3); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(67, 97, 238, 0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+/* Title & Message */
+.notfound-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.notfound-message {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Suggestions */
+.notfound-suggestions {
+  margin-bottom: 32px;
+  padding: 20px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.notfound-suggestions h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.notfound-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.notfound-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  color: #1e293b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.notfound-link:hover {
+  background: #4361ee;
+  border-color: #4361ee;
+  color: white;
+}
+
+.notfound-link svg {
+  color: #4361ee;
+  transition: color 0.3s ease;
+}
+
+.notfound-link:hover svg {
+  color: white;
+}
+
+/* Buttons */
+.notfound-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.notfound-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #4361ee 0%, #7c3aed 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+}
+
+.notfound-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+}
+
+.notfound-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: transparent;
+  color: #4361ee;
+  border: 2px solid #4361ee;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.notfound-btn-secondary:hover {
+  background: #eef2ff;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.notfound-footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .notfound-card {
+    padding: 40px 25px;
+  }
+
+  .notfound-code {
+    font-size: 3.5rem;
+  }
+
+  .notfound-code-animation {
+    width: 60px;
+    height: 60px;
+  }
+
+  .notfound-code-animation svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .notfound-title {
+    font-size: 1.6rem;
+  }
+
+  .notfound-message {
+    font-size: 0.9rem;
+  }
+
+  .notfound-links {
+    gap: 12px;
+  }
+
+  .notfound-link {
+    padding: 6px 16px;
+    font-size: 0.85rem;
+  }
+
+  .notfound-buttons {
+    flex-direction: column;
+  }
+
+  .notfound-btn-primary,
+  .notfound-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .notfound-card {
+    padding: 30px 20px;
+  }
+
+  .notfound-code {
+    font-size: 2.5rem;
+  }
+
+  .notfound-code-wrapper {
+    gap: 8px;
+  }
+
+  .notfound-code-animation {
+    width: 50px;
+    height: 50px;
+  }
+
+  .notfound-title {
+    font-size: 1.3rem;
+  }
+
+  .notfound-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .notfound-link {
+    width: 100%;
+    justify-content: center;
+  }
+}

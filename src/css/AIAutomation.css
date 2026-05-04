@@ -1,0 +1,872 @@
+/* AIAutomation.css */
+
+
+.ai-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  color: #1e293b;
+  background: #ffffff;
+  line-height: 1.5;
+}
+
+.ai-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.ai-hero {
+  padding: 120px 0 60px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  text-align: center;
+}
+
+.ai-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: #eef2ff;
+  color: #4361ee;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.ai-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.ai-highlight {
+  color: #4361ee;
+  position: relative;
+  display: inline-block;
+}
+
+.ai-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(67, 97, 238, 0.1);
+  z-index: -1;
+}
+
+.ai-hero-description {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.ai-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.ai-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-radius: 40px;
+  border: 1px solid #e2e8f0;
+}
+
+.ai-stat-icon {
+  color: #4361ee;
+}
+
+.ai-stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.ai-stat-label {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.ai-hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ai-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #4361ee;
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.ai-btn-primary:hover {
+  background: #3a56d4;
+  transform: translateY(-2px);
+}
+
+.ai-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  background: transparent;
+  color: #4361ee;
+  text-decoration: none;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid #4361ee;
+  transition: all 0.2s ease;
+}
+
+.ai-btn-outline:hover {
+  background: #eef2ff;
+  transform: translateY(-2px);
+}
+
+/* Section Styles */
+.ai-section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.ai-section-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* Features Section */
+.ai-features {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.ai-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.ai-feature-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.2s ease;
+}
+
+.ai-feature-card:hover {
+  border-color: #4361ee;
+  transform: translateY(-4px);
+}
+
+.ai-feature-icon {
+  width: 50px;
+  height: 50px;
+  background: #eef2ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4361ee;
+  margin-bottom: 20px;
+}
+
+.ai-feature-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.ai-feature-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Technology Tabs */
+.ai-tech-tabs {
+  padding: 60px 0;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ai-tabs-header {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.ai-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ai-tab-btn:hover {
+  border-color: #4361ee;
+  color: #4361ee;
+}
+
+.ai-tab-btn.active {
+  background: #4361ee;
+  border-color: #4361ee;
+  color: white;
+}
+
+.ai-tab-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ai-tech-content {
+  animation: fadeIn 0.3s ease;
+}
+
+.ai-tech-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ai-tech-icon {
+  color: #4361ee;
+  margin-bottom: 16px;
+}
+
+.ai-tech-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.ai-tech-header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.ai-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ai-tech-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.ai-tech-card:hover {
+  border-color: #4361ee;
+  transform: translateY(-2px);
+}
+
+.ai-tech-card-icon {
+  width: 40px;
+  height: 40px;
+  background: #eef2ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4361ee;
+  flex-shrink: 0;
+}
+
+.ai-tech-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #1e293b;
+}
+
+.ai-tech-card p {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Use Cases Section */
+.ai-use-cases {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.ai-use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.ai-use-case-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.ai-use-case-card:hover {
+  border-color: #4361ee;
+  transform: translateY(-4px);
+}
+
+.ai-use-case-icon {
+  width: 60px;
+  height: 60px;
+  background: #eef2ff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4361ee;
+  margin: 0 auto 16px;
+}
+
+.ai-use-case-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.ai-use-case-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Benefits Section */
+.ai-benefits {
+  padding: 60px 0;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ai-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ai-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.ai-benefit-icon {
+  width: 40px;
+  height: 40px;
+  background: #eef2ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4361ee;
+  flex-shrink: 0;
+}
+
+.ai-benefit-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #1e293b;
+}
+
+.ai-benefit-item p {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Example Section */
+.ai-example {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.ai-example-content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ai-example-content h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.ai-example-content > p {
+  color: #64748b;
+  margin-bottom: 40px;
+}
+
+.ai-example-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.ai-example-step {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.ai-step-icon {
+  width: 40px;
+  height: 40px;
+  background: #4361ee;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 auto 16px;
+}
+
+.ai-example-step h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.ai-example-step p {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* CTA Section */
+.ai-cta {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  border-top: 1px solid #e2e8f0;
+}
+
+.ai-cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ai-cta-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.ai-cta-desc {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.ai-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ai-btn-large {
+  padding: 14px 32px;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .ai-features-grid,
+  .ai-use-cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ai-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ai-example-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-hero-title {
+    font-size: 2rem;
+  }
+  
+  .ai-features-grid,
+  .ai-use-cases-grid,
+  .ai-benefits-grid,
+  .ai-example-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .ai-tech-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ai-stats-row {
+    gap: 20px;
+  }
+  
+  .ai-tabs-header {
+    flex-direction: column;
+  }
+  
+  .ai-tab-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-hero-title {
+    font-size: 1.6rem;
+  }
+  
+  .ai-stats-row {
+    flex-direction: column;
+  }
+  
+  .ai-hero-buttons {
+    flex-direction: column;
+  }
+  
+  .ai-btn-primary,
+  .ai-btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .ai-section-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* =========== */
+/* Add to existing AIAutomation.css */
+
+.ai-india-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.ai-india-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.ai-india-stat-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.ai-india-stat-icon {
+  display: flex;
+  justify-content: center;
+}
+
+/* India Services Section */
+.ai-india-services {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+.ai-india-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.ai-india-service-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.ai-india-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.ai-india-service-icon {
+  width: 60px;
+  height: 60px;
+  background: #eef2ff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4361ee;
+  margin: 0 auto 20px;
+}
+
+.ai-india-service-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+.ai-india-service-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* n8n India Features */
+.ai-n8n-india {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.ai-n8n-india-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.ai-n8n-india-card {
+  background: #f8fafc;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.ai-n8n-india-icon {
+  width: 50px;
+  height: 50px;
+  background: #eef2ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4361ee;
+  margin: 0 auto 15px;
+}
+
+.ai-n8n-india-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ai-n8n-india-card p {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* AI Chatbot Section */
+.ai-chatbot-india {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #f0f9ff 0%, #eef2ff 100%);
+}
+
+.ai-chatbot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.ai-chatbot-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.ai-chatbot-icon {
+  width: 50px;
+  height: 50px;
+  background: #eef2ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4361ee;
+  margin: 0 auto 15px;
+}
+
+.ai-chatbot-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ai-chatbot-card p {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.ai-chatbot-languages {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.ai-chatbot-languages h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.ai-language-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.ai-language-tags span {
+  padding: 6px 16px;
+  background: white;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+}
+
+/* Indian Use Cases */
+.ai-indian-use-cases {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+.ai-indian-use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.ai-indian-use-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.ai-indian-use-icon {
+  width: 50px;
+  height: 50px;
+  background: #eef2ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4361ee;
+  margin: 0 auto 15px;
+}
+
+.ai-indian-use-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ai-indian-use-card p {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .ai-india-services-grid,
+  .ai-n8n-india-grid,
+  .ai-chatbot-grid,
+  .ai-indian-use-cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-india-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ai-india-services-grid,
+  .ai-n8n-india-grid,
+  .ai-chatbot-grid,
+  .ai-indian-use-cases-grid {
+    grid-template-columns: 1fr;
+  }
+}

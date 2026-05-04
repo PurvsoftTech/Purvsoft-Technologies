@@ -128,3 +128,398 @@
   opacity: 0.7;
   cursor: not-allowed;
 }
+
+/* ContactPage.css - Complete Styles */
+
+.contact-wrapper {
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Banner Section */
+.contact-banner {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 120px 0;
+}
+
+.banner-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.banner-text {
+  flex: 1;
+}
+
+.banner-text h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+}
+
+.banner-text .blue-text {
+  color: #0088cc;
+}
+
+.banner-text p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.banner-img {
+  flex: 1;
+  text-align: center;
+}
+
+.banner-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px ;
+}
+
+/* Contact Main Section */
+.contact-main {
+  padding: 80px 0;
+  background: white;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+/* Contact Info Cards */
+.contact-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #0088cc 0%, #0088cc 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-circle i {
+  font-size: 22px;
+  color: white;
+}
+
+.info-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.direction-link,
+.call-link,
+.email-link {
+  color: #0088cc;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.direction-link:hover,
+.call-link:hover,
+.email-link:hover {
+  text-decoration: underline;
+}
+
+/* Social Links */
+.social-card {
+  flex-direction: column;
+}
+
+.social-card .icon-circle {
+  margin-bottom: 10px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0088cc;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: #0088cc;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Contact Form */
+.contact-form-container {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 24px;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.form-header .blue-text {
+  color: #0088cc;
+}
+
+.form-header p {
+  font-size: 15px;
+  color: #666;
+}
+
+.modern-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group.full-width {
+  width: 100%;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input-group input,
+.input-group textarea {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #0088cc;
+  box-shadow: 0 0 0 3px rgba(91, 60, 196, 0.1);
+}
+
+.input-group textarea {
+  resize: vertical;
+}
+
+/* Form Status */
+.form-status-message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-status-message.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.form-status-message.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Submit Button */
+.submit-btn {
+  background: linear-gradient(135deg, #0088cc 0%, #0088cc 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(91, 60, 196, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Form Note */
+.form-note {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.form-note i {
+  margin-right: 5px;
+}
+
+/* Map Section */
+.map-section {
+  padding: 0;
+}
+
+.map-container {
+  width: 100%;
+  position: relative;
+}
+
+.map-container iframe {
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .banner-text h1 {
+    font-size: 32px;
+  }
+  
+  .banner-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-banner {
+    padding: 40px 0;
+  }
+  
+  .contact-main {
+    padding: 50px 0;
+  }
+  
+  .banner-text h1 {
+    font-size: 28px;
+  }
+  
+  .banner-text p {
+    font-size: 16px;
+  }
+  
+  .contact-form-container {
+    padding: 25px;
+  }
+  
+  .form-header h2 {
+    font-size: 24px;
+  }
+  
+  .info-card {
+    padding: 15px;
+  }
+  
+  .icon-circle {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .icon-circle i {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .banner-text h1 {
+    font-size: 24px;
+  }
+  
+  .contact-form-container {
+    padding: 20px;
+  }
+  
+  .social-links a {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}

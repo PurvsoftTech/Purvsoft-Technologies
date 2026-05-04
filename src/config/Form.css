@@ -1,11 +1,5 @@
 /* FormWithImage.css */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .fwi-container {
   padding: 40px 20px;
   background: #f8fafc;

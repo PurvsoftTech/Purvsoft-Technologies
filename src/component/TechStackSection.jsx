@@ -8,15 +8,15 @@ const TechStackSection = () => {
       { name: "ReactJS", icon: "fab fa-react" },
       { name: "NextJS", icon: "fas fa-code" },
        { name: "NodeJS", icon: "fab fa-node-js" },
-      { name: "ExpressJS", icon: "fas fa-server" },
-      { name: "PHP", icon: "fab fa-php" },
       { name: "Laravel", icon: "fab fa-laravel" },
       { name: "Shopify", icon: "fab fa-shopify" },
        { name: "MySQL", icon: "fas fa-database" },
       { name: "MongoDB", icon: "fas fa-leaf" },
        { name: "AWS", icon: "fab fa-aws" },
       { name: "Docker", icon: "fab fa-docker" },
-       { name: "Flutter", icon: "fas fa-mobile-alt" }
+       { name: "Flutter", icon: "fas fa-mobile-alt" },
+       { name: "AI Automation", icon: "fas fa-robot" }
+
     ],
     Frontend: [
       { name: "ReactJS", icon: "fab fa-react" },
@@ -24,8 +24,6 @@ const TechStackSection = () => {
     ],
     Backend: [
       { name: "NodeJS", icon: "fab fa-node-js" },
-      { name: "ExpressJS", icon: "fas fa-server" },
-      { name: "PHP", icon: "fab fa-php" },
       { name: "Laravel", icon: "fab fa-laravel" },
     ],
     CMS: [
@@ -42,6 +40,9 @@ const TechStackSection = () => {
     "Mobile App": [
       { name: "Flutter", icon: "fas fa-mobile-alt" }
     ],
+    "AI & Automation": [
+      { name: "AI Automation", icon: "fas fa-robot" },
+    ]
   };
 
   const tabs = Object.keys(techData);

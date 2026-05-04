@@ -243,6 +243,9 @@ const NextJSSolutions = () => {
     { icon: <Star size={24} />, value: "4.9", label: "Client Rating" },
     { icon: <Clock size={24} />, value: "5+ Years", label: "Next.js Experience" }
   ];
+  const scrollToForm = () => {
+  document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+};
 
   const faqs = [
     {
@@ -263,63 +266,212 @@ const NextJSSolutions = () => {
     }
   ];
 
+  // JSON-LD Structured Data for Next.js Solutions
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Next.js Development Services in Ahmedabad",
+    "provider": {
+      "@type": "Organization",
+      "name": "Purvsoft Technologies",
+      "url": "https://www.purvsoft.com",
+      "logo": "https://www.purvsoft.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ahmedabad",
+        "addressRegion": "Gujarat",
+        "addressCountry": "India"
+      }
+    },
+    "description": "Professional Next.js development services in Ahmedabad, India. Build fast, scalable, and SEO-friendly web applications with server-side rendering and static generation.",
+    "serviceType": ["Next.js E-commerce", "Next.js SaaS Platforms", "Next.js Enterprise Portals", "Next.js PWA", "Next.js CMS Integration"],
+    "areaServed": "Ahmedabad, Gujarat, India",
+    "audience": {
+      "@type": "BusinessAudience"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "USD",
+        "price": "Custom"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.purvsoft.com/services/nextjs"
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.purvsoft.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.purvsoft.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Next.js Development",
+        "item": "https://www.purvsoft.com/services/nextjs"
+      }
+    ]
+  };
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  const organizationStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Purvsoft Technologies",
+    "url": "https://www.purvsoft.com",
+    "logo": "https://www.purvsoft.com/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "addressCountry": "India"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Hindi"]
+    }
+  };
+
   return (
     <div className="njs-container">
       <Helmet>
-      <title>Next.js Development Services | Purvsoft Technologies</title>
-      <meta name="description" content="Purvsoft Technologies offers expert Next.js development for SEO-optimized, server-side rendered web applications. Fast, scalable, and production-ready Next.js solutions." />
-      <meta name="keywords" content="Next.js development, SSR, server-side rendering, Next.js company, SEO web app, hire Next.js developer India" />
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <link rel="canonical" href="https://www.purvsoft.com/services/nextjs" />
- 
-      <meta property="og:title" content="Next.js Development Services | Purvsoft Technologies" />
-      <meta property="og:description" content="SEO-optimized, server-side rendered Next.js web applications by Purvsoft Technologies." />
-      <meta property="og:url" content="https://www.purvsoft.com/services/nextjs" />
-      <meta property="og:image" content="https://www.purvsoft.com/og-image.jpg" />
- 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Next.js Development | Purvsoft Technologies" />
-      <meta name="twitter:description" content="Fast and SEO-friendly Next.js solutions by Purvsoft Technologies." />
-    </Helmet>
+        {/* Primary Meta Tags */}
+        <title>Next.js Development Company in Ahmedabad | SEO-Friendly Web Apps | Purvsoft</title>
+        <meta name="title" content="Next.js Development Company in Ahmedabad | SEO-Friendly Web Apps | Purvsoft" />
+        <meta name="description" content="Purvsoft Technologies offers expert Next.js development services in Ahmedabad, Gujarat. Build fast, scalable, and SEO-optimized web applications with server-side rendering and static generation. Hire Next.js developer in Ahmedabad." />
+        <meta name="keywords" content="Next.js development company in Ahmedabad, Next.js development company India, Next.js web development company, Next.js developer in Ahmedabad full time, Next.js developer in Ahmedabad, Node.js developer Ahmedabad, Next.js development services, hire Next.js developer, server-side rendering, static site generation, Next.js e-commerce, Next.js SaaS, Purvsoft Next.js" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="author" content="Purvsoft Technologies" />
+        <meta name="language" content="English" />
+        
+        {/* Canonical URL - FIXES DUPLICATE ISSUE */}
+        <link rel="canonical" href="https://www.purvsoft.com/services/nextjs" />
+        
+        {/* Alternate language versions */}
+        <link rel="alternate" href="https://www.purvsoft.com/services/nextjs" hrefLang="x-default" />
+        
+        {/* Open Graph / Facebook Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.purvsoft.com/services/nextjs" />
+        <meta property="og:title" content="Next.js Development Company in Ahmedabad | SEO-Friendly Web Apps | Purvsoft" />
+        <meta property="og:description" content="Build fast, scalable, and SEO-optimized web applications with Purvsoft's Next.js development services in Ahmedabad. Expert Next.js developers for e-commerce, SaaS, and enterprise solutions." />
+        <meta property="og:image" content="https://www.purvsoft.com/og-nextjs.jpg" />
+        <meta property="og:image:alt" content="Next.js Development Services - Fast and SEO-Friendly Web Applications" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Purvsoft Technologies" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.purvsoft.com/services/nextjs" />
+        <meta name="twitter:title" content="Next.js Development Company in Ahmedabad | Purvsoft" />
+        <meta name="twitter:description" content="Expert Next.js development for SEO-friendly, high-performance web applications. Server-side rendering, static generation, and more." />
+        <meta name="twitter:image" content="https://www.purvsoft.com/twitter-nextjs.jpg" />
+        <meta name="twitter:image:alt" content="Next.js Development Services" />
+        
+        {/* Verification tags */}
+        <meta name="google-site-verification" content="MjMKilzhOmqr6Txi7pbjACF6g_hSt-B6Ej496yJyrH0" />
+        <meta name="msvalidate.01" content="AD0DF443696FB452E952416667F1A8DC" />
+        
+        {/* Geographic Meta Tags - Ahmedabad, Gujarat (FIXED) */}
+        <meta name="geo.region" content="IN-GJ" />
+        <meta name="geo.placename" content="Ahmedabad, Gujarat, India" />
+        <meta name="geo.position" content="23.0225;72.5714" />
+        <meta name="ICBM" content="23.0225, 72.5714" />
+        
+        {/* Mobile Optimization */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="theme-color" content="#2563eb" />
+        
+      </Helmet>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(organizationStructuredData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(faqStructuredData)}
+      </script>
+
       {/* Hero Section */}
-      <section className="njs-hero">
+      <section className="njs-hero" aria-label="Next.js Development Services Hero Section">
         <div className="njs-wrapper">
           <div className="njs-hero-grid">
-            <div className="njs-hero-content">
+            <div className="njs-hero-content" data-aos="fade-right">
               <div className="njs-badge">
                 <Rocket size={16} />
-                <span>Customized Next.js Solutions</span>
+                <span>Next.js Development Company in Ahmedabad</span>
               </div>
               <h1>
-                Next.js Solutions for <br />
-                <span className="njs-gradient-text">Your Business Needs</span>
+                Next.js Development Solutions for <br />
+                <span className="njs-brand-gradient">Your Business Growth</span>
               </h1>
               <p className="njs-hero-description">
                 Leverage the power of Next.js to build fast, scalable, and SEO-friendly web applications 
                 tailored to your specific business requirements. From e-commerce to enterprise portals, 
-                we deliver solutions that drive growth.
+                we deliver solutions that drive growth. Based in Ahmedabad, Gujarat, India.
               </p>
               <div className="njs-hero-stats">
-                <div className="njs-stat-item">
+                <div className="njs-stat-item" data-aos="fade-up" data-aos-delay="0">
                   <span className="njs-stat-number">100+</span>
-                  <span className="njs-stat-label">Projects</span>
+                  <span className="njs-stat-label">Projects Delivered</span>
                 </div>
-                <div className="njs-stat-item">
+                <div className="njs-stat-item" data-aos="fade-up" data-aos-delay="50">
                   <span className="njs-stat-number">50+</span>
-                  <span className="njs-stat-label">Clients</span>
+                  <span className="njs-stat-label">Happy Clients</span>
                 </div>
-                <div className="njs-stat-item">
+                <div className="njs-stat-item" data-aos="fade-up" data-aos-delay="100">
                   <span className="njs-stat-number">4.9</span>
-                  <span className="njs-stat-label">Rating</span>
+                  <span className="njs-stat-label">Client Rating</span>
                 </div>
               </div>
               <div className="njs-hero-buttons">
-                <a href="#form" className="njs-btn-primary">
-                  Contact Us <ArrowRight size={18} />
-                </a>
+                <button
+                  className="njs-btn-primary"
+                  onClick={scrollToForm}
+                  aria-label="Contact us for Next.js development"
+                >
+                  Hire Next.js Developer <ArrowRight size={18} />
+                </button>
               </div>
             </div>
-            <div className="njs-hero-visual">
+            <div className="njs-hero-visual" data-aos="fade-left">
               <div className="njs-visual-card">
                 <div className="njs-card-header">
                   <div className="njs-header-dots">
@@ -332,21 +484,21 @@ const NextJSSolutions = () => {
                 <div className="njs-card-content">
                   <div className="njs-metrics">
                     <div className="njs-metric">
-                      <Zap size={20} className="njs-metric-icon" />
+                      <Zap size={20} className="njs-metric-icon" aria-hidden="true" />
                       <div>
                         <span className="njs-metric-value">98</span>
-                        <span className="njs-metric-label">Performance</span>
+                        <span className="njs-metric-label">Performance Score</span>
                       </div>
                     </div>
                     <div className="njs-metric">
-                      <Globe size={20} className="njs-metric-icon" />
+                      <Globe size={20} className="njs-metric-icon" aria-hidden="true" />
                       <div>
                         <span className="njs-metric-value">100</span>
                         <span className="njs-metric-label">SEO Score</span>
                       </div>
                     </div>
                     <div className="njs-metric">
-                      <Clock size={20} className="njs-metric-icon" />
+                      <Clock size={20} className="njs-metric-icon" aria-hidden="true" />
                       <div>
                         <span className="njs-metric-value">0.3s</span>
                         <span className="njs-metric-label">Load Time</span>
@@ -355,19 +507,19 @@ const NextJSSolutions = () => {
                   </div>
                   <div className="njs-feature-list">
                     <div className="njs-feature-item">
-                      <CheckCircle size={16} />
-                      <span>Server-Side Rendering</span>
+                      <CheckCircle size={16} aria-hidden="true" />
+                      <span>Server-Side Rendering (SSR)</span>
                     </div>
                     <div className="njs-feature-item">
-                      <CheckCircle size={16} />
-                      <span>Static Generation</span>
+                      <CheckCircle size={16} aria-hidden="true" />
+                      <span>Static Site Generation (SSG)</span>
                     </div>
                     <div className="njs-feature-item">
-                      <CheckCircle size={16} />
+                      <CheckCircle size={16} aria-hidden="true" />
                       <span>API Routes</span>
                     </div>
                     <div className="njs-feature-item">
-                      <CheckCircle size={16} />
+                      <CheckCircle size={16} aria-hidden="true" />
                       <span>Image Optimization</span>
                     </div>
                   </div>
@@ -379,12 +531,12 @@ const NextJSSolutions = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="njs-stats">
+      <section className="njs-stats" aria-label="Company Statistics">
         <div className="njs-wrapper">
           <div className="njs-stats-grid">
             {stats.map((stat, index) => (
-              <div key={index} className="njs-stat-card">
-                <div className="njs-stat-icon">{stat.icon}</div>
+              <div key={index} className="njs-stat-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="njs-stat-icon" aria-hidden="true">{stat.icon}</div>
                 <h3 className="njs-stat-value">{stat.value}</h3>
                 <p className="njs-stat-label">{stat.label}</p>
               </div>
@@ -394,12 +546,12 @@ const NextJSSolutions = () => {
       </section>
 
       {/* Solutions Section */}
-      <section className="njs-solutions">
+      <section className="njs-solutions" aria-label="Next.js Solutions by Industry">
         <div className="njs-wrapper">
           <div className="njs-section-header">
-            <h6 className="njs-section-subtitle">Our Solutions</h6>
+            <p className="njs-section-subtitle">Our Solutions</p>
             <h2 className="njs-section-title">
-              Tailored Next.js Solutions for <span className="njs-gradient-text">Every Business</span>
+              Tailored Next.js Solutions for <span className="njs-brand-gradient">Every Business</span>
             </h2>
             <p className="njs-section-description">
               We build custom Next.js applications that solve real business problems and deliver exceptional user experiences.
@@ -408,14 +560,14 @@ const NextJSSolutions = () => {
 
           <div className="njs-solutions-grid">
             {solutions.map((solution, index) => (
-              <div key={index} className="njs-solution-card">
-                <div className="njs-solution-icon">{solution.icon}</div>
+              <div key={index} className="njs-solution-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="njs-solution-icon" aria-hidden="true">{solution.icon}</div>
                 <h3 className="njs-solution-title">{solution.title}</h3>
                 <p className="njs-solution-description">{solution.desc}</p>
-                <ul className="njs-solution-features">
+                <ul className="njs-solution-features" aria-label={`${solution.title} features`}>
                   {solution.features.map((feature, idx) => (
                     <li key={idx}>
-                      <CheckCircle size={14} />
+                      <CheckCircle size={14} aria-hidden="true" />
                       {feature}
                     </li>
                   ))}
@@ -427,22 +579,22 @@ const NextJSSolutions = () => {
       </section>
 
       {/* Features Section */}
-      <section className="njs-features">
+      <section className="njs-features" aria-label="Next.js Key Features">
         <div className="njs-wrapper">
           <div className="njs-section-header">
-            <h6 className="njs-section-subtitle">Why Next.js</h6>
+            <p className="njs-section-subtitle">Why Choose Next.js</p>
             <h2 className="njs-section-title">
-              Powerful Features for <span className="njs-gradient-text">Modern Web Apps</span>
+              Powerful Features for <span className="njs-brand-gradient">Modern Web Applications</span>
             </h2>
             <p className="njs-section-description">
-              Next.js provides everything you need to build production-ready applications.
+              Next.js provides everything you need to build production-ready applications with exceptional performance.
             </p>
           </div>
 
           <div className="njs-features-grid">
             {features.map((feature, index) => (
-              <div key={index} className="njs-feature-card">
-                <div className="njs-feature-icon">{feature.icon}</div>
+              <div key={index} className="njs-feature-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="njs-feature-icon" aria-hidden="true">{feature.icon}</div>
                 <div>
                   <h3 className="njs-feature-title">{feature.title}</h3>
                   <p className="njs-feature-desc">{feature.desc}</p>
@@ -454,19 +606,22 @@ const NextJSSolutions = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="njs-benefits">
+      <section className="njs-benefits" aria-label="Benefits of Next.js Development">
         <div className="njs-wrapper">
           <div className="njs-section-header">
-            <h6 className="njs-section-subtitle">Benefits</h6>
+            <p className="njs-section-subtitle">Key Benefits</p>
             <h2 className="njs-section-title">
-              Why Businesses Choose <span className="njs-gradient-text">Our Next.js Solutions</span>
+              Why Businesses Choose <span className="njs-brand-gradient">Our Next.js Solutions</span>
             </h2>
+            <p className="njs-section-description">
+              Discover the advantages that make Next.js the perfect choice for modern web applications
+            </p>
           </div>
 
           <div className="njs-benefits-grid">
             {benefits.map((benefit, index) => (
-              <div key={index} className="njs-benefit-card">
-                <div className="njs-benefit-icon">{benefit.icon}</div>
+              <div key={index} className="njs-benefit-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="njs-benefit-icon" aria-hidden="true">{benefit.icon}</div>
                 <h3 className="njs-benefit-title">{benefit.title}</h3>
                 <p className="njs-benefit-description">{benefit.desc}</p>
               </div>
@@ -476,23 +631,23 @@ const NextJSSolutions = () => {
       </section>
 
       {/* Process Section */}
-      <section className="njs-process">
+      <section className="njs-process" aria-label="Next.js Development Process">
         <div className="njs-wrapper">
           <div className="njs-section-header">
-            <h6 className="njs-section-subtitle">Our Process</h6>
+            <p className="njs-section-subtitle">Our Development Process</p>
             <h2 className="njs-section-title">
-              How We Build Your <span className="njs-gradient-text">Next.js Solution</span>
+              How We Build Your <span className="njs-brand-gradient">Next.js Application</span>
             </h2>
             <p className="njs-section-description">
-              A proven methodology that ensures successful project delivery.
+              A proven methodology that ensures successful project delivery with quality and efficiency.
             </p>
           </div>
 
           <div className="njs-process-grid">
             {process.map((item, index) => (
-              <div key={index} className="njs-process-card">
-                <div className="njs-process-step">{item.step}</div>
-                <div className="njs-process-icon">{item.icon}</div>
+              <div key={index} className="njs-process-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="njs-process-step" aria-label={`Step ${item.step}`}>{item.step}</div>
+                <div className="njs-process-icon" aria-hidden="true">{item.icon}</div>
                 <h3 className="njs-process-title">{item.title}</h3>
                 <p className="njs-process-description">{item.desc}</p>
               </div>
@@ -502,19 +657,22 @@ const NextJSSolutions = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="njs-case-studies">
+      <section className="njs-case-studies" aria-label="Next.js Success Stories">
         <div className="njs-wrapper">
           <div className="njs-section-header">
-            <h6 className="njs-section-subtitle">Success Stories</h6>
+            <p className="njs-section-subtitle">Success Stories</p>
             <h2 className="njs-section-title">
-              Real Results for <span className="njs-gradient-text">Our Clients</span>
+              Real Results for <span className="njs-brand-gradient">Our Clients</span>
             </h2>
+            <p className="njs-section-description">
+              See how we've helped businesses achieve their goals with Next.js development
+            </p>
           </div>
 
           <div className="njs-case-studies-grid">
             {caseStudies.map((study, index) => (
-              <div key={index} className="njs-case-card">
-                <div className="njs-case-icon">{study.icon}</div>
+              <div key={index} className="njs-case-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="njs-case-icon" aria-hidden="true">{study.icon}</div>
                 <span className="njs-case-company">{study.company}</span>
                 <h3 className="njs-case-title">{study.title}</h3>
                 <div className="njs-case-result">{study.result}</div>
@@ -526,20 +684,25 @@ const NextJSSolutions = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="njs-faq">
+      <section className="njs-faq" aria-label="Next.js Frequently Asked Questions">
         <div className="njs-wrapper">
           <div className="njs-section-header">
-            <h6 className="njs-section-subtitle">FAQ</h6>
+            <p className="njs-section-subtitle">FAQs</p>
             <h2 className="njs-section-title">
-              Frequently Asked <span className="njs-gradient-text">Questions</span>
+              Frequently Asked <span className="njs-brand-gradient">Questions</span>
             </h2>
+            <p className="njs-section-description">
+              Get answers to common questions about Next.js development services in Ahmedabad
+            </p>
           </div>
 
           <div className="njs-faq-grid">
             {faqs.map((faq, index) => (
-              <div key={index} className="njs-faq-card">
-                <h3 className="njs-faq-question">{faq.question}</h3>
-                <p className="njs-faq-answer">{faq.answer}</p>
+              <div key={index} className="njs-faq-card" data-aos="fade-up" data-aos-delay={index * 50} itemScope itemType="https://schema.org/Question">
+                <h3 className="njs-faq-question" itemProp="name">{faq.question}</h3>
+                <div className="njs-faq-answer" itemProp="acceptedAnswer" itemScope itemType="https://schema.org/Answer">
+                  <p itemProp="text">{faq.answer}</p>
+                </div>
               </div>
             ))}
           </div>

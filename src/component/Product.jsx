@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { 
+import {
   Globe,
   Smartphone,
   Code,
@@ -7,10 +7,8 @@ import {
   Search,
   Youtube,
   Facebook,
-  Instagram,
   ShoppingCart,
   BarChart3,
-  Mail,
   PenTool,
   Layers,
   ArrowRight,
@@ -18,15 +16,17 @@ import {
   Zap,
   Shield,
   Users,
-  Award
+  Award,
+  Bot
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import '../css/ProductShowcase.css';
 import { Helmet } from 'react-helmet-async';
 
-const ServicesShowcase = () => {
+const ProductShowcase = () => {
   const navigate = useNavigate();
   const [hoveredService, setHoveredService] = useState(null);
+  const [activeCategory, setActiveCategory] = useState("All");
 
   const services = [
     {
@@ -49,7 +49,7 @@ const ServicesShowcase = () => {
       badge: "Trending",
       description: "Native and cross-platform mobile apps for iOS and Android using Flutter and React Native.",
       features: ["Flutter Development", "React Native", "iOS & Android Apps", "App Store Optimization"],
-      path: "/service/mobile-app-development"
+      path: "/services/mobile-app-development"
     },
     {
       id: 3,
@@ -149,6 +149,26 @@ const ServicesShowcase = () => {
       description: "See how we've solved complex challenges for our clients with innovative solutions.",
       features: ["Problem Solving", "Innovation", "Case Studies", "Success Stories"],
       path: "/services/our-challenges"
+    },
+    {
+      id: 13,
+      name: "AI Automation",
+      category: "AI & Automation",
+      icon: <Bot size={32} />,
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      badge: "Trending",
+      description: "We build intelligent AI-powered automation systems using n8n, OpenAI, and Claude to streamline business processes, reduce manual work, and improve efficiency.",
+      features: [
+        "AI Chatbot Development (OpenAI & Claude)",
+        "Workflow Automation using n8n",
+        "Lead Generation & CRM Automation",
+        "Email & WhatsApp Automation",
+        "Data Processing & AI-based Insights",
+        "Custom API Integrations",
+        "AI Content Generation Systems",
+        "Business Process Automation"
+      ],
+      path: "/services/ai-automation"
     }
   ];
 
@@ -156,13 +176,12 @@ const ServicesShowcase = () => {
     { name: "All", icon: <Layers size={16} /> },
     { name: "Development", icon: <Code size={16} /> },
     { name: "Marketing", icon: <TrendingUp size={16} /> },
-    { name: "Advertising", icon: <BarChart3 size={16} /> }
+    { name: "Advertising", icon: <BarChart3 size={16} /> },
+    { name: "AI & Automation", icon: <Bot size={16} /> }
   ];
 
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filteredServices = activeCategory === "All" 
-    ? services 
+  const filteredServices = activeCategory === "All"
+    ? services
     : services.filter(service => service.category === activeCategory);
 
   const stats = [
@@ -176,45 +195,172 @@ const ServicesShowcase = () => {
     navigate(path);
   };
 
+  // ✅ Fixed: addressCountry "India" → "IN", provider → author for CollectionPage
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Purvsoft Technologies Services - Digital Solutions for Business",
+    "description": "Explore our comprehensive range of digital services including Web Development, Mobile Apps, SEO, Google Ads, YouTube Ads, Meta Ads, E-commerce Development, AI Automation, and Digital Marketing solutions.",
+    "url": "https://www.purvsoft.com/services",
+    "author": {
+      "@type": "Organization",
+      "name": "Purvsoft Technologies",
+      "url": "https://www.purvsoft.com",
+      "logo": "https://www.purvsoft.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sv Square, 333, Near GST Road, New Ranip",
+        "addressLocality": "Ahmedabad",
+        "addressRegion": "Gujarat",
+        "postalCode": "382470",
+        "addressCountry": "IN"
+      }
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": services.map((service, index) => ({
+        "@type": "Service",
+        "position": index + 1,
+        "name": service.name,
+        "description": service.description,
+        "category": service.category,
+        "provider": {
+          "@type": "Organization",
+          "name": "Purvsoft Technologies"
+        },
+        "serviceType": service.features,
+        "url": `https://www.purvsoft.com${service.path}`
+      }))
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.purvsoft.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.purvsoft.com/services"
+      }
+    ]
+  };
+
+  // ✅ Fixed: addressCountry "India" → "IN", added full address
+  const organizationStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Purvsoft Technologies",
+    "url": "https://www.purvsoft.com",
+    "logo": "https://www.purvsoft.com/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/purvsoft",
+      "https://twitter.com/purvsoft",
+      "https://www.linkedin.com/company/purvsoft-technologies"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sv Square, 333, Near GST Road, New Ranip",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "postalCode": "382470",
+      "addressCountry": "IN"
+    }
+  };
+
   return (
-    <div className="ss-container">
+    // ✅ Added role="main" for semantic structure
+    <main className="ss-container" role="main">
       <Helmet>
-        <title>Our Services | Purvsoft Technologies – Digital Solutions</title>
-        <meta name="description" content="Explore Purvsoft Technologies' range of digital services including Web Development, Mobile Apps, SEO, Google Ads, YouTube Ads, and Digital Marketing solutions." />
-        <meta name="keywords" content="web development, mobile app development, digital marketing, SEO services, Google Ads, YouTube Ads, Meta Ads, e-commerce development" />
+        {/* ✅ Removed: redundant <meta name="title"> */}
+        <title>Digital Services | Web Development, SEO, Marketing & AI Solutions | Purvsoft</title>
+        <meta name="description" content="Purvsoft Technologies offers comprehensive digital services including Web Development, Mobile Apps, SEO, Google Ads, YouTube Ads, Meta Ads, E-commerce Development, AI Automation, and Digital Marketing solutions for business growth." />
+        <meta name="keywords" content="web development services, mobile app development, digital marketing agency, SEO services, Google Ads management, YouTube Ads, Meta Ads, e-commerce development, AI automation services, custom software development, content marketing, Purvsoft Technologies services Ahmedabad" />
+
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        {/* ✅ Added: googlebot directive (was missing) */}
+        <meta name="googlebot" content="index, follow" />
+        <meta name="author" content="Purvsoft Technologies" />
+        <meta name="language" content="English" />
+        {/* ✅ Removed: revisit-after — deprecated */}
+
+        {/* Canonical */}
+        {/* ✅ Note: add /services to sitemap.xml — this page has a canonical but is not in the sitemap */}
         <link rel="canonical" href="https://www.purvsoft.com/services" />
-        <meta property="og:title" content="Our Services | Purvsoft Technologies" />
-        <meta property="og:description" content="Digital solutions including Web Development, Mobile Apps, SEO, Google Ads, YouTube Ads, and Digital Marketing." />
+        {/* ✅ Removed: hreflang alternate — pointless with only one language version */}
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.purvsoft.com/services" />
-        <meta property="og:image" content="https://www.purvsoft.com/og-image.jpg" />
+        <meta property="og:title" content="Digital Services | Web Development, SEO, Marketing & AI | Purvsoft" />
+        <meta property="og:description" content="Comprehensive digital solutions including Web Development, Mobile Apps, SEO, Google Ads, YouTube Ads, Meta Ads, E-commerce, and AI Automation for your business." />
+        <meta property="og:image" content="https://www.purvsoft.com/og-services.jpg" />
+        <meta property="og:image:alt" content="Purvsoft Technologies Digital Services - Web, Mobile, SEO & AI" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Purvsoft Technologies" />
+        {/* ✅ Fixed: en_US → en_IN */}
+        <meta property="og:locale" content="en_IN" />
+
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Services | Purvsoft Technologies" />
+        {/* ✅ Removed: twitter:url — not a standard Twitter card tag */}
+        {/* ✅ Added: twitter:site and twitter:creator (were missing) */}
+        <meta name="twitter:site" content="@purvsoft" />
+        <meta name="twitter:creator" content="@purvsoft" />
+        <meta name="twitter:title" content="Digital Services | Purvsoft Technologies" />
+        <meta name="twitter:description" content="Web Development, Mobile Apps, SEO, Google Ads, YouTube Ads, Meta Ads, E-commerce, and AI Automation solutions." />
+        {/* ✅ Fixed: unified twitter image with OG image */}
+        <meta name="twitter:image" content="https://www.purvsoft.com/og-services.jpg" />
+        <meta name="twitter:image:alt" content="Purvsoft Technologies Digital Services - Web, Mobile, SEO & AI" />
+
+        {/* Verification */}
+        <meta name="google-site-verification" content="MjMKilzhOmqr6Txi7pbjACF6g_hSt-B6Ej496yJyrH0" />
+        <meta name="msvalidate.01" content="AD0DF443696FB452E952416667F1A8DC" />
+
+        {/* Geo Tags */}
+        <meta name="geo.region" content="IN-GJ" />
+        {/* ✅ Fixed: was just "Ahmedabad" — now consistent with other pages */}
+        <meta name="geo.placename" content="Ahmedabad, Gujarat, India" />
+        <meta name="geo.position" content="23.0225;72.5714" />
+        <meta name="ICBM" content="23.0225, 72.5714" />
+
+        {/* ✅ JSON-LD moved inside Helmet — was incorrectly placed in JSX body */}
+        <script type="application/ld+json">{JSON.stringify(organizationStructuredData)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbData)}</script>
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
-      {/* Header */}
-      <div className="ss-header">
-        <h1 className="ss-title">Our Services</h1>
+      {/* ✅ Fixed: div → section with proper aria-label for semantic HTML */}
+      <section className="ss-header" aria-label="Services Page Header" data-aos="fade-up">
+        <h1 className="ss-title">Our Digital <span className="ss-highlight">Services</span></h1>
         <p className="ss-subtitle">Comprehensive digital solutions for your business growth</p>
-      </div>
+      </section>
 
-      {/* Stats Section */}
-      <div className="ss-stats">
+      {/* ✅ Fixed: div → section */}
+      <section className="ss-stats" aria-label="Company Statistics">
         <div className="ss-wrapper">
           <div className="ss-stats-grid">
             {stats.map((stat, index) => (
-              <div key={index} className="ss-stat-card">
-                <div className="ss-stat-icon">{stat.icon}</div>
+              <div key={index} className="ss-stat-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="ss-stat-icon" aria-hidden="true">{stat.icon}</div>
                 <div className="ss-stat-value">{stat.value}</div>
                 <div className="ss-stat-label">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Category Filter */}
-      <div className="ss-category-filter">
+      {/* ✅ Fixed: div → section */}
+      <section className="ss-category-filter" aria-label="Filter services by category">
         <div className="ss-wrapper">
           <div className="ss-filter-grid">
             {categories.map((category, index) => (
@@ -222,6 +368,8 @@ const ServicesShowcase = () => {
                 key={index}
                 className={`ss-filter-btn ${activeCategory === category.name ? 'active' : ''}`}
                 onClick={() => setActiveCategory(category.name)}
+                aria-label={`Filter services by ${category.name}`}
+                aria-pressed={activeCategory === category.name}
               >
                 {category.icon}
                 <span>{category.name}</span>
@@ -229,49 +377,66 @@ const ServicesShowcase = () => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Services Grid */}
-      <div className="ss-services">
+      {/* ✅ Fixed: div → section */}
+      <section className="ss-services" aria-label="All Digital Services">
         <div className="ss-wrapper">
           <div className="ss-services-grid">
-            {filteredServices.map((service) => (
-              <div 
-                key={service.id} 
+            {filteredServices.map((service, index) => (
+              <div
+                key={service.id}
                 className="ss-service-card"
                 onMouseEnter={() => setHoveredService(service.id)}
                 onMouseLeave={() => setHoveredService(null)}
+                data-aos="fade-up"
+                data-aos-delay={(index % 6) * 50}
+                itemScope
+                itemType="https://schema.org/Service"
               >
                 <div className="ss-service-image">
-                  <img src={service.image} alt={service.name} />
+                  <img
+                    src={service.image}
+                    alt={`${service.name} - ${service.category} services by Purvsoft Technologies`}
+                    loading="lazy"
+                    itemProp="image"
+                    width="800"
+                    height="450"
+                  />
                   {service.badge && (
                     <span className={`ss-badge ss-badge-${service.badge.toLowerCase().replace(' ', '-')}`}>
                       {service.badge}
                     </span>
                   )}
-                  <div className={`ss-service-overlay ${hoveredService === service.id ? 'show' : ''}`}>
+                  <div className={`ss-service-overlay ${hoveredService === service.id ? 'show' : ''}`} aria-hidden="true">
                     <div className="ss-service-icon-large">{service.icon}</div>
                   </div>
                 </div>
-                
+
                 <div className="ss-service-info">
-                  <div className="ss-service-icon">{service.icon}</div>
-                  <span className="ss-service-category">{service.category}</span>
-                  <h3 className="ss-service-name">{service.name}</h3>
-                  <p className="ss-service-description">{service.description}</p>
-                  
+                  <div className="ss-service-icon" aria-hidden="true">{service.icon}</div>
+                  <span className="ss-service-category" itemProp="category">{service.category}</span>
+                  <h3 className="ss-service-name" itemProp="name">{service.name}</h3>
+                  <p className="ss-service-description" itemProp="description">{service.description}</p>
+
                   <div className="ss-service-features">
                     {service.features.slice(0, 3).map((feature, idx) => (
                       <div key={idx} className="ss-feature-item">
-                        <CheckCircle size={14} />
+                        <CheckCircle size={14} aria-hidden="true" />
                         <span>{feature}</span>
                       </div>
                     ))}
+                    {service.features.length > 3 && (
+                      <div className="ss-feature-more">
+                        +{service.features.length - 3} more features
+                      </div>
+                    )}
                   </div>
-                  
-                  <button 
+
+                  <button
                     className="ss-learn-btn"
                     onClick={() => handleLearnMore(service.path)}
+                    aria-label={`Learn more about ${service.name}`}
                   >
                     Learn More <ArrowRight size={16} />
                   </button>
@@ -279,17 +444,26 @@ const ServicesShowcase = () => {
               </div>
             ))}
           </div>
-        </div>
-      </div>
 
-      {/* View All Button */}
+          {filteredServices.length === 0 && (
+            <div className="ss-no-results" role="status">
+              <p>No services found in this category. Please try another filter.</p>
+            </div>
+          )}
+        </div>
+      </section>
+
       <div className="ss-view-all">
-        <button className="ss-view-btn">
+        <button
+          className="ss-view-btn"
+          onClick={() => setActiveCategory("All")}
+          aria-label="View all services"
+        >
           Explore All Services <ArrowRight size={18} />
         </button>
       </div>
-    </div>
+    </main>
   );
 };
 
-export default ServicesShowcase;
+export default ProductShowcase;

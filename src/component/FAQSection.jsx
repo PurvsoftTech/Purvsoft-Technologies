@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 import '../css/FAQSection.css';
-
+import { Helmet } from "react-helmet-async";
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -58,9 +58,26 @@ const FAQSection = () => {
 
   return (
     <div className="faq-container">
+  <Helmet>
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      })}
+    </script>
+  </Helmet>
       <div className="faq-wrapper">
         <div className="faq-header">
-          <h2 className="faq-title">Frequently Asked Questions</h2>
+          <span className="testimonials-badge">FAQ</span>
+          <h2 className="section-title"><span className="brand-gradient">Frequently Asked Questions</span></h2>
           <p className="faq-subtitle">Everything you need to know about our services</p>
         </div>
 

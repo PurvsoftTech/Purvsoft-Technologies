@@ -71,7 +71,7 @@
   color: var(--sb-text-dark);
 }
 
-.sb-gradient-text {
+.sb-brand-gradient {
   background: var(--sb-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -127,6 +127,7 @@
   font-weight: 500;
   transition: all 0.3s ease;
   box-shadow: var(--sb-shadow-md);
+  border: none;
 }
 
 .sb-btn-primary:hover {

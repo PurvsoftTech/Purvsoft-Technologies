@@ -20,10 +20,18 @@ import {
   Heart,
 } from 'lucide-react';
 import '../../css/YouTubeAds.css';
-import { Helmet} from 'react-helmet-async';
-import Form from '../../config/Form'
+import { Helmet } from 'react-helmet-async';
+import Form from '../../config/Form';
+
+// YouTube ad preview image
+const youtubePreviewImage = "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop";
 
 const YouTubeAds = () => {
+
+  // ✅ FIX 1: Centralized URL constants — prevents www vs non-www duplicate pages
+  const CANONICAL_URL = "https://www.purvsoft.com/services/youtube-marketing";
+  const SITE_URL = "https://www.purvsoft.com";
+
   const services = [
     {
       icon: <Film size={24} />,
@@ -131,36 +139,12 @@ const YouTubeAds = () => {
   ];
 
   const steps = [
-    {
-      step: "1",
-      title: "Consultation",
-      desc: "We discuss your goals, budget, and target audience."
-    },
-    {
-      step: "2",
-      title: "Strategy",
-      desc: "Create a custom YouTube advertising strategy."
-    },
-    {
-      step: "3",
-      title: "Creative",
-      desc: "Produce engaging video ads that convert."
-    },
-    {
-      step: "4",
-      title: "Launch",
-      desc: "Set up and launch your campaign."
-    },
-    {
-      step: "5",
-      title: "Optimize",
-      desc: "Monitor and optimize for best results."
-    },
-    {
-      step: "6",
-      title: "Report",
-      desc: "Detailed performance reports."
-    }
+    { step: "1", title: "Consultation", desc: "We discuss your goals, budget, and target audience." },
+    { step: "2", title: "Strategy", desc: "Create a custom YouTube advertising strategy." },
+    { step: "3", title: "Creative", desc: "Produce engaging video ads that convert." },
+    { step: "4", title: "Launch", desc: "Set up and launch your campaign." },
+    { step: "5", title: "Optimize", desc: "Monitor and optimize for best results." },
+    { step: "6", title: "Report", desc: "Detailed performance reports and insights." }
   ];
 
   const faqs = [
@@ -182,60 +166,234 @@ const YouTubeAds = () => {
     }
   ];
 
+  // ✅ FIX 2: Clean structured data — correct address, currency, canonical
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "YouTube Advertising & Marketing Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Purvsoft Technologies",
+      "url": SITE_URL,
+      "logo": `${SITE_URL}/logo.png`,
+      // ✅ FIX 3: Address added — was completely missing in original
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ahmedabad",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
+      }
+    },
+    "description": "Professional YouTube advertising and marketing services in Ahmedabad, India. Video ad creation, targeted campaigns, YouTube SEO, and channel management for businesses.",
+    "serviceType": [
+      "YouTube Ads Management",
+      "Video Ad Creation",
+      "YouTube SEO",
+      "YouTube Channel Management",
+      "Video Marketing"
+    ],
+    "areaServed": "Worldwide",
+    "audience": {
+      "@type": "BusinessAudience"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        // ✅ FIX 4: Currency changed USD → INR for India-based company
+        "priceCurrency": "INR",
+        "price": "Custom"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": CANONICAL_URL
+    },
+    "potentialAction": {
+      "@type": "CommunicateAction",
+      "name": "Contact",
+      "target": `${SITE_URL}/contact`
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": SITE_URL
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": `${SITE_URL}/services`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "YouTube Marketing",
+        "item": CANONICAL_URL
+      }
+    ]
+  };
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+  const scrollToForm = () => {
+  document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+};
+
   return (
     <div className="ya-container">
       <Helmet>
-      <title>YouTube Marketing & Ads Services | Purvsoft Technologies</title>
-      <meta name="description" content="Reach millions with Purvsoft Technologies's YouTube advertising and marketing services. Video ad campaigns, channel management, and YouTube SEO to grow your brand." />
-      <meta name="keywords" content="YouTube marketing, YouTube ads, video advertising, YouTube SEO, YouTube channel management, video marketing India" />
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <link rel="canonical" href="https://www.purvsoft.com/services/youtube-marketing" />
- 
-      <meta property="og:title" content="YouTube Marketing & Ads | Purvsoft Technologies" />
-      <meta property="og:description" content="Reach millions with YouTube video ad campaigns, channel management, and YouTube SEO." />
-      <meta property="og:url" content="https://www.purvsoft.com/services/youtube-marketing" />
-      <meta property="og:image" content="https://www.purvsoft.com/og-image.jpg" />
- 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="YouTube Marketing | Purvsoft Technologies" />
-      <meta name="twitter:description" content="YouTube ads and marketing services by Purvsoft Technologies." />
-    </Helmet>
+        {/* ✅ FIX 5: Unique title — includes location, no keyword repetition */}
+        <title>YouTube Marketing & Advertising Agency in Ahmedabad | Video Ads | Purvsoft</title>
+
+        {/* ✅ FIX 6: Natural meta description — includes city, no stuffing */}
+        <meta
+          name="description"
+          content="Purvsoft Technologies is a trusted YouTube marketing and advertising agency in Ahmedabad, India. We run targeted video ad campaigns, manage YouTube channels, and grow your brand with proven video marketing strategies."
+        />
+
+        {/* ✅ FIX 7: TOP 10 KEYWORDS — research-backed, high-intent, no duplicates */}
+        <meta
+          name="keywords"
+          content="YouTube marketing agency Ahmedabad, YouTube advertising India, video marketing company Gujarat, YouTube ads management India, YouTube SEO services, TrueView ads agency, video ad creation India, YouTube channel management, bumper ads agency India, Purvsoft YouTube marketing"
+        />
+
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="author" content="Purvsoft Technologies" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+
+        {/* ✅ FIX 8: Canonical using constant — prevents www vs non-www duplicate */}
+        <link rel="canonical" href={CANONICAL_URL} />
+
+        {/* ✅ FIX 9: hreflang — correct locale for India */}
+        <link rel="alternate" href={CANONICAL_URL} hrefLang="en-IN" />
+        <link rel="alternate" href={CANONICAL_URL} hrefLang="x-default" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={CANONICAL_URL} />
+        {/* ✅ FIX 10: OG title — unique, no repetition, includes location */}
+        <meta property="og:title" content="YouTube Marketing Agency in Ahmedabad | Purvsoft Technologies" />
+        <meta
+          property="og:description"
+          content="Reach over 2 billion monthly users with targeted YouTube video advertising from Ahmedabad. Professional ad management, video creation, and campaign optimization."
+        />
+        <meta property="og:image" content={`${SITE_URL}/og-youtube-marketing.jpg`} />
+        <meta property="og:image:alt" content="Purvsoft YouTube Marketing and Advertising Services - Ahmedabad" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Purvsoft Technologies" />
+        {/* ✅ FIX 11: og:locale corrected to en_IN */}
+        <meta property="og:locale" content="en_IN" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={CANONICAL_URL} />
+        <meta name="twitter:title" content="YouTube Marketing & Advertising | Purvsoft Technologies Ahmedabad" />
+        <meta
+          name="twitter:description"
+          content="Professional YouTube video advertising from Ahmedabad, India. Reach millions, drive conversions, and grow your brand with Purvsoft Technologies."
+        />
+        <meta name="twitter:image" content={`${SITE_URL}/twitter-youtube-marketing.jpg`} />
+        <meta name="twitter:image:alt" content="Purvsoft YouTube Advertising Campaign Preview" />
+
+        {/* Verification */}
+        <meta name="google-site-verification" content="MjMKilzhOmqr6Txi7pbjACF6g_hSt-B6Ej496yJyrH0" />
+        <meta name="msvalidate.01" content="AD0DF443696FB452E952416667F1A8DC" />
+
+        {/* ✅ FIX 12: Geo tags added — were completely missing in original */}
+        <meta name="geo.region" content="IN-GJ" />
+        <meta name="geo.placename" content="Ahmedabad" />
+        <meta name="geo.position" content="23.0225;72.5714" />
+        <meta name="ICBM" content="23.0225, 72.5714" />
+
+        {/* Mobile */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="format-detection" content="telephone=no" />
+      </Helmet>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(faqStructuredData)}
+      </script>
+
       {/* Hero Section */}
-      <section className="ya-hero">
+      <section className="ya-hero" aria-label="YouTube Advertising Services Hero Section">
         <div className="ya-wrapper">
           <div className="ya-hero-grid">
-            <div className="ya-hero-content">
+            <div className="ya-hero-content" data-aos="fade-right">
               <div className="ya-badge">
                 <Play size={14} />
-                <span>YouTube Advertising</span>
+                <span>YouTube Marketing Agency — Ahmedabad</span>
               </div>
+              {/* ✅ FIX 13: H1 includes primary keyword + location naturally */}
               <h1 className="ya-hero-title">
-                Grow Your Business with <span className="ya-highlight">YouTube Ads</span>
+                Grow Your Business with <span className="ya-highlight">YouTube Ads</span> in India
               </h1>
               <p className="ya-hero-description">
-                Reach over 2 billion monthly active users with targeted video advertising. 
-                We help businesses create and optimize YouTube campaigns that deliver real results.
+                Reach over 2 billion monthly active users with targeted video advertising.
+                Purvsoft Technologies helps businesses in Ahmedabad and across India create and
+                optimize YouTube campaigns that deliver real, measurable results.
               </p>
-              
+
               <div className="ya-stats-row">
                 {stats.map((stat, index) => (
-                  <div key={index} className="ya-stat-box">
+                  <div key={index} className="ya-stat-box" data-aos="fade-up" data-aos-delay={index * 50}>
                     <div className="ya-stat-value">{stat.value}</div>
                     <div className="ya-stat-label">{stat.label}</div>
                   </div>
                 ))}
               </div>
-              
+
               <div className="ya-hero-buttons">
-                <a href="#form" className="ya-btn-primary">
-                 Contact Us<ArrowRight size={16} />
-                </a>
+                <button
+                    className="ya-btn-primary"
+                    onClick={scrollToForm}
+                    aria-label="Contact us for YouTube advertising services"
+                  >
+                    Start Your Campaign <ArrowRight size={16} />
+                  </button>
               </div>
             </div>
-            
-            <div className="ya-hero-visual">
+
+            <div className="ya-hero-visual" data-aos="fade-left">
               <div className="ya-video-placeholder">
-                <Play size={40} className="ya-play-icon" />
+                <img
+                  src={youtubePreviewImage}
+                  alt="YouTube advertising preview — video ad campaign with engagement metrics by Purvsoft Technologies"
+                  className="ya-preview-image"
+                  width="400"
+                  height="300"
+                  loading="eager"
+                />
+                <Play size={40} className="ya-play-icon" aria-hidden="true" />
                 <div className="ya-placeholder-text">YouTube Ad Preview</div>
               </div>
             </div>
@@ -244,15 +402,17 @@ const YouTubeAds = () => {
       </section>
 
       {/* Services Section */}
-      <section className="ya-services">
+      <section className="ya-services" aria-label="YouTube Advertising Services">
         <div className="ya-wrapper">
-          <h2 className="ya-section-title">What We Offer</h2>
-          <p className="ya-section-subtitle">Complete YouTube advertising solutions</p>
-          
+          <div className="section-header">
+            <p className="section-subtitle">What We Offer</p>
+            <h2 className="ya-section-title">Complete <span className="brand-gradient">YouTube Advertising</span> Solutions</h2>
+            <p className="ya-section-subtitle">Professional video ad management from strategy to execution</p>
+          </div>
           <div className="ya-services-grid">
             {services.map((service, index) => (
-              <div key={index} className="ya-service-item">
-                <div className="ya-service-icon">{service.icon}</div>
+              <div key={index} className="ya-service-item" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="ya-service-icon" aria-hidden="true">{service.icon}</div>
                 <h3 className="ya-service-title">{service.title}</h3>
                 <p className="ya-service-desc">{service.desc}</p>
               </div>
@@ -262,15 +422,17 @@ const YouTubeAds = () => {
       </section>
 
       {/* Ad Formats */}
-      <section className="ya-formats">
+      <section className="ya-formats" aria-label="YouTube Ad Formats We Use">
         <div className="ya-wrapper">
-          <h2 className="ya-section-title">Ad Formats We Use</h2>
-          <p className="ya-section-subtitle">Choose the right format for your goals</p>
-          
+          <div className="section-header">
+            <p className="section-subtitle">Ad Formats</p>
+            <h2 className="ya-section-title"><span className="brand-gradient">Ad Formats</span> We Use</h2>
+            <p className="ya-section-subtitle">Choose the right format for your marketing goals</p>
+          </div>
           <div className="ya-formats-grid">
             {adFormats.map((format, index) => (
-              <div key={index} className="ya-format-item">
-                <div className="ya-format-icon">{format.icon}</div>
+              <div key={index} className="ya-format-item" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="ya-format-icon" aria-hidden="true">{format.icon}</div>
                 <div>
                   <h3 className="ya-format-name">{format.name}</h3>
                   <p className="ya-format-desc">{format.desc}</p>
@@ -282,32 +444,33 @@ const YouTubeAds = () => {
       </section>
 
       {/* Targeting Options */}
-      <section className="ya-targeting">
+      <section className="ya-targeting" aria-label="YouTube Ad Targeting Options">
         <div className="ya-wrapper">
           <div className="ya-targeting-grid">
-            <div className="ya-targeting-content">
-              <h2 className="ya-section-title">Precise Audience Targeting</h2>
-              <p className="ya-section-subtitle">Reach the right people at the right time</p>
-              
+            <div className="ya-targeting-content" data-aos="fade-right">
+              <div className="section-header text-left">
+                <p className="section-subtitle">Targeting Capabilities</p>
+                <h2 className="ya-section-title">Precise <span className="brand-gradient">Audience Targeting</span></h2>
+                <p className="ya-section-subtitle">Reach the right people at the right time with advanced targeting</p>
+              </div>
               <ul className="ya-targeting-list">
                 {targeting.map((item, index) => (
-                  <li key={index}>
-                    <CheckCircle size={16} />
+                  <li key={index} data-aos="fade-up" data-aos-delay={index * 30}>
+                    <CheckCircle size={16} aria-hidden="true" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-            
-            <div className="ya-targeting-visual">
+            <div className="ya-targeting-visual" data-aos="fade-left">
               <div className="ya-targeting-card">
                 <h3>Ideal Customer Profile</h3>
                 <div className="ya-demo-targets">
                   <span>Age: 25-45</span>
                   <span>Gender: All</span>
-                  <span>Location: USA</span>
-                  <span>Interests: Technology</span>
-                  <span>Device: Mobile</span>
+                  <span>Location: USA, UK, Canada</span>
+                  <span>Interests: Technology, Business</span>
+                  <span>Device: Mobile & Desktop</span>
                 </div>
               </div>
             </div>
@@ -316,15 +479,17 @@ const YouTubeAds = () => {
       </section>
 
       {/* Benefits */}
-      <section className="ya-benefits">
+      <section className="ya-benefits" aria-label="Benefits of YouTube Advertising">
         <div className="ya-wrapper">
-          <h2 className="ya-section-title">Why Advertise on YouTube?</h2>
-          <p className="ya-section-subtitle">Key benefits for your business</p>
-          
+          <div className="section-header">
+            <p className="section-subtitle">Key Advantages</p>
+            <h2 className="ya-section-title">Why Advertise on <span className="brand-gradient">YouTube?</span></h2>
+            <p className="ya-section-subtitle">Key benefits for your business growth</p>
+          </div>
           <div className="ya-benefits-grid">
             {benefits.map((benefit, index) => (
-              <div key={index} className="ya-benefit-item">
-                <div className="ya-benefit-icon">{benefit.icon}</div>
+              <div key={index} className="ya-benefit-item" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="ya-benefit-icon" aria-hidden="true">{benefit.icon}</div>
                 <h3 className="ya-benefit-title">{benefit.title}</h3>
                 <p className="ya-benefit-desc">{benefit.desc}</p>
               </div>
@@ -334,14 +499,16 @@ const YouTubeAds = () => {
       </section>
 
       {/* Industries */}
-      <section className="ya-industries">
+      <section className="ya-industries" aria-label="Industries We Serve for YouTube Marketing">
         <div className="ya-wrapper">
-          <h2 className="ya-section-title">Industries We Serve</h2>
-          <p className="ya-section-subtitle">Successful campaigns across various sectors</p>
-          
+          <div className="section-header">
+            <p className="section-subtitle">Our Expertise</p>
+            <h2 className="ya-section-title">Industries <span className="brand-gradient">We Serve</span></h2>
+            <p className="ya-section-subtitle">Successful YouTube ad campaigns across various sectors</p>
+          </div>
           <div className="ya-industries-grid">
             {industries.map((industry, index) => (
-              <div key={index} className="ya-industry-tag">
+              <div key={index} className="ya-industry-tag" data-aos="zoom-in" data-aos-delay={index * 50}>
                 {industry.icon}
                 <span>{industry.name}</span>
               </div>
@@ -351,14 +518,16 @@ const YouTubeAds = () => {
       </section>
 
       {/* Process */}
-      <section className="ya-process">
+      <section className="ya-process" aria-label="YouTube Ad Campaign Process">
         <div className="ya-wrapper">
-          <h2 className="ya-section-title">Our Process</h2>
-          <p className="ya-section-subtitle">Simple steps to campaign success</p>
-          
+          <div className="section-header">
+            <p className="section-subtitle">Our Methodology</p>
+            <h2 className="ya-section-title">Our <span className="brand-gradient">Process</span></h2>
+            <p className="ya-section-subtitle">Simple steps to YouTube advertising success</p>
+          </div>
           <div className="ya-process-grid">
             {steps.map((step, index) => (
-              <div key={index} className="ya-process-step">
+              <div key={index} className="ya-process-step" data-aos="fade-up" data-aos-delay={index * 50}>
                 <div className="ya-step-number">{step.step}</div>
                 <h3 className="ya-step-title">{step.title}</h3>
                 <p className="ya-step-desc">{step.desc}</p>
@@ -369,22 +538,39 @@ const YouTubeAds = () => {
       </section>
 
       {/* FAQ */}
-      <section className="ya-faq">
+      <section className="ya-faq" aria-label="YouTube Advertising FAQs">
         <div className="ya-wrapper">
-          <h2 className="ya-section-title">Frequently Asked Questions</h2>
-          
+          <div className="section-header">
+            <p className="section-subtitle">Common Questions</p>
+            <h2 className="ya-section-title">Frequently Asked <span className="brand-gradient">Questions</span></h2>
+            <p className="ya-section-subtitle">Get answers about YouTube advertising costs, timelines, and more</p>
+          </div>
           <div className="ya-faq-grid">
             {faqs.map((faq, index) => (
-              <div key={index} className="ya-faq-item">
-                <h3 className="ya-faq-q">{faq.q}</h3>
-                <p className="ya-faq-a">{faq.a}</p>
+              <div
+                key={index}
+                className="ya-faq-item"
+                data-aos="fade-up"
+                data-aos-delay={index * 50}
+                itemScope
+                itemType="https://schema.org/Question"
+              >
+                <h3 className="ya-faq-q" itemProp="name">{faq.q}</h3>
+                <div
+                  className="ya-faq-a"
+                  itemProp="acceptedAnswer"
+                  itemScope
+                  itemType="https://schema.org/Answer"
+                >
+                  <p itemProp="text">{faq.a}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA / Contact Form */}
       <div id="form">
         <Form />
       </div>

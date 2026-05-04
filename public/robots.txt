@@ -1,3 +1,89 @@
-# https://www.robotstxt.org/robotstxt.html
+# ============================================
+# ROBOTS.TXT - Purvsoft Technologies
+# Last Updated: 2026-04-21
+# ============================================
+
+# ==================== ALLOW ALL MAJOR BOTS ====================
+User-agent: Googlebot
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /draft/
+Disallow: /api/
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /admin/
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# ==================== BLOCK DUPLICATE URL PARAMETERS ====================
 User-agent: *
-Disallow:
+Disallow: /*?
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+Disallow: /*?source=*
+Disallow: /*?campaign=*
+Disallow: /*?term=*
+Disallow: /*?content=*
+Disallow: /*?placement=*
+Disallow: /*?network=*
+
+# ==================== BLOCK ADMIN & TEMPORARY PATHS ====================
+Disallow: /cgi-bin/
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /draft/
+Disallow: /test/
+Disallow: /backup/
+Disallow: /old/
+Disallow: /dev/
+Disallow: /staging/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+
+# ==================== BLOCK SEARCH & FILTER PAGES ====================
+Disallow: /search
+Disallow: /filter
+Disallow: /tag/
+Disallow: /category/
+Disallow: /author/
+
+# ==================== BLOCK AI CRAWLERS (OPTIONAL - RECOMMENDED) ====================
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Anthropic-AI
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+# ==================== SITEMAP LOCATION ====================
+Sitemap: https://www.purvsoft.com/sitemap.xml

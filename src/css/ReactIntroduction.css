@@ -70,7 +70,7 @@
   color: var(--ri-text-dark);
 }
 
-.ri-gradient-text {
+.ri-brand-gradient {
   background: var(--ri-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -126,6 +126,7 @@
   font-weight: 500;
   transition: all 0.3s ease;
   box-shadow: var(--ri-shadow-md);
+  border: none;
 }
 
 .ri-btn-primary:hover {

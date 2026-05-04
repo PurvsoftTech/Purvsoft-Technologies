@@ -49,9 +49,11 @@
 }
 
 .brand-gradient {
-  background: linear-gradient(90deg, var(--primary), #06b6d4); /* Azure to Cyan gradient */
+  background: linear-gradient(90deg, var(--primary), #06b6d4);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .section-desc {

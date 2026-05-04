@@ -1,76 +1,76 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import image from '../image/Pursoft_Logo.png'
+import image from '../image/Pursoft_Logo.png';
+
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen]       = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-  const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false);
+  // ✅ Removed: companyDropdownOpen, setCompanyDropdownOpen, mobileCompanyOpen
+  //    — all three were declared but never read or rendered anywhere
 
   const servicesData = [
     {
       category: "IT Services",
       items: [
-        { name: "Digital Marketing", path: "/services/digital-marketing" },
-        { name: "SEO", path: "/services/seo" },
-        { name: "Custom Software Development", path: "/services/custom-software-development" },
-        { name: "Content Management", path: "/services/content-management" },
-        { name: "Web Design & Development", path: "/services/website-development" },
-        { name: "Mobile App Development", path: "/service/mobile-app-development" },
-        { name: "eCommerce Development", path: "/services/e-commerce-development" },
-        { name: "Youtube Marketing", path: "/services/youtube-marketing" },
-        { name: "Meta Ads", path: "/services/meta-ads" },
-        { name: "Google Ads", path: "/services/google-ads" },
-        { name: "Our Challenges", path: "/services/our-challenges" },
-      ]
+        { name: "Digital Marketing",            path: "/services/digital-marketing" },
+        { name: "SEO",                           path: "/services/seo" },
+        { name: "Custom Software Development",   path: "/services/custom-software-development" },
+        { name: "Content Management",            path: "/services/content-management" },
+        { name: "Web Design & Development",      path: "/services/website-development" },
+        { name: "Mobile App Development",        path: "/services/mobile-app-development" },
+        { name: "eCommerce Development",         path: "/services/e-commerce-development" },
+        { name: "Youtube Marketing",             path: "/services/youtube-marketing" },
+        { name: "Meta Ads",                      path: "/services/meta-ads" },
+        { name: "Google Ads",                    path: "/services/google-ads" },
+        { name: "Our Challenges",                path: "/services/our-challenges" },
+      ],
     },
     {
       category: "Frontend Development",
       items: [
-        { name: "ReactJS", path: "/services/reactjs" },
-        { name: "NextJS", path: "/services/nextjs" },
-        { name: "AngularJS", path: "/services/angular" },
-      ]
+        { name: "ReactJS",   path: "/services/reactjs-development" },
+        { name: "NextJS",    path: "/services/nextjs-development" },
+        { name: "AngularJS", path: "/services/angular-development" },
+      ],
     },
     {
       category: "CMS & eCommerce",
       items: [
-        { name: "Shopify", path: "/services/shopify" }
-      ]
+        { name: "Shopify", path: "/services/shopify-development" },
+      ],
     },
     {
       category: "Mobile App Development",
       items: [
-        { name: "Flutter", path: "/services/flutter" }
-      ]
+        { name: "Flutter", path: "/services/flutter-development" },
+      ],
     },
     {
       category: "Backend Development",
       items: [
-        { name: "Laravel", path: "/services/Laravel" },
-        { name: "NodeJS", path: "/services/nodejs" }
-      ]
-    }
+        { name: "Laravel", path: "/services/laravel-development" },
+        { name: "NodeJS",  path: "/services/nodejs-development" },
+      ],
+    },
+    {
+      category: "AI & Automation",
+      items: [
+        { name: "AI Automation", path: "/services/ai-automation" },
+      ],
+    },
   ];
-
-  const companyData = {
-    mainItems: [
-      { name: "About", path: "/aboutus", icon: "fas fa-info-circle" },
-      { name: "Portfolio", path: "/portfolio", icon: "fas fa-briefcase" }
-    ]
-  };
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setMobileServicesOpen(false);
-    setMobileCompanyOpen(false);
   };
 
   return (
     <header className="header">
       <nav className="navbar">
         <div className="nav-container">
+
           <div className="logo">
             <Link to="/" className="logo-link">
               <img
@@ -85,7 +85,7 @@ const Header = () => {
 
           <div className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
             <ul className="nav-links">
-              {/* Home */}
+
               <li className="nav-item">
                 <NavLink
                   to="/"
@@ -105,74 +105,16 @@ const Header = () => {
                   About Us
                 </NavLink>
               </li>
-              
 
-              {/* Company Desktop */}
-              {/* <li
-                className={`nav-item dropdown desktop-only ${companyDropdownOpen ? 'open' : ''}`}
-                onMouseEnter={() => setCompanyDropdownOpen(true)}
-                onMouseLeave={() => setCompanyDropdownOpen(false)}
-              >
-                <span className="dropdown-toggle">
-                  Company <i className={`fas fa-chevron-${companyDropdownOpen ? 'up' : 'down'}`}></i>
-                </span>
-                <div className="dropdown-menu company-dropdown">
-                  <div className="company-dropdown-content">
-                    <div className="company-main-links">
-                      {companyData.mainItems.map((item, index) => (
-                        <NavLink
-                          key={index}
-                          to={item.path}
-                          className="company-link"
-                          onClick={closeMobileMenu}
-                        >
-                          <i className={item.icon}></i>
-                          <div className="company-link-text">
-                            <span className="link-title">{item.name}</span>
-                          </div>
-                        </NavLink>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </li> */}
-
-              {/* Company Mobile */}
-              {/* <li className="nav-item mobile-only">
-                <div className="mobile-dropdown">
-                  <div
-                    className="mobile-dropdown-toggle"
-                    onClick={() => setMobileCompanyOpen(!mobileCompanyOpen)}
-                  >
-                    <span>Company</span>
-                    <i className={`fas ${mobileCompanyOpen ? 'fa-minus' : 'fa-plus'}`}></i>
-                  </div>
-                  <div className={`mobile-dropdown-menu ${mobileCompanyOpen ? 'open' : ''}`}>
-                    <div className="mobile-company-links">
-                      {companyData.mainItems.map((item, index) => (
-                        <NavLink
-                          key={index}
-                          to={item.path}
-                          className="mobile-company-link"
-                          onClick={closeMobileMenu}
-                        >
-                          <i className={item.icon}></i>
-                          <span className="link-title">{item.name}</span>
-                        </NavLink>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </li> */}
-
-              {/* Services Desktop */}
+              {/* Services — Desktop */}
               <li
                 className={`nav-item dropdown desktop-only ${servicesDropdownOpen ? 'open' : ''}`}
                 onMouseEnter={() => setServicesDropdownOpen(true)}
                 onMouseLeave={() => setServicesDropdownOpen(false)}
               >
                 <span className="dropdown-toggle">
-                  Services <i className={`fas fa-chevron-${servicesDropdownOpen ? 'up' : 'down'}`}></i>
+                  Services{" "}
+                  <i className={`fas fa-chevron-${servicesDropdownOpen ? 'up' : 'down'}`}></i>
                 </span>
                 <div className="dropdown-menu">
                   <div className="dropdown-grid">
@@ -194,7 +136,7 @@ const Header = () => {
                 </div>
               </li>
 
-              {/* Services Mobile */}
+              {/* Services — Mobile */}
               <li className="nav-item mobile-only">
                 <div className="mobile-dropdown">
                   <div
@@ -222,7 +164,6 @@ const Header = () => {
                   </div>
                 </div>
               </li>
-              
 
               <li className="nav-item">
                 <NavLink
@@ -233,7 +174,7 @@ const Header = () => {
                   Hire Resource
                 </NavLink>
               </li>
-                
+
               <li className="nav-item">
                 <NavLink
                   to="/portfolio"
@@ -243,7 +184,7 @@ const Header = () => {
                   Portfolio
                 </NavLink>
               </li>
-              
+
               <li className="nav-item">
                 <NavLink
                   to="/product"
@@ -263,8 +204,7 @@ const Header = () => {
                   Blog
                 </NavLink>
               </li>
-              
-              {/* Careers */}
+
               <li className="nav-item">
                 <NavLink
                   to="/career"
@@ -275,7 +215,6 @@ const Header = () => {
                 </NavLink>
               </li>
 
-              {/* Contact */}
               <li className="nav-item">
                 <NavLink
                   to="/contact"
@@ -286,8 +225,6 @@ const Header = () => {
                 </NavLink>
               </li>
 
-              {/* Hire Source */}
-              
             </ul>
 
             <NavLink to="/contact" className="nav-cta" onClick={closeMobileMenu}>
@@ -301,6 +238,7 @@ const Header = () => {
           >
             <i className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
           </div>
+
         </div>
       </nav>
     </header>

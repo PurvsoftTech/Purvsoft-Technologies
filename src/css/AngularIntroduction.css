@@ -72,7 +72,7 @@
   color: var(--ai-text-dark);
 }
 
-.ai-gradient-text {
+.ai-brand-gradient {
   background: var(--ai-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -128,6 +128,7 @@
   font-weight: 500;
   transition: all 0.3s ease;
   box-shadow: var(--ai-shadow-md);
+  border: none;
 }
 
 .ai-btn-primary:hover {

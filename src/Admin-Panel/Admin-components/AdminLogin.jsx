@@ -24,12 +24,12 @@ const AdminLogin = () => {
 
     try {
       const result = await login(email.trim(), password);
-      console.log("login result:", result);
+      // console.log("login result:", result);
 
       if (result.success) {
         toast.success("Login successful! Redirecting...");
         // Token is now stored as new token every time
-        console.log("Token after login:", localStorage.getItem("apiToken"));
+        // console.log("Token after login:", localStorage.getItem("apiToken"));
         navigate("/admin/dashboard"); // Change to BlogForm route if needed
       } else {
         const msg =

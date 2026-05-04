@@ -1,0 +1,48 @@
+Website: Purvsoft Technologies
+URL: https://purvsoft.com
+
+About:
+Purvsoft Technologies is a digital marketing and web development company providing advanced SEO, paid marketing, and custom software solutions for businesses and startups.
+
+Services:
+
+Core Services:
+- Digital Marketing (https://purvsoft.com/services/digital-marketing)
+- SEO Services (https://purvsoft.com/services/seo)
+- Website Development (https://purvsoft.com/services/website-development)
+- Custom Software Development (https://purvsoft.com/services/custom-software-development)
+- Content Management (https://purvsoft.com/services/content-management)
+- Mobile App Development (https://purvsoft.com/services/mobile-app-development)
+- E-commerce Development (https://purvsoft.com/services/e-commerce-development)
+
+Technology Services:
+- ReactJS Development (https://purvsoft.com/services/reactjs-development)
+- Next.js Development (https://purvsoft.com/services/nextjs-development)
+- Angular Development (https://purvsoft.com/services/angular-development)
+- Shopify Development (https://purvsoft.com/services/shopify-development)
+- Flutter Development (https://purvsoft.com/services/flutter-development)
+- Laravel Development (https://purvsoft.com/services/laravel-development)
+- Node.js Development (https://purvsoft.com/services/nodejs-development)
+
+Marketing Services:
+- YouTube Marketing (https://purvsoft.com/services/youtube-marketing)
+- Meta Ads (https://purvsoft.com/services/meta-ads)
+- Google Ads (https://purvsoft.com/services/google-ads)
+
+Additional:
+- AI Automation (https://purvsoft.com/services/ai-automation)
+- Business Challenges (https://purvsoft.com/services/our-challenges)
+
+Other Pages:
+- Blog (https://purvsoft.com/blog)
+- Portfolio (https://purvsoft.com/portfolio)
+- Contact (https://purvsoft.com/contact)
+
+Target Audience:
+Startups, small businesses, and enterprises looking to grow online using SEO, paid ads, and web solutions.
+
+Expertise:
+SEO, Performance Marketing, Web Development, Branding, Automation
+
+Contact:
+https://purvsoft.com/contact

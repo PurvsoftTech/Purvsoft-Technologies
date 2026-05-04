@@ -111,8 +111,7 @@ const AccountCenter = () => {
                   <img
                     src={
                       profileImageFile ||
-                      user?.profileImage ||
-                      "https://via.placeholder.com/150"
+                      user?.profileImage
                     }
                     alt="Profile"
                     className="admin-profile-avatar"

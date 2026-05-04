@@ -70,7 +70,7 @@
   color: var(--fd-text-dark);
 }
 
-.fd-gradient-text {
+.fd-brand-gradient {
   background: var(--fd-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -126,6 +126,7 @@
   font-weight: 500;
   transition: all 0.3s ease;
   box-shadow: var(--fd-shadow-md);
+  border: none;
 }
 
 .fd-btn-primary:hover {

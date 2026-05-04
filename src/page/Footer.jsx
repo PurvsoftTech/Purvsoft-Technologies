@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import image from '../image/Pursoft_Logo.png';
 import contactConfig from "../config/Allsend";
 
@@ -7,18 +8,21 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-grid">
+
           {/* Company Info */}
           <div className="footer-col">
-            <img
-              src={image}
-              alt="PurvSoft Technologies"
-              className="logo-image"
-              width={130}
-              style={{ borderRadius: "10px" }}
-            />
+            <Link to="/">
+              <img
+                src={image}
+                alt="PurvSoft Technologies"
+                className="logo-image"
+                width={130}
+                style={{ borderRadius: "10px" }}
+              />
+            </Link>
             <p className="footer-description">
-              8+ years of web and mobile app expertise with 400+ projects delivered. 
-              Our skilled team transforms your ideas into digital success. 
+              8+ years of web and mobile app expertise with 400+ projects delivered.
+              Our skilled team transforms your ideas into digital success.
               Your trusted development partner.
             </p>
           </div>
@@ -27,17 +31,18 @@ const Footer = () => {
           <div className="footer-col">
             <h4>Our Services</h4>
             <ul className="footer-links">
-              <li><a href="/services/digital-marketing">Digital Marketing</a></li>
-              <li><a href="/services/seo">SEO</a></li>
-              <li><a href="/services/custom-software-development">Custom Software Development</a></li>
-              <li><a href="/services/content-management">Content Management</a></li>
-              <li><a href="/services/website-development">Web Design & Development</a></li>
-              <li><a href="/service/mobile-app-development">Mobile App Development</a></li>
-              <li><a href="/services/e-commerce-development">eCommerce Development</a></li>
-              <li><a href="/services/youtube-marketing">Youtube Ads</a></li>
-              <li><a href="/services/meta-ads">Meta Ads</a></li>
-              <li><a href="/services/google-ads">Google Ads</a></li>
-              <li><a href="/services/our-challenges">Our Challenges</a></li>
+              <li><Link to="/services/digital-marketing">Digital Marketing</Link></li>
+              <li><Link to="/services/seo">SEO</Link></li>
+              <li><Link to="/services/custom-software-development">Custom Software Development</Link></li>
+              <li><Link to="/services/content-management">Content Management</Link></li>
+              <li><Link to="/services/website-development">Web Design &amp; Development</Link></li>
+              <li><Link to="/services/mobile-app-development">Mobile App Development</Link></li>
+              <li><Link to="/services/e-commerce-development">eCommerce Development</Link></li>
+              <li><Link to="/services/youtube-marketing">Youtube Ads</Link></li>
+              <li><Link to="/services/meta-ads">Meta Ads</Link></li>
+              <li><Link to="/services/google-ads">Google Ads</Link></li>
+              <li><Link to="/services/our-challenges">Our Challenges</Link></li>
+              <li><Link to="/services/ai-automation">AI Automation</Link></li>
             </ul>
           </div>
 
@@ -45,13 +50,14 @@ const Footer = () => {
           <div className="footer-col">
             <h4>Hire Resource</h4>
             <ul className="footer-links">
-              <li><a href="/hire-resource">React Developer</a></li>
-              <li><a href="/hire-resource">Laravel Developer</a></li>
-              <li><a href="/hire-resource">Node.js Developer</a></li>
-              <li><a href="/hire-resource">Flutter Developer</a></li>
-              <li><a href="/hire-resource">UI/UX Designer</a></li>
-              <li><a href="/hire-resource">SEO Expert</a></li>
-              <li><a href="/hire-resource">Digital Marketing Expert</a></li>
+              <li><Link to="/hire-resource">React Developer</Link></li>
+              <li><Link to="/hire-resource">Laravel Developer</Link></li>
+              <li><Link to="/hire-resource">Node.js Developer</Link></li>
+              <li><Link to="/hire-resource">Flutter Developer</Link></li>
+              <li><Link to="/hire-resource">UI/UX Designer</Link></li>
+              <li><Link to="/hire-resource">SEO Expert</Link></li>
+              <li><Link to="/hire-resource">Digital Marketing Expert</Link></li>
+              <li><Link to="/hire-resource">AI &amp; Automation</Link></li>
             </ul>
           </div>
 
@@ -59,13 +65,13 @@ const Footer = () => {
           <div className="footer-col">
             <h4>Important Links</h4>
             <ul className="footer-links">
-              <li><a href="/aboutus">About</a></li>
-              <li><a href="/hire-resource">Hire Resource</a></li>
-              <li><a href="/portfolio">Portfolio</a></li>
-              <li><a href="/product">Product</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/career">Career</a></li>
-              <li><a href="/contact">Contact Us</a></li>
+              <li><Link to="/aboutus">About</Link></li>
+              <li><Link to="/hire-resource">Hire Resource</Link></li>
+              <li><Link to="/portfolio">Portfolio</Link></li>
+              <li><Link to="/product">Product</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/career">Career</Link></li>
+              <li><Link to="/contact">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -77,21 +83,40 @@ const Footer = () => {
               <p><i className="fas fa-envelope"></i> {contactConfig.email}</p>
               <p><i className="fas fa-map-marker-alt"></i> {contactConfig.address}</p>
             </div>
-            
+
             <div className="social-links">
-              <a href="https://www.linkedin.com/company/purvsoft-tech/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/company/purvsoft-tech/posts/?feedView=all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-linkedin"></i>
               </a>
-              <a href="https://www.instagram.com/purv_soft/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.instagram.com/purv_soft/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-instagram"></i>
               </a>
             </div>
           </div>
+
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2024 Purvsoft Technologies. All rights reserved.</p>
+          <p>
+            &copy; 2026{" "}
+            <a
+              href="https://www.purvsoft.com/"
+              rel="noopener noreferrer"
+            >
+              Purvsoft Technologies
+            </a>
+            . All rights reserved.
+          </p>
         </div>
+
       </div>
     </footer>
   );

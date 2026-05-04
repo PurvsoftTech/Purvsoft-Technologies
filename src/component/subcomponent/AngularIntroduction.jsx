@@ -6,21 +6,16 @@ import {
   RefreshCw,
   Globe,
   Users,
-  Star,
   Rocket,
   Shield,
   Cpu,
   Terminal,
-  BookOpen,
+  
   CheckCircle,
   ArrowRight,
   Clock,
   Award,
   Heart,
-  Github,
-  Twitter,
-  Youtube,
-  FileText,
 } from 'lucide-react';
 import '../../css/AngularIntroduction.css';
 import { Helmet} from 'react-helmet-async';
@@ -237,70 +232,261 @@ export class DataService {
     }
   ];
 
-  const resources = [
-    { name: "Official Docs", icon: <BookOpen size={16} />, url: "#" },
-    { name: "GitHub", icon: <Github size={16} />, url: "#" },
-    { name: "Angular Blog", icon: <FileText size={16} />, url: "#" },
-    { name: "YouTube", icon: <Youtube size={16} />, url: "#" }
-  ];
+  // JSON-LD Structured Data for Angular Services
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Angular Development Services in Ahmedabad",
+    "url": "https://www.purvsoft.com/services/angular",
+    "provider": {
+      "@type": "Organization",
+      "name": "Purvsoft Technologies",
+      "url": "https://www.purvsoft.com",
+      "logo": "https://www.purvsoft.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ahmedabad",
+        "addressRegion": "Gujarat",
+        "addressCountry": "India"
+      }
+    },
+    "description": "Professional Angular development services in Ahmedabad, India. Build scalable, maintainable, and high-performance web applications with Angular framework for enterprises and startups.",
+    "serviceType": [
+      "Angular Web Development",
+      "Angular Migration Services",
+      "Enterprise Angular Solutions",
+      "Custom Angular Applications",
+      "Angular Consulting"
+    ],
+    "areaServed": "Ahmedabad, Gujarat, India",
+    "audience": {
+      "@type": "BusinessAudience"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "USD",
+        "price": "Custom"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.purvsoft.com/services/angular"
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.purvsoft.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.purvsoft.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Angular Development",
+        "item": "https://www.purvsoft.com/services/angular"
+      }
+    ]
+  };
+
+  const organizationStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Purvsoft Technologies",
+    "url": "https://www.purvsoft.com",
+    "logo": "https://www.purvsoft.com/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "addressCountry": "India"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Hindi"]
+    }
+  };
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Angular used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Angular is used for building single-page applications (SPAs), enterprise web applications, progressive web apps (PWAs), and complex dynamic websites."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Angular good for large applications?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Angular is specifically designed for large-scale enterprise applications with features like dependency injection, modules, and TypeScript support."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does Angular development cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Angular development cost depends on project complexity, features, and timeline. Contact us for a custom quote based on your requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there an Angular development company in Ahmedabad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Purvsoft Technologies is a leading Angular development company in Ahmedabad, Gujarat, offering enterprise Angular solutions and hiring Angular developers."
+        }
+      }
+    ]
+  };
 
   return (
     <div className="ai-container">
       <Helmet>
-      <title>Angular Development Services | Purvsoft Technologies</title>
-      <meta name="description" content="Purvsoft Technologies delivers robust Angular web applications for enterprises and startups. Scalable, maintainable, and high-performance Angular development services." />
-      <meta name="keywords" content="Angular development, AngularJS, Angular web app, hire Angular developer, enterprise web development India" />
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <link rel="canonical" href="https://www.purvsoft.com/services/angular" />
- 
-      <meta property="og:title" content="Angular Development Services | Purvsoft Technologies" />
-      <meta property="og:description" content="Robust and scalable Angular web applications for enterprises and startups." />
-      <meta property="og:url" content="https://www.purvsoft.com/services/angular" />
-      <meta property="og:image" content="https://www.purvsoft.com/og-image.jpg" />
- 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Angular Development | Purvsoft Technologies" />
-      <meta name="twitter:description" content="High-performance Angular development services by Purvsoft Technologies." />
-    </Helmet>
+        {/* Primary Meta Tags - Optimized for Top Keywords */}
+        <title>Angular Development Company in Ahmedabad | Hire Angular Developer | Purvsoft</title>
+        <meta name="title" content="Angular Development Company in Ahmedabad | Hire Angular Developer | Purvsoft" />
+        <meta name="description" content="Purvsoft Technologies is a leading Angular development company in Ahmedabad, Gujarat. Hire expert Angular developers for scalable web applications, migration, and custom enterprise solutions." />
+        <meta name="keywords" content="Angular development company in Ahmedabad, best angular development company in ahmedabad, angular developer company in ahmedabad, angular development company in india, angular developer ahmedabad, angular company ahmedabad, top angular development company in ahmedabad, Angular development services, Angular web application development, hire Angular developer, AngularJS development company, enterprise Angular solutions, Angular migration services, custom Angular applications, Angular UI development, Angular consulting services, Angular performance optimization" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="author" content="Purvsoft Technologies" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+        
+        {/* Canonical URL - Critical for fixing duplicate issues */}
+        <link rel="canonical" href="https://www.purvsoft.com/services/angular" />
+        
+        {/* Alternate language versions */}
+        <link rel="alternate" href="https://www.purvsoft.com/services/angular" hrefLang="x-default" />
+        
+        {/* Open Graph / Facebook Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.purvsoft.com/services/angular" />
+        <meta property="og:title" content="Angular Development Company in Ahmedabad | Enterprise Web Apps | Purvsoft" />
+        <meta property="og:description" content="Professional Angular development services in Ahmedabad, Gujarat. Scalable, maintainable, and high-performance web applications. Hire expert Angular developers for your enterprise projects." />
+        <meta property="og:image" content="https://www.purvsoft.com/og-angular-development.jpg" />
+        <meta property="og:image:alt" content="Angular Development Services - Enterprise Web Applications in Ahmedabad" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Purvsoft Technologies" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.purvsoft.com/services/angular" />
+        <meta name="twitter:title" content="Angular Development Company in Ahmedabad | Purvsoft" />
+        <meta name="twitter:description" content="Expert Angular development for enterprise web applications in Ahmedabad. Scalable, maintainable, and high-performance solutions." />
+        <meta name="twitter:image" content="https://www.purvsoft.com/twitter-angular-development.jpg" />
+        <meta name="twitter:image:alt" content="Angular Development Services" />
+        
+        {/* Verification tags */}
+        <meta name="google-site-verification" content="MjMKilzhOmqr6Txi7pbjACF6g_hSt-B6Ej496yJyrH0" />
+        <meta name="msvalidate.01" content="AD0DF443696FB452E952416667F1A8DC" />
+        
+        {/* Geographic Meta Tags - Ahmedabad, Gujarat (FIXED) */}
+        <meta name="geo.region" content="IN-GJ" />
+        <meta name="geo.placename" content="Ahmedabad, Gujarat, India" />
+        <meta name="geo.position" content="23.0225;72.5714" />
+        <meta name="ICBM" content="23.0225, 72.5714" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="distribution" content="global" />
+        <meta name="rating" content="general" />
+        <meta name="copyright" content="Purvsoft Technologies" />
+        <meta name="business:contact_data:country_name" content="India" />
+        <meta name="business:contact_data:locality" content="Ahmedabad" />
+        
+        {/* Mobile Optimization */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="theme-color" content="#2563eb" />
+        
+        {/* Prevent noindex issues */}
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(organizationStructuredData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(faqStructuredData)}
+      </script>
+
       {/* Hero Section */}
-      <section className="ai-hero">
+      <section className="ai-hero" aria-label="Angular Development Services Hero Section">
         <div className="ai-wrapper">
           <div className="ai-hero-grid">
-            <div className="ai-hero-content">
+            <div className="ai-hero-content" data-aos="fade-right">
               <div className="ai-badge">
                 <Code size={14} />
-                <span>Angular Introduction</span>
+                <span>Angular Development Company in Ahmedabad</span>
               </div>
               <h1>
-                The Complete Framework for <br />
-                <span className="ai-gradient-text">Modern Web Apps</span>
+                Professional <span className="ai-brand-gradient">Angular Development</span> Services in Ahmedabad
               </h1>
               <p className="ai-hero-description">
-                Angular is a platform and framework for building single-page client applications 
-                using HTML and TypeScript. It combines declarative templates, dependency injection, 
-                and powerful tooling to create scalable enterprise applications.
+                Purvsoft Technologies delivers robust, scalable, and maintainable Angular web applications in Ahmedabad, Gujarat. 
+                As a leading Angular development company, we help enterprises build high-performance single-page 
+                applications with TypeScript, RxJS, and modern Angular features.
               </p>
               <div className="ai-hero-stats">
-                <div className="ai-stat-item">
+                <div className="ai-stat-item" data-aos="fade-up" data-aos-delay="0">
                   <span className="ai-stat-number">90K+</span>
                   <span className="ai-stat-label">GitHub Stars</span>
                 </div>
-                <div className="ai-stat-item">
+                <div className="ai-stat-item" data-aos="fade-up" data-aos-delay="50">
                   <span className="ai-stat-number">2M+</span>
                   <span className="ai-stat-label">Weekly Downloads</span>
                 </div>
-                <div className="ai-stat-item">
-                  <span className="ai-stat-number">1000+</span>
-                  <span className="ai-stat-label">Contributors</span>
+                <div className="ai-stat-item" data-aos="fade-up" data-aos-delay="100">
+                  <span className="ai-stat-number">100+</span>
+                  <span className="ai-stat-label">Projects Delivered</span>
                 </div>
               </div>
               <div className="ai-hero-buttons">
-                <a href="#form" className="ai-btn-primary">
-                  Contact Us <ArrowRight size={18} />
-                </a>
-              </div>
+              <button
+                className="ai-btn-primary"
+                onClick={() => {
+                  const section = document.getElementById("form");
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                aria-label="Contact us for Angular development"
+              >
+                Hire Angular Developer in Ahmedabad <ArrowRight size={18} />
+              </button>
             </div>
-            <div className="ai-hero-visual">
+            </div>
+            <div className="ai-hero-visual" data-aos="fade-left">
               <div className="ai-code-block">
                 <div className="ai-code-header">
                   <span className="ai-dot ai-dot-red"></span>
@@ -344,47 +530,55 @@ export class DataService {
       </section>
 
       {/* Quick Navigation */}
-      <section className="ai-nav-section">
+      <section className="ai-nav-section" aria-label="Angular Learning Navigation">
         <div className="ai-wrapper">
           <div className="ai-nav-tabs">
             <button 
               className={`ai-nav-tab ${activeTab === 'what' ? 'ai-active' : ''}`}
               onClick={() => setActiveTab('what')}
+              aria-pressed={activeTab === 'what'}
             >
               What is Angular?
             </button>
             <button 
               className={`ai-nav-tab ${activeTab === 'why' ? 'ai-active' : ''}`}
               onClick={() => setActiveTab('why')}
+              aria-pressed={activeTab === 'why'}
             >
               Why Angular?
             </button>
             <button 
               className={`ai-nav-tab ${activeTab === 'concepts' ? 'ai-active' : ''}`}
               onClick={() => setActiveTab('concepts')}
+              aria-pressed={activeTab === 'concepts'}
             >
               Core Concepts
             </button>
             <button 
               className={`ai-nav-tab ${activeTab === 'compare' ? 'ai-active' : ''}`}
               onClick={() => setActiveTab('compare')}
+              aria-pressed={activeTab === 'compare'}
             >
-              Comparison
+              Framework Comparison
             </button>
           </div>
 
           <div className="ai-tab-content">
             {activeTab === 'what' && (
-              <div className="ai-what-content">
-                <h2>What is Angular?</h2>
+              <div className="ai-what-content" data-aos="fade-up">
+                <div className="section-header">
+                  <p className="section-subtitle">Introduction</p>
+                  <h2>What is <span className="brand-gradient">Angular?</span></h2>
+                </div>
                 <p className="ai-lead-text">
                   Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google. 
-                  It's a complete rewrite from the same team that built AngularJS.
+                  It's a complete rewrite from the same team that built AngularJS, designed specifically for building 
+                  large-scale enterprise applications with maintainability and performance in mind.
                 </p>
                 <div className="ai-features-grid">
                   {features.map((feature, index) => (
-                    <div key={index} className="ai-feature-card">
-                      <div className="ai-feature-icon">{feature.icon}</div>
+                    <div key={index} className="ai-feature-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                      <div className="ai-feature-icon" aria-hidden="true">{feature.icon}</div>
                       <h3>{feature.title}</h3>
                       <p>{feature.desc}</p>
                     </div>
@@ -394,12 +588,16 @@ export class DataService {
             )}
 
             {activeTab === 'why' && (
-              <div className="ai-why-content">
-                <h2>Why Choose Angular?</h2>
+              <div className="ai-why-content" data-aos="fade-up">
+                <div className="section-header">
+                  <p className="section-subtitle">Benefits</p>
+                  <h2>Why Choose <span className="brand-gradient">Angular?</span></h2>
+                  <p className="ai-section-subtitle">Discover why leading enterprises choose Angular for their web applications</p>
+                </div>
                 <div className="ai-advantages-grid">
                   {advantages.map((adv, index) => (
-                    <div key={index} className="ai-advantage-card">
-                      <div className="ai-advantage-icon">{adv.icon}</div>
+                    <div key={index} className="ai-advantage-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                      <div className="ai-advantage-icon" aria-hidden="true">{adv.icon}</div>
                       <div>
                         <h3>{adv.title}</h3>
                         <p>{adv.desc}</p>
@@ -411,14 +609,18 @@ export class DataService {
             )}
 
             {activeTab === 'concepts' && (
-              <div className="ai-concepts-content">
-                <h2>Core Angular Concepts</h2>
+              <div className="ai-concepts-content" data-aos="fade-up">
+                <div className="section-header">
+                  <p className="section-subtitle">Fundamentals</p>
+                  <h2>Core <span className="brand-gradient">Angular Concepts</span></h2>
+                  <p className="ai-section-subtitle">Understanding the building blocks of Angular applications</p>
+                </div>
                 <div className="ai-concepts-grid">
                   {concepts.map((concept, index) => (
-                    <div key={index} className="ai-concept-card">
+                    <div key={index} className="ai-concept-card" data-aos="fade-up" data-aos-delay={index * 50}>
                       <h3>{concept.title}</h3>
                       <p>{concept.desc}</p>
-                      <pre className="ai-code-block">
+                      <pre className="ai-code-block" aria-label={`${concept.title} code example`}>
                         <code>{concept.example}</code>
                       </pre>
                     </div>
@@ -428,8 +630,12 @@ export class DataService {
             )}
 
             {activeTab === 'compare' && (
-              <div className="ai-compare-content">
-                <h2>Angular vs React vs Vue</h2>
+              <div className="ai-compare-content" data-aos="fade-up">
+                <div className="section-header">
+                  <p className="section-subtitle">Analysis</p>
+                  <h2>Angular vs React <span className="brand-gradient">vs Vue</span></h2>
+                  <p className="ai-section-subtitle">Compare the most popular JavaScript frameworks</p>
+                </div>
                 <div className="ai-comparison-table">
                   <div className="ai-comparison-row ai-header">
                     <span>Feature</span>
@@ -462,23 +668,23 @@ export class DataService {
       </section>
 
       {/* Getting Started Section */}
-      <section className="ai-getting-started">
+      <section className="ai-getting-started" aria-label="Getting Started with Angular">
         <div className="ai-wrapper">
           <div className="ai-section-header">
-            <h6 className="ai-section-subtitle">Getting Started</h6>
+            <p className="ai-section-subtitle">Quick Start Guide</p>
             <h2 className="ai-section-title">
-              Start Building with <span className="ai-gradient-text">Angular Today</span>
+              Start Building with <span className="ai-brand-gradient">Angular Today</span>
             </h2>
             <p className="ai-section-description">
-              Follow these simple steps to create your first Angular application.
+              Follow these simple steps to create your first Angular application and begin your development journey.
             </p>
           </div>
 
           <div className="ai-steps-grid">
             {gettingStarted.map((step, index) => (
-              <div key={index} className="ai-step-card">
+              <div key={index} className="ai-step-card" data-aos="fade-up" data-aos-delay={index * 50}>
                 <div className="ai-step-number">{step.step}</div>
-                <Terminal size={24} className="ai-step-icon" />
+                <Terminal size={24} className="ai-step-icon" aria-hidden="true" />
                 <h3>{step.title}</h3>
                 <p>{step.desc}</p>
               </div>
@@ -488,23 +694,7 @@ export class DataService {
       </section>
 
       {/* Resources Section */}
-      <section className="ai-resources">
-        <div className="ai-wrapper">
-          <div className="ai-resources-content">
-            <h2>Learn More About Angular</h2>
-            <p>Explore official documentation and community resources</p>
-            <div className="ai-resources-grid">
-              {resources.map((resource, index) => (
-                <a key={index} href={resource.url} className="ai-resource-link">
-                  {resource.icon}
-                  <span>{resource.name}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
+     
       {/* CTA Section */}
       <div id="form">
         <Form />

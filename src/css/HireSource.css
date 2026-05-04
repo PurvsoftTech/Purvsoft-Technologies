@@ -289,3 +289,387 @@
     justify-content: center;
   }
 }
+
+/* ============================================
+   New SEO Sections CSS (No Design Change)
+   ============================================ */
+
+/* Section Header Styles */
+.hs-section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hs-section-subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #4361ee;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hs-section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+}
+
+.hs-section-desc {
+  font-size: 18px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hs-highlight {
+  background: linear-gradient(135deg, #4361ee 0%, #4361ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Tech Stack Section */
+.hs-tech-stack {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+
+.hs-tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hs-tech-item {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.hs-tech-item svg {
+  color: #4361ee;
+}
+
+/* Hiring Models Section */
+.hs-models {
+  padding: 60px 0;
+  background: white;
+}
+
+.hs-models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hs-model-card {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.hs-model-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hs-model-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.hs-model-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* FAQ Section */
+.hs-faq {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+
+.hs-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .hs-faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hs-faq-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.hs-faq-question {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+}
+
+.hs-faq-answer {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Hero Buttons */
+.hs-hero-buttons {
+  margin-top: 30px;
+}
+
+.hs-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #4361ee 0%, #4361ee 100%);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.hs-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(91, 60, 196, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hs-section-title {
+    font-size: 28px;
+  }
+  
+  .hs-section-desc {
+    font-size: 16px;
+  }
+  
+  .hs-tech-item {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+  
+  .hs-model-card {
+    padding: 20px;
+  }
+  
+  .hs-faq-card {
+    padding: 20px;
+  }
+  
+  .hs-faq-question {
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   Internal Links Styles for HireSource
+   ============================================ */
+
+/* Secondary Button */
+.hs-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 2px solid #4361ee;
+  color: #4361ee;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+}
+
+.hs-btn-secondary:hover {
+  background: #4361ee;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Offer Card Links */
+.hs-offer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 15px;
+  color: #4361ee;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.hs-offer-link:hover {
+  gap: 10px;
+  color: #4361ee;
+}
+
+/* Tech Stack Items as Links */
+.hs-tech-item {
+  background: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.hs-tech-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(91, 60, 196, 0.15);
+  color: #4361ee;
+}
+
+.hs-tech-item svg {
+  color: #4361ee;
+}
+
+/* Internal Links Section */
+.hs-internal-links {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.internal-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.links-column h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #4361ee;
+  display: inline-block;
+}
+
+.links-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links-column ul li {
+  margin-bottom: 12px;
+}
+
+.links-column ul li a {
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.links-column ul li a:hover {
+  color: #4361ee;
+  transform: translateX(5px);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+}
+
+.section-header p {
+  font-size: 18px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #4361ee 0%, #4361ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero Buttons Container */
+.hs-hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .internal-links-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .section-header h2 {
+    font-size: 28px;
+  }
+  
+  .hs-btn-secondary {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .hs-offer-link {
+    font-size: 12px;
+  }
+  
+  .hs-hero-buttons {
+    flex-direction: column;
+  }
+  
+  .hs-btn-secondary {
+    margin-left: 0;
+  }
+}

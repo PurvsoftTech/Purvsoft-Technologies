@@ -12,7 +12,7 @@ const AdminHeader = () => {
       <header className="admin-header">
         <div className="admin-header-content">
           <div className="admin-header-left">
-            <h2 className="admin-header-title">IT-Solution-Animated</h2>
+            <h2 className="admin-header-title">Purvsoft Technologies</h2>
           </div>
 
           <div className="admin-header-right">

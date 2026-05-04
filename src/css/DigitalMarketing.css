@@ -52,7 +52,7 @@
   color: var(--text-dark);
 }
 
-.gradient-text {
+.brand-gradient {
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -84,6 +84,7 @@
   font-weight: 500;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-md);
+  border: none;
 }
 
 .btn-primary:hover {
@@ -641,3 +642,70 @@
 .cat { animation-delay: 0.4s; }
 .couch-group { animation-delay: 0.6s; }
 .plant { animation-delay: 0.8s; }
+
+/* ===== Why Choose Us Section ===== */
+.why-us-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.why-us-card {
+  background: #f8f9ff;
+  border: 1px solid #e8eaf6;
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left accent bar on hover */
+.why-us-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 4px 0 0 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.why-us-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.12);
+  border-color: #c7d2fe;
+  background: #ffffff;
+}
+
+.why-us-card:hover::before {
+  opacity: 1;
+}
+
+.why-us-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.why-us-card p {
+  font-size: 0.93rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+}

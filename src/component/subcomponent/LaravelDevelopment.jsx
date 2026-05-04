@@ -60,6 +60,9 @@ const LaravelDevelopment = () => {
       desc: "Expressive, elegant routing syntax with resource controllers and API support."
     }
   ];
+  const scrollToForm = () => {
+  document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+};
 
   const benefits = [
     {
@@ -90,7 +93,7 @@ const LaravelDevelopment = () => {
     {
       icon: <Heart size={24} />,
       title: "Long-term Support",
-      cnt: "Regular updates and LTS versions for enterprise stability."
+      desc: "Regular updates and LTS versions for enterprise stability."
     }
   ];
 
@@ -216,86 +219,240 @@ const LaravelDevelopment = () => {
 
   const stats = [
     { icon: <Star size={24} />, value: "70K+", label: "GitHub Stars" },
-    { icon: <Users size={24} />, value: "1M+", label: "Developers" },
+    { icon: <Users size={24} />, value: "1M+", label: "Developers Worldwide" },
     { icon: <Award size={24} />, value: "100K+", label: "Sites Built" },
     { icon: <Globe size={24} />, value: "4.9", label: "Developer Rating" }
   ];
 
   const faqs = [
     {
-      question: "What is Laravel?",
-      answer: "Laravel is a PHP web application framework with expressive, elegant syntax. It provides tools and resources to build modern PHP applications."
+      question: "What is Laravel and why should I use it?",
+      answer: "Laravel is a PHP web application framework with expressive, elegant syntax. It provides tools and resources to build modern PHP applications faster, more securely, and with better code organization."
     },
     {
-      question: "Is Laravel good for large applications?",
-      answer: "Yes! Laravel is highly scalable and used by many enterprise companies. It handles millions of users with caching, queues, and optimization features."
+      question: "Is Laravel good for large enterprise applications?",
+      answer: "Yes! Laravel is highly scalable and used by many enterprise companies worldwide. It handles millions of users with caching, queues, database optimization, and horizontal scaling capabilities."
     },
     {
       question: "How long does Laravel development take?",
-      answer: "Timeline varies by complexity. Simple CRUD apps take 2-3 weeks, complex enterprise systems take 2-4 months."
+      answer: "Timeline varies by complexity. Simple CRUD applications take 2-3 weeks, while complex enterprise systems with custom features take 2-4 months. We provide detailed timelines during consultation."
     },
     {
-      question: "Do you provide ongoing support?",
-      answer: "Yes, we offer maintenance packages including updates, security patches, and performance optimization."
+      question: "Do you provide ongoing support and maintenance?",
+      answer: "Yes, we offer comprehensive maintenance packages including security updates, bug fixes, performance optimization, and feature enhancements for your Laravel applications."
+    },
+    {
+      question: "Are there Laravel jobs available in Ahmedabad?",
+      answer: "Yes, Purvsoft Technologies regularly hires Laravel developers in Ahmedabad. We have openings for Laravel fresher jobs, PHP Laravel developer jobs, senior Laravel developer positions, remote Laravel jobs, and work from home opportunities."
     }
   ];
+
+  // JSON-LD Structured Data for Laravel Development Services
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Laravel Development Services in Ahmedabad",
+    "provider": {
+      "@type": "Organization",
+      "name": "Purvsoft Technologies",
+      "url": "https://www.purvsoft.com",
+      "logo": "https://www.purvsoft.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ahmedabad",
+        "addressRegion": "Gujarat",
+        "addressCountry": "India"
+      }
+    },
+    "description": "Professional Laravel PHP development services in Ahmedabad, India. Build secure, scalable, and high-performance web applications, REST APIs, and backend systems.",
+    "serviceType": ["Laravel Web Development", "REST API Development", "Laravel E-commerce", "SaaS Development", "Laravel Migration"],
+    "areaServed": "Ahmedabad, Gujarat, India",
+    "audience": {
+      "@type": "BusinessAudience"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "USD",
+        "price": "Custom"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.purvsoft.com/services/laravel"
+    }
+  };
+
+  const organizationStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Purvsoft Technologies",
+    "url": "https://www.purvsoft.com",
+    "logo": "https://www.purvsoft.com/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "addressCountry": "India"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Hindi"]
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.purvsoft.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.purvsoft.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Laravel Development",
+        "item": "https://www.purvsoft.com/services/laravel"
+      }
+    ]
+  };
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
 
   return (
     <div className="lv-container">
       <Helmet>
-      <title>Laravel Development Services | Purvsoft Technologies</title>
-      <meta name="description" content="Purvsoft Technologies offers expert Laravel PHP development for web applications, REST APIs, and backend systems. Secure, scalable, and fast Laravel solutions." />
-      <meta name="keywords" content="Laravel development, PHP Laravel, Laravel web app, REST API, Laravel developer India, backend development" />
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <link rel="canonical" href="https://www.purvsoft.com/services/laravel" />
- 
-      <meta property="og:title" content="Laravel Development Services | Purvsoft Technologies" />
-      <meta property="og:description" content="Expert Laravel PHP development — web apps, REST APIs, and backend systems." />
-      <meta property="og:url" content="https://www.purvsoft.com/services/laravel" />
-      <meta property="og:image" content="https://www.purvsoft.com/og-image.jpg" />
- 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Laravel Development | Purvsoft Technologies" />
-      <meta name="twitter:description" content="Secure and scalable Laravel development by Purvsoft Technologies." />
-    </Helmet>
+        {/* Primary Meta Tags with Laravel Job Keywords */}
+        <title>Laravel Development Company in Ahmedabad | PHP Laravel Jobs | Purvsoft</title>
+        <meta name="title" content="Laravel Development Company in Ahmedabad | PHP Laravel Jobs | Purvsoft" />
+        <meta name="description" content="Purvsoft Technologies is a leading Laravel development company in Ahmedabad, Gujarat. We offer Laravel development services and hire Laravel developers for full-time, part-time, remote, work from home, contract, internship, and fresher positions. Apply for PHP Laravel developer jobs today." />
+        <meta name="keywords" content="laravel development company in ahmedabad, laravel jobs in ahmedabad remote, laravel jobs in ahmedabad full time, laravel jobs in ahmedabad part time, laravel jobs in ahmedabad contract, laravel jobs in ahmedabad internship, laravel jobs in ahmedabad work from home, laravel developer jobs in ahmedabad for freshers, php laravel jobs in ahmedabad, senior laravel developer jobs, laravel developer in ahmedabad, laravel developer jobs remote, php laravel developer jobs in ahmedabad, laravel fresher jobs in ahmedabad, best laravel development company in ahmedabad, top laravel development company in ahmedabad, Purvsoft Laravel" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="author" content="Purvsoft Technologies" />
+        <meta name="language" content="English" />
+        
+        {/* Canonical URL - Critical for fixing duplicate issues */}
+        <link rel="canonical" href="https://www.purvsoft.com/services/laravel" />
+        
+        {/* Alternate language versions */}
+        <link rel="alternate" href="https://www.purvsoft.com/services/laravel" hrefLang="x-default" />
+        
+        {/* Open Graph / Facebook Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.purvsoft.com/services/laravel" />
+        <meta property="og:title" content="Laravel Development Company in Ahmedabad | PHP Laravel Jobs | Purvsoft" />
+        <meta property="og:description" content="Looking for Laravel jobs in Ahmedabad? Purvsoft Technologies is a top Laravel development company hiring Laravel developers for full-time, part-time, remote, work from home, contract, and internship positions. Apply now!" />
+        <meta property="og:image" content="https://www.purvsoft.com/og-laravel-development.jpg" />
+        <meta property="og:image:alt" content="Laravel Development Services & Laravel Jobs in Ahmedabad" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Purvsoft Technologies" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.purvsoft.com/services/laravel" />
+        <meta name="twitter:title" content="Laravel Development Company in Ahmedabad | Purvsoft" />
+        <meta name="twitter:description" content="Find Laravel developer jobs in Ahmedabad. Full-time, part-time, remote, work from home, contract, and internship positions available at Purvsoft Technologies." />
+        <meta name="twitter:image" content="https://www.purvsoft.com/twitter-laravel-development.jpg" />
+        <meta name="twitter:image:alt" content="Laravel Development Services" />
+        
+        {/* Verification tags - Google Search Console */}
+        <meta name="google-site-verification" content="MjMKilzhOmqr6Txi7pbjACF6g_hSt-B6Ej496yJyrH0" />
+        <meta name="msvalidate.01" content="AD0DF443696FB452E952416667F1A8DC" />
+        
+        {/* Geographic Meta Tags - Ahmedabad, Gujarat (FIXED) */}
+        <meta name="geo.region" content="IN-GJ" />
+        <meta name="geo.placename" content="Ahmedabad, Gujarat, India" />
+        <meta name="geo.position" content="23.0225;72.5714" />
+        <meta name="ICBM" content="23.0225, 72.5714" />
+        
+        {/* Mobile Optimization */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="theme-color" content="#2563eb" />
+        
+      </Helmet>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(organizationStructuredData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(faqStructuredData)}
+      </script>
+
       {/* Hero Section */}
-      <section className="lv-hero">
+      <section className="lv-hero" aria-label="Laravel Development Hero Section">
         <div className="lv-wrapper">
           <div className="lv-hero-grid">
-            <div className="lv-hero-content">
+            <div className="lv-hero-content" data-aos="fade-right">
               <div className="lv-badge">
                 <Code size={16} />
-                <span>Laravel Development</span>
+                <span>Laravel Development Company in Ahmedabad</span>
               </div>
               <h1>
                 Build Powerful Web Applications with <br />
-                <span className="lv-gradient-text">Laravel Framework</span>
+                <span className="lv-brand-gradient">Laravel PHP Framework</span>
               </h1>
               <p className="lv-hero-description">
                 Laravel is a web application framework with expressive, elegant syntax. 
-                We believe development must be an enjoyable, creative experience to be truly fulfilling.
+                We build secure, scalable, and high-performance PHP applications that grow with your business.
+                Based in Ahmedabad, Gujarat, India.
               </p>
               <div className="lv-hero-stats">
-                <div className="lv-stat-item">
+                <div className="lv-stat-item" data-aos="fade-up" data-aos-delay="0">
                   <span className="lv-stat-number">70K+</span>
                   <span className="lv-stat-label">GitHub Stars</span>
                 </div>
-                <div className="lv-stat-item">
+                <div className="lv-stat-item" data-aos="fade-up" data-aos-delay="50">
                   <span className="lv-stat-number">1M+</span>
-                  <span className="lv-stat-label">Developers</span>
+                  <span className="lv-stat-label">Developers Worldwide</span>
                 </div>
-                <div className="lv-stat-item">
+                <div className="lv-stat-item" data-aos="fade-up" data-aos-delay="100">
                   <span className="lv-stat-number">4.9</span>
-                  <span className="lv-stat-label">Rating</span>
+                  <span className="lv-stat-label">Client Rating</span>
                 </div>
               </div>
               <div className="lv-hero-buttons">
-                <a href="#form" className="lv-btn-primary">
-                  Contact Us<ArrowRight size={18} />
-                </a>
+                <button
+                  className="lv-btn-primary"
+                  onClick={scrollToForm}
+                  aria-label="Contact us for Laravel development"
+                >
+                  Hire Laravel Developer in Ahmedabad <ArrowRight size={18} />
+                </button>
               </div>
             </div>
-            <div className="lv-hero-visual">
+            <div className="lv-hero-visual" data-aos="fade-left">
               <div className="lv-code-block">
                 <div className="lv-code-header">
                   <span className="lv-dot lv-dot-red"></span>
@@ -305,7 +462,7 @@ const LaravelDevelopment = () => {
                 </div>
                 <div className="lv-code-content">
                   <div className="lv-line">
-                    <span className="lv-comment">// Route definition</span>
+                    <span className="lv-comment">Route definition</span>
                   </div>
                   <div className="lv-line">
                     <span className="lv-keyword">Route</span>::<span className="lv-function">get</span>(<span className="lv-string">'/'</span>, <span className="lv-keyword">function</span> () {'{'}
@@ -334,12 +491,12 @@ const LaravelDevelopment = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="lv-stats">
+      <section className="lv-stats" aria-label="Laravel Statistics">
         <div className="lv-wrapper">
           <div className="lv-stats-grid">
             {stats.map((stat, index) => (
-              <div key={index} className="lv-stat-card">
-                <div className="lv-stat-icon">{stat.icon}</div>
+              <div key={index} className="lv-stat-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="lv-stat-icon" aria-hidden="true">{stat.icon}</div>
                 <h3 className="lv-stat-value">{stat.value}</h3>
                 <p className="lv-stat-label">{stat.label}</p>
               </div>
@@ -349,22 +506,22 @@ const LaravelDevelopment = () => {
       </section>
 
       {/* Features Section */}
-      <section className="lv-features">
+      <section className="lv-features" aria-label="Laravel Key Features">
         <div className="lv-wrapper">
           <div className="lv-section-header">
-            <h6 className="lv-section-subtitle">Why Laravel</h6>
+            <p className="lv-section-subtitle">Why Laravel</p>
             <h2 className="lv-section-title">
-              Powerful Features for <span className="lv-gradient-text">Modern PHP Development</span>
+              Powerful Features for <span className="lv-brand-gradient">Modern PHP Development</span>
             </h2>
             <p className="lv-section-description">
-              Laravel provides elegant syntax and powerful tools for building robust applications.
+              Laravel provides elegant syntax and powerful tools for building robust web applications.
             </p>
           </div>
 
           <div className="lv-features-grid">
             {features.map((feature, index) => (
-              <div key={index} className="lv-feature-card">
-                <div className="lv-feature-icon">{feature.icon}</div>
+              <div key={index} className="lv-feature-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="lv-feature-icon" aria-hidden="true">{feature.icon}</div>
                 <h3 className="lv-feature-title">{feature.title}</h3>
                 <p className="lv-feature-description">{feature.desc}</p>
               </div>
@@ -374,12 +531,12 @@ const LaravelDevelopment = () => {
       </section>
 
       {/* Modules Section */}
-      <section className="lv-modules">
+      <section className="lv-modules" aria-label="Laravel Built-in Modules">
         <div className="lv-wrapper">
           <div className="lv-section-header">
-            <h6 className="lv-section-subtitle">Built-in Modules</h6>
+            <p className="lv-section-subtitle">Built-in Modules</p>
             <h2 className="lv-section-title">
-              Everything You Need <span className="lv-gradient-text">Built-in</span>
+              Everything You Need <span className="lv-brand-gradient">Built-in</span>
             </h2>
             <p className="lv-section-description">
               Laravel comes with comprehensive built-in modules for common web development tasks.
@@ -388,8 +545,8 @@ const LaravelDevelopment = () => {
 
           <div className="lv-modules-grid">
             {modules.map((module, index) => (
-              <div key={index} className="lv-module-card">
-                <div className="lv-module-icon">{module.icon}</div>
+              <div key={index} className="lv-module-card" data-aos="fade-up" data-aos-delay={index * 30}>
+                <div className="lv-module-icon" aria-hidden="true">{module.icon}</div>
                 <div>
                   <h3 className="lv-module-title">{module.title}</h3>
                   <p className="lv-module-description">{module.desc}</p>
@@ -401,19 +558,22 @@ const LaravelDevelopment = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="lv-benefits">
+      <section className="lv-benefits" aria-label="Benefits of Laravel Development">
         <div className="lv-wrapper">
           <div className="lv-section-header">
-            <h6 className="lv-section-subtitle">Business Benefits</h6>
+            <p className="lv-section-subtitle">Business Benefits</p>
             <h2 className="lv-section-title">
-              Why Businesses Choose <span className="lv-gradient-text">Laravel</span>
+              Why Businesses Choose <span className="lv-brand-gradient">Laravel</span>
             </h2>
+            <p className="lv-section-description">
+              Discover the advantages that make Laravel the top choice for PHP development
+            </p>
           </div>
 
           <div className="lv-benefits-grid">
             {benefits.map((benefit, index) => (
-              <div key={index} className="lv-benefit-card">
-                <div className="lv-benefit-icon">{benefit.icon}</div>
+              <div key={index} className="lv-benefit-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="lv-benefit-icon" aria-hidden="true">{benefit.icon}</div>
                 <h3 className="lv-benefit-title">{benefit.title}</h3>
                 <p className="lv-benefit-description">{benefit.desc}</p>
               </div>
@@ -423,22 +583,22 @@ const LaravelDevelopment = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="lv-use-cases">
+      <section className="lv-use-cases" aria-label="Laravel Use Cases">
         <div className="lv-wrapper">
           <div className="lv-section-header">
-            <h6 className="lv-section-subtitle">Use Cases</h6>
+            <p className="lv-section-subtitle">Use Cases</p>
             <h2 className="lv-section-title">
-              Perfect for <span className="lv-gradient-text">Every Application</span>
+              Perfect for <span className="lv-brand-gradient">Every Application</span>
             </h2>
             <p className="lv-section-description">
-              Laravel is versatile enough for any web application.
+              Laravel is versatile enough for any web application you need to build.
             </p>
           </div>
 
           <div className="lv-use-cases-grid">
             {useCases.map((useCase, index) => (
-              <div key={index} className="lv-use-case-card">
-                <div className="lv-use-case-icon">{useCase.icon}</div>
+              <div key={index} className="lv-use-case-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="lv-use-case-icon" aria-hidden="true">{useCase.icon}</div>
                 <h3 className="lv-use-case-title">{useCase.title}</h3>
                 <p className="lv-use-case-description">{useCase.desc}</p>
               </div>
@@ -448,23 +608,23 @@ const LaravelDevelopment = () => {
       </section>
 
       {/* Process Section */}
-      <section className="lv-process">
+      <section className="lv-process" aria-label="Laravel Development Process">
         <div className="lv-wrapper">
           <div className="lv-section-header">
-            <h6 className="lv-section-subtitle">Our Process</h6>
+            <p className="lv-section-subtitle">Our Process</p>
             <h2 className="lv-section-title">
-              How We Build <span className="lv-gradient-text">Your Laravel Application</span>
+              How We Build <span className="lv-brand-gradient">Your Laravel Application</span>
             </h2>
             <p className="lv-section-description">
-              A proven methodology that delivers quality applications on time.
+              A proven methodology that delivers quality applications on time and within budget.
             </p>
           </div>
 
           <div className="lv-process-grid">
             {process.map((item, index) => (
-              <div key={index} className="lv-process-card">
+              <div key={index} className="lv-process-card" data-aos="fade-up" data-aos-delay={index * 50}>
                 <div className="lv-process-number">{item.step}</div>
-                <div className="lv-process-icon">{item.icon}</div>
+                <div className="lv-process-icon" aria-hidden="true">{item.icon}</div>
                 <h3 className="lv-process-title">{item.title}</h3>
                 <p className="lv-process-description">{item.desc}</p>
               </div>
@@ -474,20 +634,25 @@ const LaravelDevelopment = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="lv-faq">
+      <section className="lv-faq" aria-label="Laravel FAQs">
         <div className="lv-wrapper">
           <div className="lv-section-header">
-            <h6 className="lv-section-subtitle">FAQ</h6>
+            <p className="lv-section-subtitle">FAQ</p>
             <h2 className="lv-section-title">
-              Frequently Asked <span className="lv-gradient-text">Questions</span>
+              Frequently Asked <span className="lv-brand-gradient">Questions</span>
             </h2>
+            <p className="lv-section-description">
+              Get answers to common questions about Laravel development and jobs in Ahmedabad
+            </p>
           </div>
 
           <div className="lv-faq-grid">
             {faqs.map((faq, index) => (
-              <div key={index} className="lv-faq-card">
-                <h3 className="lv-faq-question">{faq.question}</h3>
-                <p className="lv-faq-answer">{faq.answer}</p>
+              <div key={index} className="lv-faq-card" data-aos="fade-up" data-aos-delay={index * 50} itemScope itemType="https://schema.org/Question">
+                <h3 className="lv-faq-question" itemProp="name">{faq.question}</h3>
+                <div className="lv-faq-answer" itemProp="acceptedAnswer" itemScope itemType="https://schema.org/Answer">
+                  <p itemProp="text">{faq.answer}</p>
+                </div>
               </div>
             ))}
           </div>

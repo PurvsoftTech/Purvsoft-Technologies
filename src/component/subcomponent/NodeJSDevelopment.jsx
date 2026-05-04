@@ -5,7 +5,6 @@ import {
   Database,
   Globe,
   Shield,
-  ArrowRight,
   CheckCircle,
   Users,
   Clock,
@@ -13,11 +12,13 @@ import {
   Layers,
   Cloud,
   Lock,
-  Package
+  Package,
+  ArrowRight,
 } from 'lucide-react';
 import '../../css/NodeJSDevelopment.css';
 import { Helmet} from 'react-helmet-async';
 import Form from "../../config/Form";
+
 
 const NodeJSDevelopment = () => {
   const features = [
@@ -131,62 +132,221 @@ const NodeJSDevelopment = () => {
     "Content Management"
   ];
 
+  const faqs = [
+    {
+      question: "What is Node.js used for?",
+      answer: "Node.js is used for building fast, scalable server-side applications, REST APIs, real-time applications like chat apps, streaming services, IoT backends, and microservices architecture."
+    },
+    {
+      question: "Is Node.js good for large applications?",
+      answer: "Yes! Node.js is highly scalable and used by major companies like Netflix, LinkedIn, Uber, PayPal, and Walmart for their large-scale applications."
+    },
+    {
+      question: "How long does Node.js development take?",
+      answer: "Timeline varies by complexity. Simple APIs take 2-3 weeks, while complex microservices architecture can take 2-4 months. We provide detailed timelines during consultation."
+    },
+    {
+      question: "Do you provide API documentation?",
+      answer: "Yes, we provide comprehensive API documentation using Swagger/OpenAPI, Postman collections, and inline code documentation for easy maintenance."
+    }
+  ];
+  const scrollToForm = () => {
+  document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+};
+
+
+  // JSON-LD Structured Data for Node.js Development Services
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Node.js Development Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Purvsoft Technologies",
+      "url": "https://www.purvsoft.com",
+      "logo": "https://www.purvsoft.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ahmedabad",
+        "addressRegion": "Gujarat",
+        "addressCountry": "India"
+      }
+    },
+    "description": "Professional Node.js development services for building fast, scalable, and secure server-side applications, REST APIs, real-time apps, and microservices.",
+    "serviceType": ["Node.js API Development", "Real-time Applications", "Microservices Architecture", "Backend Development", "Cloud Deployment"],
+    "areaServed": "Worldwide",
+    "audience": {
+      "@type": "BusinessAudience"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "USD",
+        "price": "Custom"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.purvsoft.com/services/nodejs"
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.purvsoft.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.purvsoft.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Node.js Development",
+        "item": "https://www.purvsoft.com/services/nodejs"
+      }
+    ]
+  };
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <div className="nj-container">
-     <Helmet>
-      <title>Node.js Development Services | Purvsoft Technologies</title>
-      <meta name="description" content="Build fast and scalable server-side applications with Purvsoft Technologies's Node.js development services. REST APIs, real-time apps, and microservices with Node.js." />
-      <meta name="keywords" content="Node.js development, NodeJS, REST API development, real-time app, microservices, Node.js company India" />
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <link rel="canonical" href="https://www.purvsoft.com/services/nodejs" />
- 
-      <meta property="og:title" content="Node.js Development Services | Purvsoft Technologies" />
-      <meta property="og:description" content="Fast and scalable Node.js development — REST APIs, real-time apps, and microservices." />
-      <meta property="og:url" content="https://www.purvsoft.com/services/nodejs" />
-      <meta property="og:image" content="https://www.purvsoft.com/og-image.jpg" />
- 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Node.js Development | Purvsoft Technologies" />
-      <meta name="twitter:description" content="Scalable Node.js development services by Purvsoft Technologies." />
-    </Helmet>
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>Node.js Development Company | REST API & Backend Experts | Purvsoft</title>
+        <meta name="title" content="Node.js Development Company | REST API & Backend Experts | Purvsoft" />
+        <meta name="description" content="Purvsoft Technologies is a leading Node.js development company. Build fast, scalable backend systems, REST APIs, real-time applications, and microservices with expert Node.js developers." />
+        <meta 
+          name="keywords" 
+          content="Node.js development company, REST API development, backend development, microservices architecture, Node.js developer Ahmedabad, scalable backend solutions"
+        />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="author" content="Purvsoft Technologies" />
+        <meta name="language" content="English" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.purvsoft.com/services/nodejs" />
+        
+        {/* Alternate language versions */}
+        <link rel="alternate" href="https://www.purvsoft.com/services/nodejs" hrefLang="x-default" />
+        
+        {/* Open Graph / Facebook Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.purvsoft.com/services/nodejs" />
+        <meta property="og:title" content="Node.js Development | REST APIs & Microservices | Purvsoft" />
+        <meta property="og:description" content="Build fast, scalable backend systems with Purvsoft Technologies's Node.js development services. REST APIs, real-time apps, and microservices for modern applications." />
+        <meta property="og:image" content="https://www.purvsoft.com/og-nodejs-development.jpg" />
+        <meta property="og:image:alt" content="Node.js Development Services - Backend API Development" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Purvsoft Technologies" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.purvsoft.com/services/nodejs" />
+        <meta name="twitter:title" content="Node.js Development | Purvsoft Technologies" />
+        <meta name="twitter:description" content="Expert Node.js development for scalable backend systems, REST APIs, real-time applications, and microservices." />
+        <meta name="twitter:image" content="https://www.purvsoft.com/twitter-nodejs-development.jpg" />
+        <meta name="twitter:image:alt" content="Node.js Development Services" />
+        
+        {/* Verification tags - Google Search Console */}
+        <meta name="google-site-verification" content="MjMKilzhOmqr6Txi7pbjACF6g_hSt-B6Ej496yJyrH0" />
+        <meta name="msvalidate.01" content="AD0DF443696FB452E952416667F1A8DC" />
+        {/* Geographic Meta Tags - Ahmedabad, Gujarat */}
+        <meta name="geo.region" content="IN-GJ" />
+        <meta name="geo.placename" content="Ahmedabad, Gujarat, India" />
+        <meta name="geo.position" content="23.0225;72.5714" />
+        <meta name="ICBM" content="23.0225, 72.5714" />
+        
+        {/* Mobile Optimization */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+      </Helmet>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(faqStructuredData)}
+      </script>
+
       {/* Hero Section */}
-      <section className="nj-hero">
+      <section className="nj-hero" aria-label="Node.js Development Hero Section">
         <div className="nj-wrapper">
-          <div className="nj-hero-content">
+          <div className="nj-hero-content" data-aos="fade-up">
             <div className="nj-badge">
               <Server size={14} />
-              <span>Node.js Development</span>
+              <span>Node.js Development Experts</span>
             </div>
             <h1 className="nj-hero-title">
               Build Scalable Backend with <span className="nj-highlight">Node.js</span>
             </h1>
             <p className="nj-hero-description">
               Create fast, scalable, and secure server-side applications with Node.js. 
-              We build high-performance APIs, real-time applications, and microservices.
+              We build high-performance REST APIs, real-time applications, and microservices for modern businesses.
             </p>
 
             <div className="nj-stats-row">
               {stats.map((stat, index) => (
-                <div key={index} className="nj-stat-item">
+                <div key={index} className="nj-stat-item" data-aos="fade-up" data-aos-delay={index * 50}>
                   <div className="nj-stat-value">{stat.value}</div>
                   <div className="nj-stat-label">{stat.label}</div>
                 </div>
               ))}
+            </div>
+
+            <div className="nj-hero-buttons">
+              <button
+                className="nj-btn-primary"
+                onClick={scrollToForm}
+                aria-label="Contact us for Node.js development"
+              >
+                Start Your Backend Project <ArrowRight size={18} />
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="nj-features">
+      <section className="nj-features" aria-label="Node.js Key Features">
         <div className="nj-wrapper">
-          <h2 className="nj-section-title">Why Choose Node.js?</h2>
-          <p className="nj-section-subtitle">Powerful features for modern applications</p>
+          <div className="nj-section-header">
+            <p className="nj-section-subtitle">Why Node.js</p>
+            <h2 className="nj-section-title">Powerful Features for <span className="nj-highlight">Modern Applications</span></h2>
+            <p className="nj-section-desc">Node.js provides everything you need to build fast, scalable backend systems</p>
+          </div>
           
           <div className="nj-features-grid">
             {features.map((feature, index) => (
-              <div key={index} className="nj-feature-card">
-                <div className="nj-feature-icon">{feature.icon}</div>
+              <div key={index} className="nj-feature-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="nj-feature-icon" aria-hidden="true">{feature.icon}</div>
                 <h3 className="nj-feature-title">{feature.title}</h3>
                 <p className="nj-feature-desc">{feature.desc}</p>
               </div>
@@ -196,20 +356,23 @@ const NodeJSDevelopment = () => {
       </section>
 
       {/* Services Section */}
-      <section className="nj-services">
+      <section className="nj-services" aria-label="Node.js Development Services">
         <div className="nj-wrapper">
-          <h2 className="nj-section-title">Our Node.js Services</h2>
-          <p className="nj-section-subtitle">Complete backend solutions for your business</p>
+          <div className="nj-section-header">
+            <p className="nj-section-subtitle">What We Offer</p>
+            <h2 className="nj-section-title">Our <span className="nj-highlight">Node.js Services</span></h2>
+            <p className="nj-section-desc">Complete backend solutions tailored to your business needs</p>
+          </div>
           
           <div className="nj-services-grid">
             {services.map((service, index) => (
-              <div key={index} className="nj-service-card">
+              <div key={index} className="nj-service-card" data-aos="fade-up" data-aos-delay={index * 50}>
                 <h3 className="nj-service-title">{service.title}</h3>
                 <p className="nj-service-desc">{service.desc}</p>
-                <ul className="nj-service-features">
+                <ul className="nj-service-features" aria-label={`${service.title} features`}>
                   {service.features.map((feature, idx) => (
                     <li key={idx}>
-                      <CheckCircle size={14} />
+                      <CheckCircle size={14} aria-hidden="true" />
                       {feature}
                     </li>
                   ))}
@@ -221,14 +384,18 @@ const NodeJSDevelopment = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="nj-benefits">
+      <section className="nj-benefits" aria-label="Benefits of Node.js Development">
         <div className="nj-wrapper">
-          <h2 className="nj-section-title">Key Benefits</h2>
+          <div className="nj-section-header">
+            <p className="nj-section-subtitle">Key Benefits</p>
+            <h2 className="nj-section-title">Why Businesses Choose <span className="nj-highlight">Node.js</span></h2>
+            <p className="nj-section-desc">Discover the advantages that make Node.js the top choice for backend development</p>
+          </div>
           
           <div className="nj-benefits-grid">
             {benefits.map((benefit, index) => (
-              <div key={index} className="nj-benefit-item">
-                <div className="nj-benefit-icon">{benefit.icon}</div>
+              <div key={index} className="nj-benefit-item" data-aos="zoom-in" data-aos-delay={index * 50}>
+                <div className="nj-benefit-icon" aria-hidden="true">{benefit.icon}</div>
                 <span className="nj-benefit-text">{benefit.text}</span>
               </div>
             ))}
@@ -237,14 +404,18 @@ const NodeJSDevelopment = () => {
       </section>
 
       {/* Use Cases Section */}
-      <section className="nj-use-cases">
+      <section className="nj-use-cases" aria-label="Node.js Use Cases">
         <div className="nj-wrapper">
-          <h2 className="nj-section-title">Perfect For</h2>
+          <div className="nj-section-header">
+            <p className="nj-section-subtitle">Perfect For</p>
+            <h2 className="nj-section-title">Node.js <span className="nj-highlight">Use Cases</span></h2>
+            <p className="nj-section-desc">Node.js is versatile enough for any application type</p>
+          </div>
           
           <div className="nj-use-cases-grid">
             {useCases.map((item, index) => (
-              <div key={index} className="nj-use-case-item">
-                <CheckCircle size={16} />
+              <div key={index} className="nj-use-case-item" data-aos="fade-up" data-aos-delay={index * 30}>
+                <CheckCircle size={16} aria-hidden="true" />
                 <span>{item}</span>
               </div>
             ))}
@@ -252,7 +423,76 @@ const NodeJSDevelopment = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Process Section */}
+      <section className="nj-process" aria-label="Node.js Development Process">
+        <div className="nj-wrapper">
+          <div className="nj-section-header">
+            <p className="nj-section-subtitle">Our Process</p>
+            <h2 className="nj-section-title">How We Build <span className="nj-highlight">Your Node.js Backend</span></h2>
+            <p className="nj-section-desc">A proven methodology that delivers scalable backend solutions</p>
+          </div>
+          
+          <div className="nj-process-grid">
+            <div className="nj-process-card" data-aos="fade-up" data-aos-delay="0">
+              <div className="nj-process-number">1</div>
+              <h3>Requirements Analysis</h3>
+              <p>Understanding your business needs and technical requirements</p>
+            </div>
+            <div className="nj-process-card" data-aos="fade-up" data-aos-delay="50">
+              <div className="nj-process-number">2</div>
+              <h3>Architecture Design</h3>
+              <p>Designing scalable and maintainable backend architecture</p>
+            </div>
+            <div className="nj-process-card" data-aos="fade-up" data-aos-delay="100">
+              <div className="nj-process-number">3</div>
+              <h3>API Development</h3>
+              <p>Building RESTful APIs with best practices and documentation</p>
+            </div>
+            <div className="nj-process-card" data-aos="fade-up" data-aos-delay="150">
+              <div className="nj-process-number">4</div>
+              <h3>Testing & QA</h3>
+              <p>Comprehensive testing for reliability and performance</p>
+            </div>
+            <div className="nj-process-card" data-aos="fade-up" data-aos-delay="200">
+              <div className="nj-process-number">5</div>
+              <h3>Deployment</h3>
+              <p>Cloud deployment with CI/CD pipeline and auto-scaling</p>
+            </div>
+            <div className="nj-process-card" data-aos="fade-up" data-aos-delay="250">
+              <div className="nj-process-number">6</div>
+              <h3>Maintenance</h3>
+              <p>Ongoing support, monitoring, and performance optimization</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="nj-faq" aria-label="Node.js FAQs">
+        <div className="nj-wrapper">
+          <div className="nj-section-header">
+            <p className="nj-section-subtitle">FAQ</p>
+            <h2 className="nj-section-title">Frequently Asked <span className="nj-highlight">Questions</span></h2>
+            <p className="nj-section-desc">Get answers to common questions about Node.js development</p>
+          </div>
+
+          <div className="nj-faq-grid">
+            {faqs.map((faq, index) => (
+              <div key={index} className="nj-faq-card" data-aos="fade-up" data-aos-delay={index * 50} itemScope itemType="https://schema.org/Question">
+                <h3 className="nj-faq-question" itemProp="name">{faq.question}</h3>
+                <div className="nj-faq-answer" itemProp="acceptedAnswer" itemScope itemType="https://schema.org/Answer">
+                  <p itemProp="text">{faq.answer}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <div id="form">
+        <Form />
+      </div>
     </div>
   );
 };

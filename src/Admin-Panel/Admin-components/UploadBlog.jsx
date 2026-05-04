@@ -38,7 +38,7 @@ const [formData, setFormData] = useState({
       toast.error('Please login first.');
       navigate('/login'); // Sirf yaha navigate, handleSubmit me nahi
     } else {
-      console.log('BlogForm loaded with token:', token.substring(0, 20) + '...');
+      // console.log('BlogForm loaded with token:', token.substring(0, 20) + '...');
     }
   }, [isAuthenticated, token, navigate]);
 

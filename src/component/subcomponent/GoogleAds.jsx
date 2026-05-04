@@ -54,7 +54,9 @@ const GoogleAds = () => {
       desc: "Drive foot traffic to your physical stores with location-based advertising."
     }
   ];
-
+  const scrollToForm = () => {
+  document.getElementById("form")?.scrollIntoView({ behavior: "smooth" });
+};
   const campaignTypes = [
     {
       icon: <Search size={20} />,
@@ -192,30 +194,145 @@ const GoogleAds = () => {
     }
   ];
 
+  // JSON-LD Structured Data for Google Ads Service
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Google Ads Management & PPC Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Purvsoft Technologies",
+      "url": "https://www.purvsoft.com",
+      "logo": "https://www.purvsoft.com/logo.png"
+    },
+    "description": "Professional Google Ads management services including Search Ads, Display Ads, Shopping Campaigns, YouTube Ads, and Remarketing. Maximize ROI with expert PPC campaign management.",
+    "serviceType": ["Google Search Ads", "Display Advertising", "Shopping Campaigns", "YouTube Ads", "Remarketing", "PPC Management"],
+    "areaServed": "Worldwide",
+    "audience": {
+      "@type": "BusinessAudience"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "USD",
+        "price": "Custom"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.purvsoft.com/services/google-ads"
+    }
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.purvsoft.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.purvsoft.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Google Ads",
+        "item": "https://www.purvsoft.com/services/google-ads"
+      }
+    ]
+  };
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+  
+
   return (
     <div className="ga-container">
-      <Helmet>
-      <title>Google Ads Services | Purvsoft Technologies – PPC Campaigns</title>
-      <meta name="description" content="Drive qualified traffic with Purvsoft Technologies's Google Ads management. Search ads, display ads, shopping campaigns, and remarketing — all optimized for high ROI." />
-      <meta name="keywords" content="Google Ads, PPC campaign, Google AdWords, paid search, display advertising, Google ads management India" />
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <link rel="canonical" href="https://www.purvsoft.com/services/google-ads" />
- 
-      <meta property="og:title" content="Google Ads Services | Purvsoft Technologies – PPC Campaigns" />
-      <meta property="og:description" content="High-ROI Google Ads — search, display, shopping, and remarketing campaigns by Purvsoft Technologies." />
-      <meta property="og:url" content="https://www.purvsoft.com/services/google-ads" />
-      <meta property="og:image" content="https://www.purvsoft.com/og-image.jpg" />
- 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Google Ads | Purvsoft Technologies" />
-      <meta name="twitter:description" content="Managed Google Ads PPC campaigns by Purvsoft Technologies." />
-    </Helmet>
+     <Helmet>
+  {/* Primary Meta Tags */}
+  <title>Google Ads Management Services | PPC Agency Ahmedabad | Purvsoft</title>
+  <meta name="title" content="Google Ads Management Services | PPC Agency Ahmedabad | Purvsoft" />
+  <meta name="description" content="Purvsoft Technologies offers professional Google Ads management services in Ahmedabad, Gujarat. Run search ads, display campaigns, shopping ads, and remarketing to drive qualified traffic and maximize ROI." />
+  <meta name="keywords" content="Google Ads, PPC management, Google Ads services, search advertising, display advertising, shopping campaigns, YouTube ads, remarketing, pay per click, Google Ads agency Ahmedabad, Google Ads agency Gujarat, Purvsoft Google Ads" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Purvsoft Technologies" />
+  <meta name="language" content="English" />
+  
+  {/* ✅ Canonical URL - FIX DUPLICATE ISSUE */}
+  <link rel="canonical" href="https://www.purvsoft.com/services/google-ads" />
+  
+  {/* ✅ Alternate language versions */}
+  <link rel="alternate" href="https://www.purvsoft.com/services/google-ads" hrefLang="x-default" />
+  
+  {/* Open Graph / Facebook Meta Tags */}
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.purvsoft.com/services/google-ads" />
+  <meta property="og:title" content="Google Ads Management | PPC Agency Ahmedabad | Purvsoft" />
+  <meta property="og:description" content="Drive qualified traffic with professional Google Ads management. Search ads, display campaigns, shopping ads, and remarketing for maximum ROI." />
+  <meta property="og:image" content="https://www.purvsoft.com/og-google-ads.jpg" />
+  <meta property="og:image:alt" content="Google Ads Management Services - PPC Campaign Preview" />
+  <meta property="og:site_name" content="Purvsoft Technologies" />
+  <meta property="og:locale" content="en_IN" />
+  
+  {/* Twitter Meta Tags */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.purvsoft.com/services/google-ads" />
+  <meta name="twitter:title" content="Google Ads Management | PPC Agency Ahmedabad" />
+  <meta name="twitter:description" content="Professional Google Ads management. Search, display, shopping, and remarketing campaigns optimized for high ROI." />
+  <meta name="twitter:image" content="https://www.purvsoft.com/twitter-google-ads.jpg" />
+  
+  {/* ✅ Verification tags */}
+  <meta name="google-site-verification" content="MjMKilzhOmqr6Txi7pbjACF6g_hSt-B6Ej496yJyrH0" />
+  <meta name="msvalidate.01" content="AD0DF443696FB452E952416667F1A8DC" />
+  
+  {/* ✅ Geographic Meta Tags - FIXED to Ahmedabad */}
+  <meta name="geo.region" content="IN-GJ" />
+  <meta name="geo.placename" content="Ahmedabad" />
+  <meta name="geo.position" content="23.0225;72.5714" />
+  <meta name="ICBM" content="23.0225, 72.5714" />
+  
+  {/* ✅ Mobile Optimization */}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  
+  {/* ✅ Prevent duplicate issues - Add this */}
+  <meta name="googlebot" content="index, follow" />
+</Helmet>
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(faqStructuredData)}
+      </script>
 
       {/* Hero Section */}
-      <section className="ga-hero">
+      <section className="ga-hero" aria-label="Google Ads Management Services Hero Section">
         <div className="ga-wrapper">
           <div className="ga-hero-grid">
-            <div className="ga-hero-content">
+            <div className="ga-hero-content" data-aos="fade-right">
               <div className="ga-badge">
                 <Search size={14} />
                 <span>Google Ads Management</span>
@@ -230,7 +347,7 @@ const GoogleAds = () => {
               
               <div className="ga-stats-row">
                 {stats.map((stat, index) => (
-                  <div key={index} className="ga-stat-box">
+                  <div key={index} className="ga-stat-box" data-aos="fade-up" data-aos-delay={index * 50}>
                     <div className="ga-stat-value">{stat.value}</div>
                     <div className="ga-stat-label">{stat.label}</div>
                   </div>
@@ -238,16 +355,20 @@ const GoogleAds = () => {
               </div>
               
               <div className="ga-hero-buttons">
-                <a href="#form" className="ga-btn-primary">
+                <button
+                  className="ga-btn-primary"
+                  onClick={scrollToForm}
+                  aria-label="Contact us for Google Ads management"
+                >
                   Contact Us <ArrowRight size={16} />
-                </a>
+                </button>
               </div>
             </div>
             
-            <div className="ga-hero-visual">
+            <div className="ga-hero-visual" data-aos="fade-left">
               <div className="ga-search-preview">
                 <div className="ga-search-bar">
-                  <Search size={16} />
+                  <Search size={16} aria-hidden="true" />
                   <span>digital marketing agency</span>
                 </div>
                 <div className="ga-ad-preview">
@@ -267,15 +388,18 @@ const GoogleAds = () => {
       </section>
 
       {/* Networks Section */}
-      <section className="ga-networks">
+      <section className="ga-networks" aria-label="Google Advertising Networks">
         <div className="ga-wrapper">
-          <h2 className="ga-section-title">Google Advertising Networks</h2>
-          <p className="ga-section-subtitle">Reach customers across all Google platforms</p>
+          <div className="section-header">
+            <p className="section-subtitle">Advertising Networks</p>
+            <h2 className="ga-section-title">Google <span className="brand-gradient">Advertising Networks</span></h2>
+            <p className="ga-section-subtitle">Reach customers across all Google platforms</p>
+          </div>
           
           <div className="ga-networks-grid">
             {networks.map((network, index) => (
-              <div key={index} className="ga-network-card">
-                <div className="ga-network-icon">{network.icon}</div>
+              <div key={index} className="ga-network-card" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="ga-network-icon" aria-hidden="true">{network.icon}</div>
                 <h3 className="ga-network-name">{network.name}</h3>
                 <p className="ga-network-desc">{network.desc}</p>
               </div>
@@ -285,15 +409,18 @@ const GoogleAds = () => {
       </section>
 
       {/* Campaign Types */}
-      <section className="ga-campaigns">
+      <section className="ga-campaigns" aria-label="Google Ads Campaign Types">
         <div className="ga-wrapper">
-          <h2 className="ga-section-title">Campaign Types</h2>
-          <p className="ga-section-subtitle">Choose the right campaign for your goals</p>
+          <div className="section-header">
+            <p className="section-subtitle">Campaign Solutions</p>
+            <h2 className="ga-section-title"><span className="brand-gradient">Campaign Types</span></h2>
+            <p className="ga-section-subtitle">Choose the right campaign for your business goals</p>
+          </div>
           
           <div className="ga-campaigns-grid">
             {campaignTypes.map((campaign, index) => (
-              <div key={index} className="ga-campaign-item">
-                <div className="ga-campaign-icon">{campaign.icon}</div>
+              <div key={index} className="ga-campaign-item" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="ga-campaign-icon" aria-hidden="true">{campaign.icon}</div>
                 <div>
                   <h3 className="ga-campaign-name">{campaign.name}</h3>
                   <p className="ga-campaign-desc">{campaign.desc}</p>
@@ -305,24 +432,27 @@ const GoogleAds = () => {
       </section>
 
       {/* Targeting Section */}
-      <section className="ga-targeting">
+      <section className="ga-targeting" aria-label="Google Ads Targeting Options">
         <div className="ga-wrapper">
           <div className="ga-targeting-grid">
-            <div className="ga-targeting-content">
-              <h2 className="ga-section-title">Advanced Targeting Options</h2>
-              <p className="ga-section-subtitle">Reach the right customers at the right time</p>
+            <div className="ga-targeting-content" data-aos="fade-right">
+              <div className="section-header text-left">
+                <p className="section-subtitle">Targeting Capabilities</p>
+                <h2 className="ga-section-title">Advanced <span className="brand-gradient">Targeting Options</span></h2>
+                <p className="ga-section-subtitle">Reach the right customers at the right time with precision targeting</p>
+              </div>
               
               <ul className="ga-targeting-list">
                 {targeting.map((item, index) => (
-                  <li key={index}>
-                    <CheckCircle size={16} />
+                  <li key={index} data-aos="fade-up" data-aos-delay={index * 30}>
+                    <CheckCircle size={16} aria-hidden="true" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div className="ga-targeting-visual">
+            <div className="ga-targeting-visual" data-aos="fade-left">
               <div className="ga-keyword-card">
                 <h3>Sample Keywords</h3>
                 <div className="ga-keyword-cloud">
@@ -337,15 +467,18 @@ const GoogleAds = () => {
       </section>
 
       {/* Benefits */}
-      <section className="ga-benefits">
+      <section className="ga-benefits" aria-label="Benefits of Google Advertising">
         <div className="ga-wrapper">
-          <h2 className="ga-section-title">Why Google Ads?</h2>
-          <p className="ga-section-subtitle">Key benefits for your business</p>
+          <div className="section-header">
+            <p className="section-subtitle">Key Advantages</p>
+            <h2 className="ga-section-title">Why <span className="brand-gradient">Google Ads?</span></h2>
+            <p className="ga-section-subtitle">Key benefits for your business growth</p>
+          </div>
           
           <div className="ga-benefits-grid">
             {benefits.map((benefit, index) => (
-              <div key={index} className="ga-benefit-item">
-                <div className="ga-benefit-icon">{benefit.icon}</div>
+              <div key={index} className="ga-benefit-item" data-aos="fade-up" data-aos-delay={index * 50}>
+                <div className="ga-benefit-icon" aria-hidden="true">{benefit.icon}</div>
                 <h3 className="ga-benefit-title">{benefit.title}</h3>
                 <p className="ga-benefit-desc">{benefit.desc}</p>
               </div>
@@ -355,14 +488,17 @@ const GoogleAds = () => {
       </section>
 
       {/* Process */}
-      <section className="ga-process">
+      <section className="ga-process" aria-label="Google Ads Management Process">
         <div className="ga-wrapper">
-          <h2 className="ga-section-title">Our Process</h2>
-          <p className="ga-section-subtitle">Simple steps to campaign success</p>
+          <div className="section-header">
+            <p className="section-subtitle">Our Methodology</p>
+            <h2 className="ga-section-title">Our <span className="brand-gradient">Process</span></h2>
+            <p className="ga-section-subtitle">Simple steps to campaign success</p>
+          </div>
           
           <div className="ga-process-grid">
             {steps.map((step, index) => (
-              <div key={index} className="ga-process-step">
+              <div key={index} className="ga-process-step" data-aos="fade-up" data-aos-delay={index * 50}>
                 <div className="ga-step-number">{step.step}</div>
                 <h3 className="ga-step-title">{step.title}</h3>
                 <p className="ga-step-desc">{step.desc}</p>
@@ -373,15 +509,21 @@ const GoogleAds = () => {
       </section>
 
       {/* FAQ */}
-      <section className="ga-faq">
+      <section className="ga-faq" aria-label="Google Ads FAQs">
         <div className="ga-wrapper">
-          <h2 className="ga-section-title">Frequently Asked Questions</h2>
+          <div className="section-header">
+            <p className="section-subtitle">Common Questions</p>
+            <h2 className="ga-section-title">Frequently Asked <span className="brand-gradient">Questions</span></h2>
+            <p className="ga-section-subtitle">Get answers about Google Ads costs, targeting, and campaign management</p>
+          </div>
           
           <div className="ga-faq-grid">
             {faqs.map((faq, index) => (
-              <div key={index} className="ga-faq-item">
-                <h3 className="ga-faq-q">{faq.q}</h3>
-                <p className="ga-faq-a">{faq.a}</p>
+              <div key={index} className="ga-faq-item" data-aos="fade-up" data-aos-delay={index * 50} itemScope itemType="https://schema.org/Question">
+                <h3 className="ga-faq-q" itemProp="name">{faq.q}</h3>
+                <div className="ga-faq-a" itemProp="acceptedAnswer" itemScope itemType="https://schema.org/Answer">
+                  <p itemProp="text">{faq.a}</p>
+                </div>
               </div>
             ))}
           </div>

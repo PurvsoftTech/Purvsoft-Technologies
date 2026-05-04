@@ -1,0 +1,361 @@
+/* ServiceInquiryForm.css */
+.sif-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #f0f2f5 100%);
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.sif-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+/* Form Side */
+.sif-form-side {
+  padding: 48px;
+  background: #ffffff;
+}
+
+.sif-header {
+  margin-bottom: 32px;
+}
+
+.sif-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.sif-subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+/* Success Message */
+.sif-success-message {
+  background: #e6f7e6;
+  border: 1px solid #10b981;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #10b981;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+/* Form Fields */
+.sif-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sif-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sif-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.sif-required {
+  color: #dc2626;
+}
+
+/* Input Wrapper */
+.sif-input-wrapper,
+.sif-select-wrapper,
+.sif-textarea-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sif-input-icon,
+.sif-select-icon,
+.sif-textarea-icon {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.sif-input,
+.sif-select,
+.sif-textarea {
+  width: 100%;
+  padding: 12px 12px 12px 42px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  transition: all 0.2s ease;
+  background: #ffffff;
+}
+
+.sif-input:focus,
+.sif-select:focus,
+.sif-textarea:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.sif-input-wrapper.error .sif-input,
+.sif-select-wrapper.error .sif-select,
+.sif-textarea-wrapper.error .sif-textarea {
+  border-color: #dc2626;
+}
+
+.sif-select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 40px;
+}
+
+.sif-select-arrow {
+  position: absolute;
+  right: 14px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.sif-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.sif-textarea-icon {
+  top: 14px;
+}
+
+.sif-error {
+  font-size: 0.8rem;
+  color: #dc2626;
+  margin-top: 4px;
+}
+
+/* WhatsApp Button */
+.sif-whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 8px 0;
+}
+
+.sif-whatsapp-btn:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+}
+
+.sif-whatsapp-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Submit Button */
+.sif-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: #4361ee;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.sif-submit-btn:hover {
+  background: #3a56d4;
+  transform: translateY(-2px);
+}
+
+.sif-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loader */
+.sif-loader {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Info Side */
+.sif-info-side {
+  background: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
+  padding: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.sif-info-card {
+  color: white;
+  width: 100%;
+}
+
+.sif-info-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.sif-info-list {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.sif-info-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.sif-info-list li svg {
+  flex-shrink: 0;
+}
+
+.sif-contact-info {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 24px;
+  margin-top: 16px;
+}
+
+.sif-contact-info h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.sif-contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sif-form-side {
+    padding: 40px;
+  }
+  
+  .sif-info-side {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sif-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .sif-form-side {
+    padding: 32px 24px;
+  }
+  
+  .sif-info-side {
+    padding: 32px 24px;
+    text-align: center;
+  }
+  
+  .sif-info-list li {
+    justify-content: center;
+  }
+  
+  .sif-contact-info p {
+    justify-content: center;
+  }
+  
+  .sif-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sif-form-side {
+    padding: 24px 20px;
+  }
+  
+  .sif-title {
+    font-size: 1.3rem;
+  }
+  
+  .sif-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .sif-input,
+  .sif-select,
+  .sif-textarea {
+    padding: 10px 10px 10px 38px;
+    font-size: 0.9rem;
+  }
+  
+  .sif-whatsapp-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .sif-submit-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}
+/* Add to existing ServiceInquiryForm.css */
+
+/* Error Message */
+.sif-error-message {
+  background: #fee2e2;
+  border: 1px solid #dc2626;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #dc2626;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}

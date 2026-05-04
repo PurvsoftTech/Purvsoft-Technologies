@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useBlog } from "../contexts/BlogContext";
 import "../styles/admin-dashboard.css";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import "../../Loader.css";
 
 const Dashboard = () => {
@@ -120,27 +120,33 @@ const Dashboard = () => {
               </h1>
             ) : (
               [...fetchblogs]
-                .sort(
-                  (a, b) => new Date(b.created_at) - new Date(a.created_at)
-                )
-                .map((blog) => (
-                  <div key={blog.blog_id} className="admin-blog-card">
-                    <div className="admin-blog-image">
-                      <img src={blog.image?.startsWith("http")? blog.image: `https://blog.purvsoft.com/${blog.image}`}alt={blog.title || "Blog thumbnail"}/>
-                    </div>
-                    <div className="admin-blog-content">
-                      <h3 className="admin-blog-heading">{blog.title}</h3>
-                      <div className="admin-blog-meta">
-                        <span className="admin-blog-category">
-                          {blog.category}
-                        </span>
-                        <span className="admin-blog-date">
-                          {formatDate(blog.created_at)}
-                        </span>
-                      </div>
+              .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+              .map((blog, index) => (
+                <div
+                  key={blog.id || blog.blog_id || index} // ✅ FIX
+                  className="admin-blog-card"
+                >
+                  <div className="admin-blog-image">
+                    <img
+                      src={
+                        blog.image?.startsWith("http")
+                          ? blog.image
+                          : `https://blog.purvsoft.com/${blog.image}`
+                      }
+                      alt={blog.title || "Blog thumbnail"}
+                    />
+                  </div>
+
+                  <div className="admin-blog-content">
+                    <h3>{blog.title}</h3>
+
+                    <div className="admin-blog-meta">
+                      <span>{blog.category}</span>
+                      <span>{formatDate(blog.created_at)}</span>
                     </div>
                   </div>
-                ))
+                </div>
+              ))
             )}
           </div>
         </div>
